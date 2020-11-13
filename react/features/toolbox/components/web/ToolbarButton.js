@@ -89,6 +89,7 @@ class ToolbarButton extends AbstractToolbarButton<Props> {
                 aria-label = { this.props.accessibilityLabel }
                 aria-pressed = { this.props.toggled }
                 className = 'toolbox-button'
+                id = { this.props.idName }
                 onClick = { this.props.onClick }
                 onKeyDown = { this._onKeyDown }
                 role = 'button'
