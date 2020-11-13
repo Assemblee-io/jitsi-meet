@@ -105,3 +105,250 @@ $flagsImagePath: "../images/";
 @import 'connection-status';
 
 /* Modules END */
+
+
+#largeVideoContainer,.tOoji, body {
+/*background-color: #f3f3f3!important;*/
+background-color:#f2f4f9!important;
+/*background-image: linear-gradient(-90deg,#296fd6fc 0,#0074ff 50%,#1a7dd2 100%);*/
+}
+
+.new-toolbox .toolbox-background {
+background-image: none!important;
+}
+.eoRGoR {
+background-color: #ffffff!important;
+border-radius: 10px!important;
+color: #283447!important;
+}
+.invite-more-dialog.header,.invite-more-dialog span,.modal-dialog-form > * {
+color: #2c2c2d!important;
+}
+.embed-meeting-trigger,.add-people-form-wrap,.invite-more-dialog.separator,.invite-more-dialog.dial-in-display, .invite-more-button-text {
+display:none!important;
+}
+.button-group-center,.button-group-left,.button-group-right {
+background: white;
+padding: 10px;
+border-radius: 50px;
+}
+.invite-more-header {
+margin: 30px 0 16px 0!important;
+}
+.chat-header .jitsi-icon svg,.button-group-left svg,.button-group-right svg {
+fill:#333!important;
+}
+#usermsg {
+color: #333!important;
+}
+.chat-header {
+background-color: rgb(255 255 255)!important;
+}
+#sideToolbarContainer {
+background-color: rgb(255 255 255)!important;
+color: #000!important;
+}
+.invite-more-container {
+background-image: none!important;
+}
+.new-toolbox {
+bottom:0!important;
+}
+.watermark {
+width: 140px!important;
+}
+.leftwatermark {
+    top: 17px!important;
+    }
+#largeVideo {
+width: 100%!important;
+height: 100%!important;
+}
+#largeVideoWrapper {
+box-shadow:none!important;
+border-radius:10px!important;
+width: 100%!important;
+position: relative!important;
+left: 0!important;
+top: 0!important;
+    max-width: 70vw;
+    margin: auto;
+}
+#largeVideoElementsContainer {
+position: absolute!important;
+left: 0px!important;
+top: 0px!important;
+padding: 100px!important;
+z-index: 1!important;
+width: calc(100% - 200px)!important;
+height: calc(100% - 200px)!important;
+}
+.invite-more-container {
+color: #393939!important;
+font-weight: 500!important;
+}
+.invite-more-header, .invite-more-button {
+display:inline-block!important;
+}
+.invite-more-header {
+font-size: 14px!important;
+    margin: 20px 0 16px 0!important;
+}
+.invite-more-button {
+padding: 3px 10px;
+height: 24px;
+width: 40px;
+position: relative;
+top: 5px;
+margin-left: 10px;
+background: #0135d4cf;
+}
+.invite-more-button svg {
+width:16px!important;
+}
+#largeVideoWrapper {
+max-height: 100%!important;
+    top: -20px!important;
+}
+.chat-message-group.local .chatmessage {
+background-color: #ececec!important;
+color: #030814!important;
+}
+.chatmessage-wrapper .timestamp {
+font-size: 10px;
+}
+
+.new-toolbox .toolbox-content .button-group-center, .new-toolbox .toolbox-content .button-group-left, .new-toolbox .toolbox-content .button-group-right {
+width: auto!important;
+}
+.button-group-right div.toolbox-button:nth-child(1) {
+display:none;
+}
+#dominantSpeaker {
+width: 50%!important;
+height: 300px!important;
+margin: auto!important;
+background: white!important;
+border-radius: 10px!important;
+padding: 120px!important;
+}
+.cliqcn {
+width: 500px;
+}
+.ffdVFW {
+padding: 20px 30px;
+}
+.dOAAnq {
+    background: #ffffff;
+    box-shadow:none;
+    }
+.fdAqDG > div {
+	    top: -30px!important;
+    left: -10px!important;
+    position: absolute!important;
+}
+.dOAAnq {
+    background: #ffffff!important;
+    box-shadow: none!important;
+    border-radius: 10px!important;
+    color: #333333!important;
+    max-width: auto!important;
+    padding: 26px 34px!important;
+    }
+    .new-toolbox .toolbox-content .overflow-menu .overflow-menu-item,.audio-preview-entry-text,.audio-preview-header {
+    color: #4c5377!important;
+    }
+    .new-toolbox .toolbox-content .overflow-menu .overflow-menu-item-icon svg,.audio-preview-header-icon {
+    fill: #6671a9ab!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button .toolbox-icon svg {
+    fill: #333333!important;
+}
+.toolbox-icon  {
+	border:none!important
+}
+.invite-more-dialog.icon-container.active .copy-invite-icon>div>svg>path {
+    fill: #ffffff;
+}
+.copy-button,.invite-more-dialog.email-container > span {
+color:white!important;
+}
+@media (max-width: 600px) {
+#largeVideoElementsContainer {
+position: absolute!important;
+left: 0!important;
+top: 100px!important;
+padding:0px;
+width: 100%;
+height: 100%;
+}
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
+    background-color: #ff3b3bcf!important;
+        width: 50px!important;
+    height: 50px!important;
+    }
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
+    fill: #fff!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button .toolbox-icon.toggled {
+       background-color: #a0a0a01c!important;
+    }
+    .audio-preview-content {
+    background: #ffffff!important;
+    }
+
+.audio-preview-entry--selected {
+    background: #f3f3f3!important;
+    }
+
+    .audio-preview-icon--check {
+    background: #0135d4!important;
+        width: 20px!important;
+    height: 20px!important;
+    }
+   .audio-preview-icon svg {
+    fill: #ffffff!important;
+    position: relative!important;
+    top: 3px!important;
+    left: 3px!important;
+    }
+    .audio-preview-microphone:hover .audio-preview-entry,.audio-preview-speaker:hover .audio-preview-entry {
+    background: #bac8d6!important;
+    }
+    .audio-preview-test-button {
+    border: 1px solid #d1dbe8!important;
+    font-weight: 500!important;
+    font-size: 13px!important;
+    padding: 3px 12px!important;
+    }
+    .metr-l-0 rect:first-child {
+    fill: #2ef54b!important;
+}
+.security-dialog {
+    color: #2c2c2d!important;
+    }
+    .new-toolbox .toolbox-content .button-group-center .toolbox-button .toolbox-icon.toggled:hover {
+       background-color: #daebfa57!important;
+}
+
+
+.video-preview {
+	background: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 0px;
+    padding: 5px 20px;
+}
+.button-group-center:nth-child(2) {
+background: white;
+    margin: 0px;
+    padding: 5px 20px;
+    }
+
+    .audio-preview {
+        background: white;
+    border-top-left-radius: 20px;
+    margin: 0px;
+    padding: 5px 20px;
+    }
