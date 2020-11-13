@@ -972,6 +972,7 @@ class Toolbox extends Component<Props, State> {
                     = { t('toolbar.accessibilityLabel.shareYourScreen') }
                 disabled = { !_desktopSharingEnabled }
                 icon = { IconShareDesktop }
+                idName = 'y-sharescreen'
                 onClick = { this._onToolbarToggleScreenshare }
                 toggled = { _screensharing }
                 tooltip = { tooltip } />
@@ -1341,6 +1342,7 @@ class Toolbox extends Component<Props, State> {
                     && <ToolbarButton
                         accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
                         icon = { IconRaisedHand }
+                        idName = 'y-raiseHand'
                         onClick = { this._onToolbarToggleRaiseHand }
                         toggled = { _raisedHand }
                         tooltip = { t('toolbar.raiseHand') } /> }

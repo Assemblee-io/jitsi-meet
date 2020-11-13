@@ -100,7 +100,8 @@ export default class ToolboxButtonWithIcon extends Component<Props, State> {
             icon,
             iconDisabled,
             onIconClick,
-            styles
+            styles,
+            idName
         } = this.props;
 
         const iconProps = {};
@@ -122,6 +123,7 @@ export default class ToolboxButtonWithIcon extends Component<Props, State> {
         return (
             <div
                 className = 'settings-button-container'
+                id = { idName }
                 styles = { styles }>
                 {children}
                 <div
