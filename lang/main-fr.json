@@ -793,7 +793,7 @@
     },
     "videothumbnail": {
         "domute": "Couper le micro",
-        "domuteOthers": "Couper le micro de tous les autres",
+        "domuteOthers": "Couper tous les micros",
         "flip": "Balancer",
         "grantModerator": "Nommer modérateur",
         "kick": "Exclure",

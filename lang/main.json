@@ -332,7 +332,7 @@
         "answer": "Answer",
         "audioCallTitle": "Incoming call",
         "decline": "Dismiss",
-        "productLabel": "from Jitsi Meet",
+        "productLabel": "de Assemblée.io",
         "videoCallTitle": "Incoming video call"
     },
     "info": {
@@ -614,7 +614,7 @@
         "about": "You can add a $t(lockRoomPassword) to your meeting. Participants will need to provide the $t(lockRoomPassword) before they are allowed to join the meeting.",
         "aboutReadOnly": "Moderator participants can add a $t(lockRoomPassword) to the meeting. Participants will need to provide the $t(lockRoomPassword) before they are allowed to join the meeting.",
         "insecureRoomNameWarning": "The room name is unsafe. Unwanted participants may join your conference. Consider securing your meeting using the security button.",
-        "securityOptions": "Security options"
+        "securityOptions": "Sécurité"
     },
     "settings": {
         "calendar": {
@@ -717,7 +717,7 @@
             "raiseHand": "Toggle raise hand",
             "recording": "Toggle recording",
             "remoteMute": "Mute participant",
-            "security": "Security options",
+            "security": "Securité",
             "Settings": "Toggle settings",
             "sharedvideo": "Toggle Youtube video sharing",
             "shareRoom": "Invite someone",
@@ -774,7 +774,7 @@
         "profile": "Edit your profile",
         "raiseHand": "Raise / Lower your hand",
         "raiseYourHand": "Raise your hand",
-        "security": "Security options",
+        "security": "Securité",
         "Settings": "Settings",
         "sharedvideo": "Share a YouTube video",
         "shareRoom": "Invite someone",
@@ -872,7 +872,7 @@
         "getHelp": "Get help",
         "go": "GO",
         "goSmall": "GO",
-        "headerTitle": "Jitsi Meet",
+        "headerTitle": "Assemblée.io",
         "headerSubtitle": "Secure and high quality meetings",
         "info": "Dial-in info",
         "join": "CREATE / JOIN",
