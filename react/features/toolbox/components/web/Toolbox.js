@@ -1325,15 +1325,6 @@ class Toolbox extends Component<Props, State> {
                                 tooltip = { t('toolbar.chat') } />
                             <ChatCounter />
                         </div> }
-                    { buttonsLeft.indexOf('desktop') !== -1
-                        && this._renderDesktopSharingButton() }
-                    { buttonsLeft.indexOf('raisehand') !== -1
-                        && <ToolbarButton
-                            accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
-                            icon = { IconRaisedHand }
-                            onClick = { this._onToolbarToggleRaiseHand }
-                            toggled = { _raisedHand }
-                            tooltip = { t('toolbar.raiseHand') } /> }
                     {
                         buttonsLeft.indexOf('closedcaptions') !== -1
                             && <ClosedCaptionButton />
@@ -1341,9 +1332,19 @@ class Toolbox extends Component<Props, State> {
                 </div>
                 <div className = 'button-group-center'>
                     { this._renderAudioButton() }
+                    { this._renderVideoButton() }
                     <HangupButton
                         visible = { this._shouldShowButton('hangup') } />
-                    { this._renderVideoButton() }
+                    { buttonsLeft.indexOf('desktop') !== -1
+                    && this._renderDesktopSharingButton() }
+                    { buttonsLeft.indexOf('raisehand') !== -1
+                    && <ToolbarButton
+                        accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
+                        icon = { IconRaisedHand }
+                        onClick = { this._onToolbarToggleRaiseHand }
+                        toggled = { _raisedHand }
+                        tooltip = { t('toolbar.raiseHand') } /> }
+
                 </div>
                 <div className = 'button-group-right'>
                     { buttonsRight.indexOf('localrecording') !== -1
