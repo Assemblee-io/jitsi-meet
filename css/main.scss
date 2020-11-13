@@ -607,7 +607,7 @@ background:#333!important;
 background-color: #ff6562;
 font-weight: 300;
 }
-.button-group-right .sc-ckVGcZ .sc-eNQAEJ.dOAAnq {
+.button-group-right .sc-ckVGcZ .sc-eNQAEJ.dOAAnq,.sc-kpOJdX.CvzNc {
 background:white!important;
 }
 .chat-message-group .chatmessage.privatemessage {
@@ -619,3 +619,33 @@ background:white!important;
     .chat-message-group .chatmessage {
     background-color: #2e78ffd1!important;
     }
+
+    #nickname {
+    text-align: center;
+    color: #0d1524;
+    font-size: 16px;
+    }
+    .dvocAg,.exHNhk {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255 255 255);
+    border-color: rgb(171 171 171 / 63%);
+    border-radius: 4px;
+    border: 1px solid #c5c5c599;
+    border-style: solid;
+    box-sizing: border-box;
+    color: rgb(184, 199, 224);
+    display: flex;
+    width: 300px;
+    flex: 1 0 auto;
+    font-size: 14px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.42857;
+    max-width: 100%;
+    overflow: hidden;
+    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+    overflow-wrap: break-word;
+    border-width: 1px;
+    padding: 6px 20px;
+}
