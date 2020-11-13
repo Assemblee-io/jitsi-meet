@@ -187,7 +187,7 @@ var config = {
     // Recording
 
     // Whether to enable file recording or not.
-    // fileRecordingsEnabled: false,
+     fileRecordingsEnabled: false,
     // Enable the dropbox integration.
     // dropbox: {
     //     appKey: '<APP_KEY>' // Specify your app key here.
@@ -208,11 +208,11 @@ var config = {
     // fileRecordingsServiceSharingEnabled: false,
 
     // Whether to enable live streaming or not.
-    // liveStreamingEnabled: false,
+     liveStreamingEnabled: true,
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)
-    // transcribingEnabled: false,
+     transcribingEnabled: true,
 
     // Enables automatic turning on captions when recording is started
     // autoCaptionOnRecord: false,
@@ -536,20 +536,20 @@ var config = {
     // Local Recording
     //
 
-    // localRecording: {
+     localRecording: {
     // Enables local recording.
     // Additionally, 'localrecording' (all lowercase) needs to be added to
     // TOOLBAR_BUTTONS in interface_config.js for the Local Recording
     // button to show up on the toolbar.
     //
-    //     enabled: true,
+         enabled: true,
     //
 
     // The recording format, can be one of 'ogg', 'flac' or 'wav'.
-    //     format: 'flac'
+         format: 'wav'
     //
 
-    // },
+     },
 
     // Options related to end-to-end (participant to participant) ping.
     // e2eping: {
@@ -584,7 +584,7 @@ var config = {
     // disableInviteFunctions: true,
 
     // Disables storing the room name to the recents list
-    // doNotStoreRoom: true,
+     doNotStoreRoom: true,
 
     // Deployment specific URLs.
     // deploymentUrls: {

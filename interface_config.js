@@ -2,7 +2,7 @@
 /* eslint sort-keys: ["error", "asc", {"caseSensitive": false}] */
 
 var interfaceConfig = {
-    etherpad_base: 'https://fr1.assemblee.io/etherpad/p/',
+    ETHERPAD_BASE: 'https://fr1.assemblee.io/etherpad/p/',
     APP_NAME: 'Assemblée',
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
@@ -206,7 +206,7 @@ var interfaceConfig = {
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat',
          'etherpad', 'sharedvideo', 'settings', 'raisehand',
-        'invite',  'shortcuts',
+        'invite',  'shortcuts', 'localrecording', 'livestreaming',
         'tileview', 'mute-everyone', 'security'
     ],
 
