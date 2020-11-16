@@ -610,9 +610,7 @@ font-weight: 300;
 .button-group-right .sc-ckVGcZ .sc-eNQAEJ.dOAAnq,.sc-kpOJdX.CvzNc {
 background:white!important;
 }
-.chat-message-group .chatmessage.privatemessage {
-    background-color: #333333!important
-}
+
 .chat-message-group .chatmessage-wrapper .replywrapper .messageactions {
     border-left: 1px solid #333!important
     }
@@ -648,4 +646,7 @@ background:white!important;
     overflow-wrap: break-word;
     border-width: 1px;
     padding: 6px 20px;
+}
+.chat-message-group .chatmessage-wrapper .replywrapper .messageactions {
+    border-left: none;
 }
