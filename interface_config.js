@@ -206,7 +206,7 @@ var interfaceConfig = {
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat',
          'etherpad', 'sharedvideo', 'settings', 'raisehand',
-        'invite',  'shortcuts', 'livestreaming',  'videoquality', 'filmstrip',
+        'invite',  'shortcuts', 'livestreaming',  'videoquality',
         'tileview', 'mute-everyone', 'security'
     ],
 
