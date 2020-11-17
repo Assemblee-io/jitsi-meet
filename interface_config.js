@@ -2,7 +2,7 @@
 /* eslint sort-keys: ["error", "asc", {"caseSensitive": false}] */
 
 var interfaceConfig = {
-    ETHERPAD_BASE: 'https://fr1.assemblee.io:9001/etherpad/p/',
+    ETHERPAD_BASE: 'https://eu0.assemblee.io/etherpad/p/',
     APP_NAME: 'Assemblée',
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',

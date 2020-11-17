@@ -212,7 +212,7 @@ var config = {
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)
-     transcribingEnabled: true,
+     transcribingEnabled: false,
 
     // Enables automatic turning on captions when recording is started
     // autoCaptionOnRecord: false,
@@ -351,7 +351,7 @@ var config = {
 
     // Whether to use a welcome page or not. In case it's false a random room
     // will be joined when no room is specified.
-    enableWelcomePage: true,
+    enableWelcomePage: false,
 
     // Enabling the close page will ignore the welcome page redirection when
     // a call is hangup.
