@@ -691,6 +691,8 @@
         "closeChat": "Fermer le chat",
         "documentClose": "Fermer le document partagé",
         "documentOpen": "Ouvrir le document partagé",
+        "whiteboardClose": "Fermer le tableau blanc",
+        "whiteboardOpen": "Ouvrir le tableau blanc",
         "download": "Télécharger nos applications",
         "enterFullScreen": "Afficher en plein écran",
         "enterTileView": "Accéder au mode mosaïque",
@@ -843,7 +845,7 @@
         "header": "Centre d'aide"
     },
     "lobby": {
-        "knockingParticipantList" : "Liste des participants en attente",
+        "knockingParticipantList": "Liste des participants en attente",
         "allow": "Autoriser",
         "backToKnockModeButton": "Aucun mot de passe, demander à rejoindre plutôt",
         "dialogTitle": "Mode lobby",

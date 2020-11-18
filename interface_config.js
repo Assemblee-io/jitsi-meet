@@ -2,7 +2,7 @@
 /* eslint sort-keys: ["error", "asc", {"caseSensitive": false}] */
 
 var interfaceConfig = {
-    ETHERPAD_BASE: 'https://eu0.assemblee.io/etherpad/p/',
+    ETHERPAD_BASE: 'https://jitsi-dev.assemblee.io/etherpad/p/',
     APP_NAME: 'Assemblée',
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
@@ -205,7 +205,7 @@ var interfaceConfig = {
    TOOLBAR_BUTTONS: [
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat',
-         'etherpad', 'sharedvideo', 'settings', 'raisehand',
+        'etherpad', 'sharedvideo', 'settings', 'raisehand',
         'invite',  'shortcuts', 'livestreaming',  'videoquality',
         'tileview', 'mute-everyone', 'security'
     ],

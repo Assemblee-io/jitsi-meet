@@ -6,29 +6,29 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'eu0.assemblee.io',
+        domain: 'jitsi-dev.assemblee.io',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'eu0.assemblee.io',
+        // authdomain: 'jitsi-dev.assemblee.io',
 
         // Call control component (Jigasi).
-        // call_control: 'callcontrol.eu0.assemblee.io',
+        // call_control: 'callcontrol.jitsi-dev.assemblee.io',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.eu0.assemblee.io',
+        // focus: 'focus.jitsi-dev.assemblee.io',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.eu0.assemblee.io'
+        muc: 'conference.jitsi-dev.assemblee.io'
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: '//eu0.assemblee.io/http-bind',
+    bosh: '//jitsi-dev.assemblee.io/http-bind',
 
     // Websocket URL
-    // websocket: 'wss://eu0.assemblee.io/xmpp-websocket',
+    // websocket: 'wss://jitsi-dev.assemblee.io/xmpp-websocket',
 
     // The name of client node advertised in XEP-0115 'c' stanza
     clientNode: 'http://jitsi.org/jitsimeet',
@@ -36,7 +36,7 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.eu0.assemblee.io',
+    // focusUserJid: 'focus@auth.jitsi-dev.assemblee.io',
 
 
     // Testing / experimental features.
@@ -105,7 +105,7 @@ var config = {
     // startAudioOnly: false,
 
     // Every participant after the Nth will start audio muted.
-    // startAudioMuted: 10,
+    startAudioMuted: 10,
 
     // Start calls with audio muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
@@ -126,7 +126,7 @@ var config = {
     // Video
 
     // Sets the preferred resolution (height) for local video. Defaults to 720.
-    // resolution: 720,
+    resolution: 1080,
 
     // How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
     // Use -1 to disable.
@@ -137,15 +137,15 @@ var config = {
     // util#browser#usesNewGumFlow. The constraints are independent from
     // this config's resolution value. Defaults to requesting an ideal
     // resolution of 720p.
-    // constraints: {
-    //     video: {
-    //         height: {
-    //             ideal: 720,
-    //             max: 720,
-    //             min: 240
-    //         }
-    //     }
-    // },
+    constraints: {
+     video: {
+             height: {
+                 ideal: 1080,
+                 max: 1080,
+                 min: 240
+             }
+         }
+     },
 
     // Enable / disable simulcast support.
     // disableSimulcast: false,
@@ -156,7 +156,7 @@ var config = {
     // enableLayerSuspension: false,
 
     // Every participant after the Nth will start video muted.
-    // startVideoMuted: 10,
+    startVideoMuted: 10,
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
@@ -193,9 +193,9 @@ var config = {
     //     appKey: '<APP_KEY>' // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://eu0.assemblee.io/static/oauth.html'
+    //     // 'https://jitsi-dev.assemblee.io/static/oauth.html'
     //     redirectURI:
-    //          'https://eu0.assemblee.io/subfolder/static/oauth.html'
+    //          'https://jitsi-dev.assemblee.io/subfolder/static/oauth.html'
     // },
     // When integrations like dropbox are enabled only that will be shown,
     // by enabling fileRecordingsServiceEnabled, we show both the integrations
@@ -440,7 +440,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:eu0.assemblee.io:3478' },
+            // { urls: 'stun:jitsi-dev.assemblee.io:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' }
         ]
 
@@ -625,7 +625,9 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.eu0.assemblee.io',
+    // moderatedRoomServiceUrl: 'https://moderated.jitsi-dev.assemblee.io',
+
+    etherpad_base: 'https://jitsi-dev.assemblee.io/etherpad/p/',
 
     // List of undocumented settings used in jitsi-meet
     /**
