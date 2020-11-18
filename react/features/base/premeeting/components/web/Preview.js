@@ -34,6 +34,7 @@ function Preview(props: Props) {
                 <Video
                     className = 'flipVideoX'
                     videoTrack = {{ jitsiTrack: videoTrack }} />
+                { props.footer }
             </div>
         );
     }
