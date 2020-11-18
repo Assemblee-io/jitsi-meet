@@ -1,13 +1,18 @@
-// @flow
+/* global interfaceConfig */
 
+// @flow
+import Page, { Grid, GridColumn } from '@atlaskit/page';
 import React, { PureComponent } from 'react';
 
+import { Watermarks } from '../../../../base/react';
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
 import { Avatar } from '../../../avatar';
 
 import ConnectionStatus from './ConnectionStatus';
 import CopyMeetingUrl from './CopyMeetingUrl';
 import Preview from './Preview';
+
+import './style.css';
 
 type Props = {
 
@@ -79,41 +84,52 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      */
     render() {
         const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack } = this.props;
+        const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
 
         return (
             <div
                 className = 'premeeting-screen'
                 id = 'lobby-screen'>
+                <Watermarks defaultJitsiLogoURL = { DEFAULT_WELCOME_PAGE_LOGO_URL } />
                 <ConnectionStatus />
-                <Preview
-                    videoMuted = { videoMuted }
-                    videoTrack = { videoTrack } />
-                {!videoMuted && <div className = 'preview-overlay' />}
-                <div className = 'content'>
-                    {showAvatar && videoMuted && (
-                        <Avatar
-                            className = 'premeeting-screen-avatar'
-                            displayName = { name }
-                            dynamicColor = { false }
-                            participantId = 'local'
-                            size = { 80 } />
-                    )}
-                    {showConferenceInfo && (
-                        <>
-                            <div className = 'title'>
-                                { title }
+                <Page>
+                    <Grid
+                        spacing = { 'comfortable' }>
+                        <GridColumn medium = { 6 }>
+                            <Preview
+                                footer = { this.props.footer }
+                                videoMuted = { videoMuted }
+                                videoTrack = { videoTrack } />
+                            {!videoMuted && <div className = 'preview-overlay' />}
+                            <div className = 'media-btn-container'>
+                                <AudioSettingsButton visible = { true } />
+                                <VideoSettingsButton visible = { true } />
                             </div>
-                            <CopyMeetingUrl />
-                        </>
-                    )}
-                    { this.props.children }
-                    <div className = 'media-btn-container'>
-                        <AudioSettingsButton visible = { true } />
-                        <VideoSettingsButton visible = { true } />
-                    </div>
-                    { this.props.skipPrejoinButton }
-                    { this.props.footer }
-                </div>
+                        </GridColumn>
+                        <GridColumn medium = { 6 }>
+                            <div className = 'content'>
+                                {showAvatar && videoMuted && (
+                                    <Avatar
+                                        className = 'premeeting-screen-avatar'
+                                        displayName = { name }
+                                        dynamicColor = { false }
+                                        participantId = 'local'
+                                        size = { 80 } />
+                                )}
+                                {showConferenceInfo && (
+                                    <>
+                                        <div className = 'title'>
+                                            { title }
+                                        </div>
+                                        <CopyMeetingUrl />
+                                    </>
+                                )}
+                                { this.props.children }
+                                { this.props.skipPrejoinButton }
+                            </div>
+                        </GridColumn>
+                    </Grid>
+                </Page>
             </div>
         );
     }
