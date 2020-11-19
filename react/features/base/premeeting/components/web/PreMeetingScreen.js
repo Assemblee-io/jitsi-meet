@@ -101,13 +101,7 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                 videoMuted = { videoMuted }
                                 videoTrack = { videoTrack } />
                             {!videoMuted && <div className = 'preview-overlay' />}
-                            <div className = 'media-btn-container'>
-                                <AudioSettingsButton visible = { true } />
-                                <VideoSettingsButton visible = { true } />
-                            </div>
-                        </GridColumn>
-                        <GridColumn medium = { 6 }>
-                            <div className = 'content'>
+                            <div className = { 'prejoin-no-camera' }>
                                 {showAvatar && videoMuted && (
                                     <Avatar
                                         className = 'premeeting-screen-avatar'
@@ -116,6 +110,14 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                         participantId = 'local'
                                         size = { 80 } />
                                 )}
+                            </div>
+                            <div className = 'media-btn-container'>
+                                <AudioSettingsButton visible = { true } />
+                                <VideoSettingsButton visible = { true } />
+                            </div>
+                        </GridColumn>
+                        <GridColumn medium = { 6 }>
+                            <div className = 'content'>
                                 {showConferenceInfo && (
                                     <>
                                         <div className = 'title'>
