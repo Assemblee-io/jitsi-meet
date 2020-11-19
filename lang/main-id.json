@@ -697,7 +697,7 @@
     },
     "userMedia": {
         "androidGrantPermissions": "Select <b><i>Allow</i></b> when your browser asks for permissions.",
-        "chromeGrantPermissions": "Select <b><i>Allow</i></b> when your browser asks for permissions.",
+        "chromeGrantPermissions": "Sélectionnez <b><i>Allow</i></b> lorsque votre navigateur vous demande des autorisations.",
         "edgeGrantPermissions": "Select <b><i>Yes</i></b> when your browser asks for permissions.",
         "electronGrantPermissions": "Please grant permissions to use your camera and microphone",
         "firefoxGrantPermissions": "Select <b><i>Share Selected Device</i></b> when your browser asks for permissions.",
