@@ -359,7 +359,7 @@ background-color: #e4e9ecb5;
 }
 
 #menu-container {
-	background: white;
+    background: white;
 border-top-left-radius: 50px;
 border-bottom-left-radius: 50px;
 border-top-right-radius: 50px;
@@ -703,7 +703,10 @@ border: 1px solid #a4b8d1;
 .invite-more-dialog.icon-container.active svg path {
 fill:white!important;
 }
-
+.premeeting-screen .sc-cvbbAY.cDFPVJ {
+    max-width: 1000px;
+    margin: auto;
+}
 .premeeting-screen .action-btn.primary {
 background: #0135d4cf;
 border: #0135d4cf;
