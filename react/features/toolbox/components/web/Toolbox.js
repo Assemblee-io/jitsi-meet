@@ -1336,22 +1336,24 @@ class Toolbox extends Component<Props, State> {
                             && <ClosedCaptionButton />
                     }
                 </div>
-                <div className = 'button-group-center'>
-                    { this._renderAudioButton() }
-                    { this._renderVideoButton() }
-                    <HangupButton
-                        visible = { this._shouldShowButton('hangup') } />
-                    { buttonsLeft.indexOf('desktop') !== -1
-                    && this._renderDesktopSharingButton() }
-                    { buttonsLeft.indexOf('raisehand') !== -1
-                    && <ToolbarButton
-                        accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
-                        icon = { IconRaisedHand }
-                        idName = 'y-raiseHand'
-                        onClick = { this._onToolbarToggleRaiseHand }
-                        toggled = { _raisedHand }
-                        tooltip = { t('toolbar.raiseHand') } /> }
+                <div id = { 'menu-container' }>
+                    <div className = 'button-group-center'>
+                        { this._renderAudioButton() }
+                        { this._renderVideoButton() }
+                        <HangupButton
+                            visible = { this._shouldShowButton('hangup') } />
+                        { buttonsLeft.indexOf('desktop') !== -1
+                        && this._renderDesktopSharingButton() }
+                        { buttonsLeft.indexOf('raisehand') !== -1
+                        && <ToolbarButton
+                            accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
+                            icon = { IconRaisedHand }
+                            idName = 'y-raiseHand'
+                            onClick = { this._onToolbarToggleRaiseHand }
+                            toggled = { _raisedHand }
+                            tooltip = { t('toolbar.raiseHand') } /> }
 
+                    </div>
                 </div>
                 <div className = 'button-group-right'>
                     { buttonsRight.indexOf('localrecording') !== -1
