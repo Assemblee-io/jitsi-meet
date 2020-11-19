@@ -854,15 +854,35 @@ background-color: #f7f7f7;
 
 
 #overlay {
-background:white;
+background:#f2f4f9!important;
 }
 
+.no-mobile-app {
+    margin: 30vh auto;
+    padding: 100px;
+    background: white;
+    -webkit-box-shadow: 1px 2px 15px -2px #0000000d!important;
+box-shadow: 1px 2px 15px -2px #0000000d!important;
+border-radius: 8px;
+color: #333;
+    }
+    .no-mobile-app h2 {
+ color: #333;   
+    }
 #overlay .inlay {
+margin-top: 30vh;
+border-radius: 8px;
 color: #333!important;
-background: #e7e7e766;
+background: white;
+-webkit-box-shadow: 1px 2px 15px -2px #0000000d!important;
+box-shadow: 1px 2px 15px -2px #0000000d!important;
+}
+#overlay .inlay-logo {
+	width:200px
 }
 #overlay .inlay__title {
-border-bottom: 1px solid #c8c8c8;
+border-bottom: none;
+       margin: 20px 0px 0px 0px;
 }
 #overlay .inlay__title, #overlay .inlay__text {
 color: #333!important;
