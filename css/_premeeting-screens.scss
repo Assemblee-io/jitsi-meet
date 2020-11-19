@@ -25,7 +25,7 @@
         text {
             fill: black;
             font-size: 26px;
-            font-weight: 400;  
+            font-weight: 400;
         }
     }
 
@@ -99,11 +99,13 @@
     }
 
     .content {
+
+        height: 100%;
         align-items: center;
         display: flex;
         flex: 1;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         padding-bottom: 24px;
         z-index: $toolbarZ + 2;
 
@@ -209,9 +211,7 @@
 }
 
 #preview {
-    height: 100%;
-    position: absolute;
-    width: 100%;
+
 
     &.no-video {
         background: radial-gradient(50% 50% at 50% 50%, #5B6F80 0%, #365067 100%), #FFFFFF;

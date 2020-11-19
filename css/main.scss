@@ -104,6 +104,15 @@ $flagsImagePath: "../images/";
 @import 'responsive';
 @import 'connection-status';
 
+.jcELaM {
+    max-width: 100%!important;
+    height: 100%;
+}
+
+.sc-iRbamj {
+    height: 100%;
+}
+
 /* Modules END */
 
 
@@ -731,21 +740,44 @@ border-bottom-right-radius: 50px;
 border-top-right-radius: 50px;
 }
 
+.prejoin-preview-status {
+    position: relative;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    text-align: center;
+    text-align: left;
+    display: block;
+    }
+
 .prejoin-preview-status--ok {
-background: #31b76a;
+    background: #31b76a;
+    position: unset!important;
+    border-radius: 0px 0px 8px 8px;
 }
+
+.prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
+    top: 3px;
+    padding-left: 10px;
+    position: relative;
+    }
+    .prejoin-preview-status--warning {
+    background: rgb(245 157 0 / 82%);
+}
+
+
 #preview {
-text-align: center;
+    padding-top: 28vh;
+    max-width: 500px;
+    margin:auto;
 }
+
 #preview video {
-height: 300px;
-object-fit: cover;
-border-radius: 8px;
-position: relative;
-width: 100%;
-max-width: 440px;
-top: 8vw;
-margin: 30px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+    width: 100%;
+    margin: 0px;
 }
 .premeeting-screen {
 align-items: stretch;
@@ -753,7 +785,7 @@ background: white;
 }
 
 .premeeting-screen .preview-overlay {
-background-image: none!important;
+display:none!important;
 }
 .premeeting-screen .content .title {
 color: #333;
