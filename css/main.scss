@@ -714,7 +714,7 @@ background: #0135d4cf;
 border: #0135d4cf;
 }
 .premeeting-screen .content input.field {
-background-color: #f1f1f1ed;
+background-color: white;
 border: 1px solid #d8d6d6;
 }
 .premeeting-screen .content input.field.focused {
@@ -763,7 +763,7 @@ background: rgb(245 157 0 / 82%);
 }
 
 .prejoin-no-camera {
-margin-top: 31vh;
+margin-top: 32vh;
 max-width: 500px;
 margin-left: auto;
 margin-right: auto;
@@ -813,7 +813,7 @@ fill: black;
 }
 
 .premeeting-screen .content .copy-meeting .url {
-background: rgb(242 242 242);
+background: white;
 border: 1px solid #d8d8d8;
 }
 
@@ -889,4 +889,8 @@ color: #333!important;
 }
 .button-group-right {
         padding-top: 12px;
+}
+.premeeting-screen-avatar, .prejoin-no-camera .avatar {
+    background-color: #0f1419!important; 
+	opacity:0.9;
 }
