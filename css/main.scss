@@ -705,6 +705,10 @@ border: 1px solid #a4b8d1;
 .invite-more-dialog.icon-container.active svg path {
 fill:white!important;
 }
+.premeeting-screen .audio-preview? .premeeting-screen .video-preview {
+	    padding: 10px 10px;
+    background: #c6c9d42e;
+}
 .premeeting-screen .sc-cvbbAY.cDFPVJ {
     max-width: 1000px;
     margin: auto;
@@ -714,11 +718,16 @@ background: #0135d4cf;
 border: #0135d4cf;
 }
 .premeeting-screen .content input.field {
-background-color: white;
+background-color: #fff!important;
 border: 1px solid #d8d6d6;
 }
 .premeeting-screen .content input.field.focused {
 box-shadow:none!important;
+}
+.premeeting-screen .content {
+	display:block!important;
+	margin-top: 31vh;
+	    text-align: center;
 }
 .premeeting-screen .audio-preview, .premeeting-screen .video-preview  {
 background: #f2f2f2;
@@ -803,6 +812,7 @@ display:none!important;
 }
 .premeeting-screen .content .title {
 color: #333;
+
 }
 
 .premeeting-screen .toggle-button {
@@ -813,7 +823,7 @@ fill: black;
 }
 
 .premeeting-screen .content .copy-meeting .url {
-background: white;
+background: #fff!important;
 border: 1px solid #d8d8d8;
 }
 
@@ -867,7 +877,7 @@ border-radius: 8px;
 color: #333;
     }
     .no-mobile-app h2 {
- color: #333;   
+ color: #333!important;
     }
 #overlay .inlay {
 margin-top: 30vh;
