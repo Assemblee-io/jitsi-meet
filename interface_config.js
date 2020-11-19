@@ -2,7 +2,6 @@
 /* eslint sort-keys: ["error", "asc", {"caseSensitive": false}] */
 
 var interfaceConfig = {
-    ETHERPAD_BASE: 'https://jitsi-dev.assemblee.io/etherpad/p/',
     APP_NAME: 'Assemblée',
     AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
     AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
@@ -43,7 +42,7 @@ var interfaceConfig = {
      *
      * @type {boolean}
      */
-    CONNECTION_INDICATOR_DISABLED: true,
+    CONNECTION_INDICATOR_DISABLED: false,
 
     DEFAULT_BACKGROUND: 'white',
     DEFAULT_LOCAL_DISPLAY_NAME: 'Vous',
@@ -96,6 +95,8 @@ var interfaceConfig = {
 
     ENABLE_FEEDBACK_ANIMATION: false, // Enables feedback star animation.
 
+    ETHERPAD_BASE: 'https://jitsi-dev.assemblee.io/etherpad/p/',
+
     FILM_STRIP_MAX_HEIGHT: 120,
 
     GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
@@ -132,7 +133,7 @@ var interfaceConfig = {
      *
      * @type {boolean}
      */
-    MOBILE_APP_PROMO: true,
+    MOBILE_APP_PROMO: false,
 
     /**
      * Specify custom URL for downloading android mobile app.
@@ -181,7 +182,7 @@ var interfaceConfig = {
     SHOW_DEEP_LINKING_IMAGE: false,
     SHOW_JITSI_WATERMARK: true,
     SHOW_POWERED_BY: false,
-    SHOW_PROMOTIONAL_CLOSE_PAGE: true,
+    SHOW_PROMOTIONAL_CLOSE_PAGE: false,
 
     /*
      * If indicated some of the error dialogs may point to the support URL for
@@ -202,11 +203,11 @@ var interfaceConfig = {
      * - it's impossible to control the placement of buttons
      * - 'desktop' controls the "Share your screen" button
      */
-   TOOLBAR_BUTTONS: [
+    TOOLBAR_BUTTONS: [
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat',
         'etherpad', 'sharedvideo', 'settings', 'raisehand',
-        'invite',  'shortcuts', 'livestreaming',  'videoquality',
+        'invite', 'shortcuts', 'livestreaming', 'videoquality',
         'tileview', 'mute-everyone', 'security', 'e2ee', 'filmstrip'
     ],
 
