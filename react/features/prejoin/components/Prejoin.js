@@ -360,7 +360,7 @@ class Prejoin extends Component<Props, State> {
                                         onOptionsClick = { _onOptionsClick }
                                         testId = 'prejoin.joinMeeting'
                                         type = 'primary'>
-                                        { t('prejoin.joinMeeting') }
+                                        { t('calendarSync.joinTooltip') }
                                     </ActionButton>
                                 </InlineDialog>
                             </div>

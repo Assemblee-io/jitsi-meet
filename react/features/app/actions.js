@@ -290,6 +290,8 @@ export function maybeRedirectToWelcomePage(options: Object = {}) {
             enableClosePage
         } = getState()['features/base/config'];
 
+        console.log(enableClosePage);
+
         // if close page is enabled redirect to it, without further action
         if (enableClosePage) {
             if (isVpaasMeeting(getState())) {
