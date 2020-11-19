@@ -2,7 +2,6 @@
 
 import type { Dispatch } from 'redux';
 
-import { API_ID } from '../../../modules/API/constants';
 import { setRoom } from '../base/conference';
 import {
     configWillLoad,
@@ -290,10 +289,9 @@ export function maybeRedirectToWelcomePage(options: Object = {}) {
             enableClosePage
         } = getState()['features/base/config'];
 
-        console.log(enableClosePage);
 
         // if close page is enabled redirect to it, without further action
-        if (enableClosePage) {
+        if (!enableClosePage) {
             if (isVpaasMeeting(getState())) {
                 redirectToStaticPage('/');
 
@@ -302,25 +300,12 @@ export function maybeRedirectToWelcomePage(options: Object = {}) {
 
             const { jwt } = getState()['features/base/jwt'];
 
-            let hashParam;
-
             // save whether current user is guest or not, and pass auth token,
             // before navigating to close page
             window.sessionStorage.setItem('guest', !jwt);
             window.sessionStorage.setItem('jwt', jwt);
 
-            let path = 'close.html';
-
-            if (interfaceConfig.SHOW_PROMOTIONAL_CLOSE_PAGE) {
-                if (Number(API_ID) === API_ID) {
-                    hashParam = `#jitsi_meet_external_api_id=${API_ID}`;
-                }
-                path = 'close3.html';
-            } else if (!options.feedbackSubmitted) {
-                path = 'close2.html';
-            }
-
-            dispatch(redirectToStaticPage(`static/${path}`, hashParam));
+            window.location.href = 'https://assemblee.io/quit';
 
             return;
         }
