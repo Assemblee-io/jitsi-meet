@@ -101,16 +101,16 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                 videoMuted = { videoMuted }
                                 videoTrack = { videoTrack } />
                             {!videoMuted && <div className = 'preview-overlay' />}
-                            <div className = { 'prejoin-no-camera' }>
-                                {showAvatar && videoMuted && (
+                            {showAvatar && videoMuted && (
+                                <div className = { 'prejoin-no-camera' }>
                                     <Avatar
                                         className = 'premeeting-screen-avatar'
                                         displayName = { name }
                                         dynamicColor = { false }
                                         participantId = 'local'
                                         size = { 80 } />
-                                )}
-                            </div>
+                                </div>
+                            )}
                             <div className = 'media-btn-container'>
                                 <AudioSettingsButton visible = { true } />
                                 <VideoSettingsButton visible = { true } />

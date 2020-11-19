@@ -1336,8 +1336,8 @@ class Toolbox extends Component<Props, State> {
                             && <ClosedCaptionButton />
                     }
                 </div>
-                <div id = { 'menu-container' }>
-                    <div className = 'button-group-center'>
+                <div className = 'button-group-center'>
+                    <div id = { 'menu-container' }>
                         { this._renderAudioButton() }
                         { this._renderVideoButton() }
                         <HangupButton
@@ -1352,7 +1352,6 @@ class Toolbox extends Component<Props, State> {
                             onClick = { this._onToolbarToggleRaiseHand }
                             toggled = { _raisedHand }
                             tooltip = { t('toolbar.raiseHand') } /> }
-
                     </div>
                 </div>
                 <div className = 'button-group-right'>
