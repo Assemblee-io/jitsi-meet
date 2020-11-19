@@ -438,7 +438,7 @@ function mapStateToProps(state, ownProps): Object {
         showDialog: isJoinByPhoneDialogVisible(state),
         showErrorOnJoin,
         hasJoinByPhoneButton: isJoinByPhoneButtonVisible(state),
-        showCameraPreview: !isVideoMutedByUser(state),
+        showCameraPreview: getLocalJitsiVideoTrack(state) === undefined ? false : !isVideoMutedByUser(state),
         showConferenceInfo,
         videoTrack: getLocalJitsiVideoTrack(state)
     };
