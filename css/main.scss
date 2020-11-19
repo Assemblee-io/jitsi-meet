@@ -359,7 +359,7 @@ background-color: #e4e9ecb5;
 }
 
 #menu-container {
-    background: white;
+background: white;
 border-top-left-radius: 50px;
 border-bottom-left-radius: 50px;
 border-top-right-radius: 50px;
@@ -701,17 +701,20 @@ border: 1px solid #a4b8d1;
 background: #a4b8d1;
 border: 1px solid #a4b8d1;
 }
-
+.premeeting-screen-avatar text {
+fill: #fff!important;
+}
 .invite-more-dialog.icon-container.active svg path {
 fill:white!important;
 }
-.premeeting-screen .audio-preview, .premeeting-screen .video-preview {
-	    padding: 10px 10px;
-    background: #c6c9d42e;
+.premeeting-screen .audio-preview .settings-button-container, .premeeting-screen .video-preview .settings-button-container {
+padding: 10px 10px;
+background: #c6c9d42e;
+border-radius: 50px;
 }
 .premeeting-screen .sc-cvbbAY.cDFPVJ {
-    max-width: 1000px;
-    margin: auto;
+max-width: 1000px;
+margin: auto;
 }
 .premeeting-screen .action-btn.primary {
 background: #0135d4cf;
@@ -725,9 +728,9 @@ border: 1px solid #d8d6d6;
 box-shadow:none!important;
 }
 .premeeting-screen .content {
-	display:block!important;
-	margin-top: 31vh;
-	    text-align: center;
+display:block!important;
+margin-top: 34vh;
+text-align: center;
 }
 .premeeting-screen .audio-preview, .premeeting-screen .video-preview  {
 background: #f2f2f2;
@@ -868,17 +871,17 @@ background:#f2f4f9!important;
 }
 
 .no-mobile-app {
-    margin: 30vh auto;
-    padding: 100px;
-    background: white;
-    -webkit-box-shadow: 1px 2px 15px -2px #0000000d!important;
+margin: 30vh auto;
+padding: 100px;
+background: white;
+-webkit-box-shadow: 1px 2px 15px -2px #0000000d!important;
 box-shadow: 1px 2px 15px -2px #0000000d!important;
 border-radius: 8px;
 color: #333;
-    }
-    .no-mobile-app h2 {
- color: #333!important;
-    }
+}
+.no-mobile-app h2 {
+color: #333!important;
+}
 #overlay .inlay {
 margin-top: 30vh;
 border-radius: 8px;
@@ -888,19 +891,19 @@ background: white;
 box-shadow: 1px 2px 15px -2px #0000000d!important;
 }
 #overlay .inlay-logo {
-	width:200px
+width:200px
 }
 #overlay .inlay__title {
 border-bottom: none;
-       margin: 20px 0px 0px 0px;
+margin: 20px 0px 0px 0px;
 }
 #overlay .inlay__title, #overlay .inlay__text {
 color: #333!important;
 }
 .button-group-right {
-        padding-top: 12px;
+padding-top: 12px;
 }
 .premeeting-screen-avatar, .prejoin-no-camera .avatar {
-    background-color: #0f1419!important; 
-	opacity:0.9;
+background-color: #0f1419!important; 
+opacity:0.9;
 }
