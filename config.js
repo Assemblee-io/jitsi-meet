@@ -363,7 +363,7 @@ var config = {
     // disable1On1Mode: false,
 
     // Default language for the user interface.
-    // defaultLanguage: 'en',
+     defaultLanguage: 'fr',
 
     // Disables profile and the edit of all fields from the profile settings (display name and email)
     // disableProfile: false,
@@ -471,7 +471,7 @@ var config = {
 
         // How long we're going to wait, before going back to P2P after the 3rd
         // participant has left the conference (to filter out page reload).
-        // backToP2PDelay: 5
+        // backToP2PDelay: 20
     },
 
     analytics: {

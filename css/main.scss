@@ -567,6 +567,9 @@ width:15px!important;
 .videocontainer__toptoolbar .indicator .indicatoricon {
 left: 46%;
 }
+.connection.indicatoricon {
+	left: 6%!important;
+}
 .hgVmZz,.cmRPpI {
 color: #44464e!important;
 }
@@ -907,3 +910,35 @@ padding-top: 12px;
 background-color: #0f1419!important; 
 opacity:0.9;
 }
+
+.videocontainer>.audioindicator-container span.audiodot-bottom::after, .videocontainer>.audioindicator-container span.audiodot-middle::after, .videocontainer>.audioindicator-container span.audiodot-top::after, .videocontainer>span.audioindicator span.audiodot-bottom::after, .videocontainer>span.audioindicator span.audiodot-middle::after, .videocontainer>span.audioindicator span.audiodot-top::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    -webkit-filter: blur(.5px);
+    filter: blur(.5px);
+   background: #fbf4f4;
+}
+
+.videocontainer>.audioindicator-container .audiodot-bottom, .videocontainer>.audioindicator-container .audiodot-middle, .videocontainer>.audioindicator-container .audiodot-top, .videocontainer>span.audioindicator .audiodot-bottom, .videocontainer>span.audioindicator .audiodot-middle, .videocontainer>span.audioindicator .audiodot-top {
+background: rgb(161 165 171 / 90%)
+}
+
+.premeeting-screen .action-btn.secondary {
+    color: #3f4850;
+}
+.premeeting-screen .action-btn.disabled {
+    color: #ffffff
+    }
+
+#lobby-screen .joining-message {
+    color: #333333;
+}
+#lobby-screen .video-preview-container {
+	background: white;
+}
+.QNwqi {
+    stroke: rgb(1 53 212);
+    }
