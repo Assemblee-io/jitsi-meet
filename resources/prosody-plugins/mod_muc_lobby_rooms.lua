@@ -393,6 +393,12 @@ process_host_module(main_muc_component_config, function(host_module, host)
             end
         end
     end);
+
+    host_module:hook('muc-set-affiliation', function(event)
+        if jid_split(event.jid) ~= 'focus' and event.affiliation == 'owner' then
+            handle_create_lobby(event);
+        end
+    end);
 end);
 
 -- Extract 'room' param from URL when session is created

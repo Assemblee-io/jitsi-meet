@@ -6,9 +6,9 @@
  */
 export const VIDEO_QUALITY_LEVELS = {
     ULTRA: 2160,
-    HIGH: 720,
-    STANDARD: 360,
-    LOW: 180
+    HIGH: 1080,
+    STANDARD: 720,
+    LOW: 360
 };
 
 /**
