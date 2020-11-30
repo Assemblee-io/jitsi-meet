@@ -114,7 +114,10 @@ height: 100%;
 }
 
 /* Modules END */
-
+#largeVideo, #largeVideoWrapper {
+    object-fit: contain!important;
+    background: black;
+}
 
 #largeVideoContainer,.tOoji, body {
 /*background-color: #f3f3f3!important;*/
@@ -159,7 +162,7 @@ color: #000!important;
 }
 .invite-more-container {
 background-image: none!important;
-z-index: 10!important;
+z-index: 9!important;
 }
 .new-toolbox {
 bottom:0!important;
@@ -305,6 +308,7 @@ height: 100%;
 }
 .new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
 background-color: #ff3b3bcf!important;
+border: 2px solid #f9bebecf!important;
 width: 60px!important;
 height: 60px!important;
 }
@@ -663,7 +667,7 @@ color: #ffffff!important;
 fill: #e8e4e4!important;
 }
 #etherpad {
-z-index:1;
+z-index:1!important;
 }
 #etherpadIFrame {
 width: 100%;
@@ -940,5 +944,55 @@ background: rgb(161 165 171 / 90%)
 	background: white;
 }
 .QNwqi {
-    stroke: rgb(1 53 212);
+    stroke: rgb(1 53 212)!important;
     }
+
+    .subject {
+   display:block!important;
+    color: #2c2c2c;
+    z-index: 10;
+    background-image: none;
+        text-align: right;
+    font-size: 15px;
+    }
+
+    #knocking-participant-list {
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(212 212 212 / 40%);
+    }
+
+    #knocking-participant-list.toolbox-visible {
+    top: 20px;
+    right: 10px;
+        border-radius: 8px;
+            min-width: 300px;
+}
+#knocking-participant-list .title {
+    background-color: rgb(54 89 220);
+    color: white;
+         border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    }
+
+   #knocking-participant-list .avatar {
+    background-color: #f5f5f5!important;
+    }
+ #knocking-participant-list .avatar svg text {
+        fill: #333333db;
+    font-size: 35px;
+    font-weight: 500;
+    }
+    #knocking-participant-list ul li .details {
+        color: #333;
+    font-weight: 400;
+    font-size: 16px;
+    }
+    #knocking-participant-list button.primary {
+    background-color: #3659dc;
+        position: absolute;
+    right: 10px;
+    }
+
+video {
+	filter: contrast(110%) brightness(110%) saturate(110%);
+}
