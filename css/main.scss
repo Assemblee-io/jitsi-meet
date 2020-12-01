@@ -244,6 +244,7 @@ font-weight: 100;
 display:none!important;
 }*/
 #dominantSpeaker {
+top: 44%!important;
 width: 50%!important;
 height: 300px!important;
 margin: auto!important;
@@ -954,11 +955,31 @@ background: rgb(161 165 171 / 90%)
     background-image: none;
         text-align: right;
     font-size: 15px;
+    padding: 0!important;
     }
+    .subject .subject-text {
+    display:none;
+    }
+
+    .subject-conference-timer {
+    display: inline-block;
+    background: #fff;
+    border-radius: 4px;
+    color: #5e6d7a;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 16px;
+    padding: 4px 8px;
+    pointer-events: auto;
+    }
+
 
     #knocking-participant-list {
     background-color: rgb(255 255 255);
     border: 1px solid rgb(212 212 212 / 40%);
+    left: initial!important;
     }
 
     #knocking-participant-list.toolbox-visible {
