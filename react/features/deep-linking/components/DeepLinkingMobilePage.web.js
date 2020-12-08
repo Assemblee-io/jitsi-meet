@@ -120,7 +120,7 @@ class DeepLinkingMobilePage extends Component<Props> {
                             ? null
                             : <img
                                 className = 'logo'
-                                src = 'images/logo-deep-linking.png' />
+                                src = 'images/logo_assemblee.png' />
                     }
                 </div>
                 <div className = { `${_SNS}__body` }>
@@ -131,6 +131,7 @@ class DeepLinkingMobilePage extends Component<Props> {
                                 src = 'images/deep-linking-image.png' />
                             : null
                     }
+                    {/*
                     <p className = { `${_SNS}__text` }>
                         { t(`${_TNS}.appNotInstalled`, { app: NATIVE_APP_NAME }) }
                     </p>
@@ -159,6 +160,8 @@ class DeepLinkingMobilePage extends Component<Props> {
                             { t(`${_TNS}.downloadApp`) }
                         </button>
                     </a>
+                    */
+                    }
                     {
                         isSupportedMobileBrowser()
                             && <a
