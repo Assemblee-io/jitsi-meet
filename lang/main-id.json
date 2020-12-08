@@ -765,7 +765,7 @@
         "roomNameAllowedChars": "Meeting name should not contain any of these characters: ?, &, :, ', \", %, #.",
         "go": "GO",
         "goSmall": "GO",
-        "join": "CREATE / JOIN",
+        "join": "Join a room",
         "info": "Info",
         "privacy": "Privacy",
         "recentList": "Recent",

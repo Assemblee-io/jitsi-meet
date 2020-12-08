@@ -1,10 +1,15 @@
 // @flow
 
+import { colorPalette } from '@atlaskit/theme/dist/cjs/colors';
 import { StyleSheet } from 'react-native';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 import { BoxModel, ColorPalette } from '../../base/styles';
 
-export const PLACEHOLDER_TEXT_COLOR = 'rgba(255, 255, 255, 0.5)';
+export const PLACEHOLDER_TEXT_COLOR = 'rgba(0, 0, 0, 0.5)';
 
 export const SIDEBAR_AVATAR_SIZE = 100;
 
@@ -17,7 +22,7 @@ export const SWITCH_UNDER_COLOR = 'rgba(0, 0, 0, 0.4)';
 /**
  * The default color of text on the WelcomePage.
  */
-const TEXT_COLOR = ColorPalette.white;
+const TEXT_COLOR = ColorPalette.black;
 
 /**
  * The styles of the React {@code Components} of the feature welcome including
@@ -55,11 +60,14 @@ export default {
      * Join button style.
      */
     button: {
+        margin: 'auto',
+        borderRadius: 10,
+        marginBottom: 20,
+        borderWidth: 1,
+        width: '90%',
         backgroundColor: ColorPalette.blue,
         borderColor: ColorPalette.blue,
-        borderRadius: 4,
-        borderWidth: 1,
-        height: 30,
+        height: 50,
         justifyContent: 'center',
         paddingHorizontal: 20
     },
@@ -68,10 +76,23 @@ export default {
      * Join button text style.
      */
     buttonText: {
+        fontSize: 18,
+        textAlign: 'center',
         alignSelf: 'center',
-        color: ColorPalette.white,
-        fontSize: 14
+        color: ColorPalette.white
     },
+
+    /**
+     * Join button text style.
+     */
+    buttonTextModal: {
+        marginTop: 3,
+        fontSize: 18,
+        textAlign: 'center',
+        alignSelf: 'center',
+        color: ColorPalette.white
+    },
+
 
     /**
      * The style of the display name label in the side bar.
@@ -84,7 +105,9 @@ export default {
     },
 
     enterRoomText: {
-        color: TEXT_COLOR,
+        marginLeft: wp(5),
+        textAlign: 'left',
+        color: '#8B959A',
         fontSize: 18,
         marginBottom: BoxModel.margin
     },
@@ -188,6 +211,7 @@ export default {
      * Container for room name input box and 'join' button.
      */
     roomContainer: {
+        backgroundColor: 'white',
         alignSelf: 'stretch',
         flexDirection: 'column'
     },
@@ -263,14 +287,16 @@ export default {
      */
     textInput: {
         backgroundColor: 'transparent',
-        borderColor: ColorPalette.white,
-        borderRadius: 4,
+        borderColor: '#333',
+        borderRadius: 10,
         borderWidth: 1,
         color: TEXT_COLOR,
         fontSize: 23,
         height: 50,
         padding: 4,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: 20,
+        width: '90%'
     },
 
     /**
@@ -304,7 +330,104 @@ export default {
      * The style of the top-level container of {@code WelcomePage}.
      */
     welcomePage: {
-        backgroundColor: ColorPalette.blue,
+        backgroundColor: ColorPalette.white,
         overflow: 'hidden'
+    },
+
+    imageContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    imageDisplay: {
+        width: wp(100),
+        height: hp(5)
+    },
+
+    imageFemmeDisplay: {
+        height: hp(45),
+        width: '100%',
+        marginBottom: hp(3)
+    },
+
+
+    buttonWhite: {
+        margin: 'auto',
+        borderRadius: 10,
+        marginBottom: 20,
+        borderWidth: 1,
+        width: '90%',
+        backgroundColor: ColorPalette.lightNewGrey,
+        borderColor: ColorPalette.lightNewGrey,
+        height: 50,
+        justifyContent: 'center',
+        paddingHorizontal: 20
+    },
+
+    buttonBlue: {
+        backgroundColor: ColorPalette.blue,
+        borderColor: ColorPalette.blue,
+        height: 30,
+        justifyContent: 'center',
+        paddingHorizontal: 20,
+        margin: 'auto',
+        padding: 17,
+        borderRadius: 10,
+        marginBottom: 30,
+        color: '#333',
+        borderWidth: 1,
+        width: '90%'
+    },
+
+    loginButtonSection: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
+
+    textCenter: {
+        fontSize: 18,
+        textAlign: 'center',
+        alignSelf: 'center'
+    },
+
+    signupButton: {
+
+    },
+
+    signupText: {
+        fontSize: 18,
+        textAlign: 'center',
+        alignSelf: 'center',
+        color: '#909AA4'
+    },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        marginTop: 20,
+        backgroundColor: 'rgba(0,0,0,0.5)'
+    },
+
+    modalViewHeight: {
+        height: hp(25)
+    },
+
+    textModal: {
+        textAlign: 'left',
+        color: '#FFFFFF'
+    },
+
+    exitModalbutton: {
+        marginLeft: wp(80),
+        backgroundColor: ColorPalette.lightGrey,
+        borderRadius: 30,
+        width: 30,
+        height: 30
+    },
+
+    exitModalbuttonView: {
+        alignContent: 'flex-end'
     }
 };
