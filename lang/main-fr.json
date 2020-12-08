@@ -704,7 +704,7 @@
         "invite": "Inviter des participants",
         "lobbyButtonDisable": "Désactiver le contrôle des participant·e·s",
         "lobbyButtonEnable": "Activer le contrôle des participant·e·s",
-        "login": "Connexion",
+        "login": "Connexion à mon compte",
         "logout": "Déconnexion",
         "lowerYourHand": "Baisser la main",
         "moreActions": "Plus d'actions",
@@ -809,7 +809,7 @@
     "welcomepage": {
         "accessibilityLabel": {
             "join": "Touchez pour rejoindre",
-            "roomname": "Saisissez un nom de salle"
+            "roomname": "Saisissez un nom de salle :"
         },
         "appDescription": "Foncez tchater en vidéo avec toute le monde. En fait, vous pouvez inviter tout ceux que vous connaissez. {{app}} est une solution de visioconférence entièrement chiffrée et 100% libre que vous pouvez utiliser en permanence, chaque jour, et sans aucun compte requis.",
         "audioVideoSwitch": {
@@ -823,7 +823,8 @@
         "roomNameAllowedChars": "Le nom de la réunion ne doit contenir aucun de ces caractères : ?, &, :, ', \", %, #.",
         "go": "Créer",
         "goSmall": "Créer",
-        "join": "CRÉER / REJOINDRE",
+        "join": "Rejoindre un salon",
+        "signup": "Créer un compte",
         "info": "Infos",
         "privacy": "Confidentialité",
         "recentList": "Récent",
