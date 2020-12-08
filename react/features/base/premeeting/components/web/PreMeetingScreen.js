@@ -118,11 +118,13 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                         </GridColumn>
                         <GridColumn medium = { 6 }>
                             <div className = 'content'>
+                                <>
+                                    <div className = 'title'>
+                                        { title }
+                                    </div>
+                                </>
                                 {showConferenceInfo && (
                                     <>
-                                        <div className = 'title'>
-                                            { title }
-                                        </div>
                                         <CopyMeetingUrl />
                                     </>
                                 )}
