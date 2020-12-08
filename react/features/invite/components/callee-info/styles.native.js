@@ -12,7 +12,7 @@ export default createStyleSheet({
     ringing: {
         ...StyleSheet.absoluteFillObject,
         alignItems: 'center',
-        backgroundColor: ColorPalette.black,
+        backgroundColor: ColorPalette.white,
         flex: 0,
         flexDirection: 'column',
         justifyContent: 'center',

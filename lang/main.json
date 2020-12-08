@@ -754,7 +754,7 @@
         "invite": "Invite people",
         "lobbyButtonDisable": "Disable lobby mode",
         "lobbyButtonEnable": "Enable lobby mode",
-        "login": "Login",
+        "login": "Login to my account",
         "logout": "Logout",
         "lowerYourHand": "Lower your hand",
         "moreActions": "More actions",
@@ -858,7 +858,7 @@
     "welcomepage": {
         "accessibilityLabel": {
             "join": "Tap to join",
-            "roomname": "Enter room name"
+            "roomname": "Enter room name :"
         },
         "appDescription": "Go ahead, video chat with the whole team. In fact, invite everyone you know. {{app}} is a fully encrypted, 100% open source video conferencing solution that you can use all day, every day, for free — with no account needed.",
         "audioVideoSwitch": {
@@ -875,7 +875,8 @@
         "headerTitle": "Assemblée.io",
         "headerSubtitle": "Secure and high quality meetings",
         "info": "Dial-in info",
-        "join": "CREATE / JOIN",
+        "join": "Join a room",
+        "signup": "Create a account",
         "jitsiOnMobile": "Jitsi on mobile – download our apps and start a meeting from anywhere",
         "moderatedMessage": "Or <a href=\"{{url}}\" rel=\"noopener noreferrer\" target=\"_blank\">book a meeting URL</a> in advance where you are the only moderator.",
         "privacy": "Privacy",
