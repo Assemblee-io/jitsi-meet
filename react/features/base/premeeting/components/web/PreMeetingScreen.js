@@ -3,6 +3,7 @@
 // @flow
 import Page, { Grid, GridColumn } from '@atlaskit/page';
 import React, { PureComponent } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import { Watermarks } from '../../../../base/react';
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
@@ -92,10 +93,11 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                 id = 'lobby-screen'>
                 <Watermarks defaultJitsiLogoURL = { DEFAULT_WELCOME_PAGE_LOGO_URL } />
                 <ConnectionStatus />
-                <Page>
-                    <Grid
-                        spacing = { 'comfortable' }>
-                        <GridColumn medium = { 6 }>
+                <Container>
+                    <Row>
+                        <Col
+                            md = { 6 }
+                            xs = { 12 }>
                             <Preview
                                 footer = { this.props.footer }
                                 videoMuted = { videoMuted }
@@ -115,8 +117,10 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                 <AudioSettingsButton visible = { true } />
                                 <VideoSettingsButton visible = { true } />
                             </div>
-                        </GridColumn>
-                        <GridColumn medium = { 6 }>
+                        </Col>
+                        <Col
+                            md = { 6 }
+                            xs = { 12 }>
                             <div className = 'content'>
                                 <>
                                     <div className = 'title'>
@@ -131,9 +135,9 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                 { this.props.children }
                                 { this.props.skipPrejoinButton }
                             </div>
-                        </GridColumn>
-                    </Grid>
-                </Page>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }
