@@ -19,6 +19,8 @@ import UI from './modules/UI/UI';
 import keyboardshortcut from './modules/keyboardshortcut/keyboardshortcut';
 import remoteControl from './modules/remotecontrol/RemoteControl';
 import translation from './modules/translation/translation';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Initialize Olm as early as possible.
 if (window.Olm) {
