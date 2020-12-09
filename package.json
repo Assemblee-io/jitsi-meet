@@ -17,6 +17,7 @@
   "dependencies": {
     "@atlaskit/button": "10.1.1",
     "@atlaskit/checkbox": "5.0.10",
+    "@atlaskit/css-reset": "^6.0.5",
     "@atlaskit/dropdown-menu": "6.1.25",
     "@atlaskit/field-text": "7.0.19",
     "@atlaskit/field-text-area": "4.0.15",
@@ -28,6 +29,7 @@
     "@atlaskit/modal-dialog": "8.0.1",
     "@atlaskit/multi-select": "11.0.13",
     "@atlaskit/page": "^12.0.2",
+    "@atlaskit/reduced-ui-pack": "^13.0.5",
     "@atlaskit/spinner": "9.0.13",
     "@atlaskit/tabs": "8.0.11",
     "@atlaskit/theme": "7.0.2",
