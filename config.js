@@ -6,29 +6,29 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'jitsi-dev.assemblee.io',
+        domain: 'vb.assemblee.io',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'jitsi-dev.assemblee.io',
+        // authdomain: 'vb.assemblee.io',
 
         // Call control component (Jigasi).
-        // call_control: 'callcontrol.jitsi-dev.assemblee.io',
+        // call_control: 'callcontrol.vb.assemblee.io',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-dev.assemblee.io',
+        // focus: 'focus.vb.assemblee.io',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.jitsi-dev.assemblee.io'
+        muc: 'conference.vb.assemblee.io'
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: '//jitsi-dev.assemblee.io/http-bind',
+    bosh: '//vb.assemblee.io/http-bind',
 
     // Websocket URL
-    // websocket: 'wss://jitsi-dev.assemblee.io/xmpp-websocket',
+    // websocket: 'wss://vb.assemblee.io/xmpp-websocket',
 
     // The name of client node advertised in XEP-0115 'c' stanza
     clientNode: 'http://jitsi.org/jitsimeet',
@@ -36,7 +36,7 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.jitsi-dev.assemblee.io',
+    // focusUserJid: 'focus@auth.vb.assemblee.io',
 
 
     // Testing / experimental features.
@@ -194,9 +194,9 @@ var config = {
     //     appKey: '<APP_KEY>' // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://jitsi-dev.assemblee.io/static/oauth.html'
+    //     // 'https://vb.assemblee.io/static/oauth.html'
     //     redirectURI:
-    //          'https://jitsi-dev.assemblee.io/subfolder/static/oauth.html'
+    //          'https://vb.assemblee.io/subfolder/static/oauth.html'
     // },
     // When integrations like dropbox are enabled only that will be shown,
     // by enabling fileRecordingsServiceEnabled, we show both the integrations
@@ -442,7 +442,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:jitsi-dev.assemblee.io:3478' },
+            // { urls: 'stun:vb.assemblee.io:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' }
         ]
 
@@ -555,7 +555,7 @@ var config = {
 
     },
 
-    hiddenDomain: 'recorder.jitsi-dev.assemblee.io',
+    hiddenDomain: 'recorder.vb.assemblee.io',
 
     // Options related to end-to-end (participant to participant) ping.
     // e2eping: {
@@ -631,10 +631,10 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.jitsi-dev.assemblee.io',
+    // moderatedRoomServiceUrl: 'https://moderated.vb.assemblee.io',
 
     // eslint-disable-next-line camelcase
-    etherpad_base: 'https://jitsi-dev.assemblee.io/etherpad/p/',
+    etherpad_base: 'https://vb.assemblee.io/etherpad/p/',
 
     // List of undocumented settings used in jitsi-meet
     /**
