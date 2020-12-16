@@ -744,10 +744,22 @@ border: 1px solid #d8d6d6;
 .premeeting-screen .content input.field.focused {
 box-shadow:none!important;
 }
-.premeeting-screen .content {
-display:block!important;
-margin-top: 34vh;
-text-align: center;
+
+/* Small devices (landscape phones, 576px and up) */
+@include media-breakpoint-up(xs) {
+    .premeeting-screen .content {
+        display:block!important;
+        text-align: center;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@include media-breakpoint-up(md) {
+    .premeeting-screen .content {
+        display:block!important;
+        margin-top: 34vh;
+        text-align: center;
+    }
 }
 .premeeting-screen .audio-preview, .premeeting-screen .video-preview  {
 background: #f2f2f2;
@@ -921,7 +933,7 @@ color: #333!important;
 padding-top: 12px;
 }
 .premeeting-screen-avatar, .prejoin-no-camera .avatar {
-background-color: #0f1419!important; 
+background-color: #0f1419!important;
 opacity:0.9;
 }
 
