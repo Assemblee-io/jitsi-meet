@@ -252,9 +252,6 @@
     text-align: center;
 }
 
-#etherpad {
-    z-index: $zindex0;
-}
 
 /**
  * Positions video thumbnail display name and editor.
@@ -507,7 +504,7 @@
 }
 
 #dominantSpeakerAvatarContainer {
-    top: 50px;
+    top: -65px;
     margin: auto;
     position: relative;
     overflow: hidden;
