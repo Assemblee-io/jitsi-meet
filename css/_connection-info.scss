@@ -18,6 +18,7 @@
     margin: -15px;
 
     > table {
+        color: white;
         white-space: nowrap;
         @extend %connection-info;
     }
