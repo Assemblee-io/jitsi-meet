@@ -244,9 +244,9 @@ font-weight: 100;
 display:none!important;
 }*/
 #dominantSpeaker {
-top: 44%!important;
+top: 40%!important;
 width: 50%!important;
-height: 300px!important;
+height: 400px!important;
 margin: auto!important;
 background: white!important;
 border-radius: 10px!important;
@@ -745,31 +745,31 @@ box-shadow:none!important;
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575.98px) {
-#preview {
-max-width: 500px;
-margin:auto;
-}
+    #preview {
+        max-width: 500px;
+        margin:auto;
+    }
 
-.premeeting-screen .content {
-display:block!important;
-text-align: center;
-}
+    .premeeting-screen .content {
+        display:block!important;
+        text-align: center;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 576px) {
 
-#preview {
-padding-top: 28vh;
-max-width: 500px;
-margin:auto;
-}
+    #preview {
+        padding-top: 28vh;
+        max-width: 500px;
+        margin:auto;
+    }
 
-.premeeting-screen .content {
-display:block!important;
-margin-top: 34vh;
-text-align: center;
-}
+    .premeeting-screen .content {
+        display:block!important;
+        margin-top: 34vh;
+        text-align: center;
+    }
 }
 .premeeting-screen .audio-preview, .premeeting-screen .video-preview  {
 background: #f2f2f2;
@@ -1125,62 +1125,61 @@ fill: #fff!important;
 }
 =======
 
-.premeeting-screen .content {
-display: block!important;
-margin-top: 0px!important;
-}
-.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
-background-color: transparent!important;
-border: none!important;
-}
-.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
-fill: #333!important;
-}
-.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
-padding-top: 0!important;
-}
-.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
-background-color: transparent!important;
-border: none!important;
-}
-.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
-fill: #ff3b3bcf!important;
-}
-.button-group-left .toolbar-button-with-badge {
-display:none;
-}
-.button-group-right .toolbox-button {
-position: absolute;
-right: 0px;
-}
-#dominantSpeaker {
-padding: 0px!important;
-margin: 10px;
-width:90%;
-}
-.prejoin-preview-error-desc {
-margin-right: 4px;
-position: relative;
-top: 2px;
-margin-left: 10px;
-}
-.prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
-top: 1px;
-}
+    .premeeting-screen .content {
+    display: block!important;
+    margin-top: 0px!important;
+    }
+	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
+	    background-color: transparent!important;
+	    border: none!important;
+	}
+	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
+	    fill: #333!important;
+	}
+	.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
+	    padding-top: 0!important;
+	}
+	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
+    background-color: transparent!important;
+    border: none!important;
+    }
+    .new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
+    fill: #ff3b3bcf!important;
+    }
+    .button-group-left .toolbar-button-with-badge {
+    display:none;
+    }
+    .button-group-right .toolbox-button {
+        position: absolute;
+      right: 0px;
+    }
+    #dominantSpeaker {
+    padding: 0px!important;
+        margin: 10px;
+        width:90%;
+    }
+    .prejoin-preview-error-desc {
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+        margin-left: 10px;
+    }
+    .prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
+    top: 1px;
+    }
 
-.premeeting-screen .jitsi-icon svg {
-fill: #333!important;
-}
-.prejoin-no-camera {
-margin-top: 100px!important;
-}
-.prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
-fill: #fff!important;
-}
+    .premeeting-screen .jitsi-icon svg {
+    fill: #333!important;
+    }
+    .prejoin-no-camera {
+    margin-top: 100px!important;
+    }
+    .prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
+    fill: #fff!important;
+    }
 
 
 .deep-linking-mobile {
-<<<<<<< HEAD
 background-color: #f1f2f5;
 }
 .deep-linking-mobile__button_primary {
@@ -1214,16 +1213,6 @@ margin-top: 10px;
 .subject-conference-timer {
 cursor:default!important;
 }
-
-background-color: #f1f2f5;
-}
-.deep-linking-mobile__button_primary {
-background-color: #0135d4cf;
-padding: 10px 30px;
-height: auto;
-border-radius: 5px;
-}
-
-.button-group-left .toolbox-button {
-padding-top: 0px!important;
-}
+ #dominantSpeakerAvatarContainer {
+ top:-20px;
+ }
