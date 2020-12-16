@@ -237,12 +237,6 @@ font-size: 10px;
 font-weight: 100;
 }
 
-.new-toolbox .toolbox-content .button-group-center, .new-toolbox .toolbox-content .button-group-left, .new-toolbox .toolbox-content .button-group-right {
-/*width: auto!important;*/
-}
-/*.button-group-right > div:nth-child(1) {
-display:none!important;
-}*/
 #dominantSpeaker {
 top: 40%!important;
 width: 50%!important;
@@ -265,13 +259,7 @@ padding: 20px 30px;
 background: #ffffff;
 box-shadow:none;
 }
-/*
-.fdAqDG > div {
-top: 0px!important;
-left: -10px!important;
-position: absolute!important;
-}
-*/
+
 .dOAAnq {
 background: #ffffff!important;
 box-shadow: none!important;
@@ -745,31 +733,31 @@ box-shadow:none!important;
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575.98px) {
-    #preview {
-        max-width: 500px;
-        margin:auto;
-    }
+#preview {
+max-width: 500px;
+margin:auto;
+}
 
-    .premeeting-screen .content {
-        display:block!important;
-        text-align: center;
-    }
+.premeeting-screen .content {
+display:block!important;
+text-align: center;
+}
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 576px) {
 
-    #preview {
-        padding-top: 28vh;
-        max-width: 500px;
-        margin:auto;
-    }
+#preview {
+padding-top: 28vh;
+max-width: 500px;
+margin:auto;
+}
 
-    .premeeting-screen .content {
-        display:block!important;
-        margin-top: 34vh;
-        text-align: center;
-    }
+.premeeting-screen .content {
+display:block!important;
+margin-top: 34vh;
+text-align: center;
+}
 }
 .premeeting-screen .audio-preview, .premeeting-screen .video-preview  {
 background: #f2f2f2;
@@ -1125,58 +1113,58 @@ fill: #fff!important;
 }
 =======
 
-    .premeeting-screen .content {
-    display: block!important;
-    margin-top: 0px!important;
-    }
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
-	    background-color: transparent!important;
-	    border: none!important;
-	}
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
-	    fill: #333!important;
-	}
-	.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
-	    padding-top: 0!important;
-	}
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
-    background-color: transparent!important;
-    border: none!important;
-    }
-    .new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
-    fill: #ff3b3bcf!important;
-    }
-    .button-group-left .toolbar-button-with-badge {
-    display:none;
-    }
-    .button-group-right .toolbox-button {
-        position: absolute;
-      right: 0px;
-    }
-    #dominantSpeaker {
-    padding: 0px!important;
-        margin: 10px;
-        width:90%;
-    }
-    .prejoin-preview-error-desc {
-    margin-right: 4px;
-    position: relative;
-    top: 2px;
-        margin-left: 10px;
-    }
-    .prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
-    top: 1px;
-    }
+.premeeting-screen .content {
+display: block!important;
+margin-top: 0px!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
+background-color: transparent!important;
+border: none!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
+fill: #333!important;
+}
+.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
+padding-top: 0!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
+background-color: transparent!important;
+border: none!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
+fill: #ff3b3bcf!important;
+}
+.button-group-left .toolbar-button-with-badge {
+display:none;
+}
+.button-group-right .toolbox-button {
+position: absolute;
+right: 0px;
+}
+#dominantSpeaker {
+padding: 0px!important;
+margin: 10px;
+width:90%;
+}
+.prejoin-preview-error-desc {
+margin-right: 4px;
+position: relative;
+top: 2px;
+margin-left: 10px;
+}
+.prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
+top: 1px;
+}
 
-    .premeeting-screen .jitsi-icon svg {
-    fill: #333!important;
-    }
-    .prejoin-no-camera {
-    margin-top: 100px!important;
-    }
-    .prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
-    fill: #fff!important;
-    }
+.premeeting-screen .jitsi-icon svg {
+fill: #333!important;
+}
+.prejoin-no-camera {
+margin-top: 100px!important;
+}
+.prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
+fill: #fff!important;
+}
 
 
 .deep-linking-mobile {
@@ -1213,6 +1201,48 @@ margin-top: 10px;
 .subject-conference-timer {
 cursor:default!important;
 }
- #dominantSpeakerAvatarContainer {
- top:-20px;
- }
+#dominantSpeakerAvatarContainer {
+top:-20px;
+}
+
+.localrec-control-action-links {
+    font-weight: 400;
+    font-size: 14px;
+    }
+    #sideToolbarContainer.slideInExt {
+    left: 10px;
+}
+.jieXsu,.ixjmHg, .gaHGzX, .ioMZrV {
+    height: 23px;
+    width: 40px;
+    }
+    .cmSPYv {
+    height: 12px;
+    width: 12px;
+    }
+    .gmTwkP {
+    color: white;
+    font-size: 13px;
+}
+.sc-bZQynM.gjukOZ {
+	color:white;
+}
+
+.sc-bZQynM.gjukOZ span.fNNJJt {
+	fill:black;
+}
+.jFmWzq {
+    color: white;
+    }
+    .DdnJG {
+    color: white;
+    }
+    .gCocoh {
+    background-color: #ff3b3bcf!important;
+    }
+
+    .video-preview .sc-kpOJdX.CvzNc {
+        background: white;
+    	padding-left: 10px!important;
+    }
+
