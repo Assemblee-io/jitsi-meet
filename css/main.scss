@@ -198,8 +198,8 @@ left: 0px!important;
 top: 0px!important;
 padding: 100px!important;
 z-index: 1!important;
-width: calc(100% - 200px)!important;
-height: calc(100% - 200px)!important;
+width: calc(100% - 00px)!important;
+height: calc(100% - 00px)!important;
 }
 .invite-more-container {
 color:#4c5377!important;
@@ -1045,77 +1045,98 @@ border-bottom-left-radius: 10px;
 border-top: 1px solid #f1f4f8;
 }
 #e2ee-section .warning {
-	display:none;
+display:none;
 }
 @media (max-width: 768px) {
-	#preview {
-    	padding-top: 100px!important;
-    }
-    .premeeting-screen .content {
-    display: block!important;
-    margin-top: 0px!important;
-    }
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
-	    background-color: transparent!important;
-	    border: none!important;
-	}
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
-	    fill: #333!important;
-	}
-	.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
-	    padding-top: 0!important;
-	}
-	.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
-    background-color: transparent!important;
-    border: none!important;
-    }
-    .new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
-    fill: #ff3b3bcf!important;
-    }
-    .button-group-left .toolbar-button-with-badge {
-    display:none;
-    }
-    .button-group-right .toolbox-button {
-        position: absolute;
-      right: 0px;
-    }
-    #dominantSpeaker {
-    padding: 0px!important;
-        margin: 10px;
-        width:90%;
-    }
-    .prejoin-preview-error-desc {
-    margin-right: 4px;
-    position: relative;
-    top: 2px;
-        margin-left: 10px;
-    }
-    .prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
-    top: 1px;
-    }
+#preview {
+padding-top: 100px!important;
+}
+.premeeting-screen .content {
+display: block!important;
+margin-top: 0px!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon {
+background-color: transparent!important;
+border: none!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(2) .toolbox-icon svg {
+fill: #333!important;
+}
+.mobile-browser .new-toolbox .toolbox-content .toolbox-button {
+padding-top: 0!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon {
+background-color: transparent!important;
+border: none!important;
+}
+.new-toolbox .toolbox-content .button-group-center .toolbox-button:nth-child(3) .toolbox-icon svg {
+fill: #ff3b3bcf!important;
+}
+.button-group-left .toolbar-button-with-badge {
+display:none;
+}
+.button-group-right .toolbox-button {
+position: absolute;
+right: 0px;
+}
+#dominantSpeaker {
+padding: 0px!important;
+margin: 10px;
+width:90%;
+}
+.prejoin-preview-error-desc {
+margin-right: 4px;
+position: relative;
+top: 2px;
+margin-left: 10px;
+}
+.prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
+top: 1px;
+}
 
-    .premeeting-screen .jitsi-icon svg {
-    fill: #333!important;
-    }
-    .prejoin-no-camera {
-    margin-top: 100px!important;
-    }
-    .prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
-    fill: #fff!important;
-    }
+.premeeting-screen .jitsi-icon svg {
+fill: #333!important;
+}
+.prejoin-no-camera {
+margin-top: 100px!important;
+}
+.prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
+fill: #fff!important;
+}
 
 }
 
 .deep-linking-mobile {
-    background-color: #f1f2f5;
-    }
-    .deep-linking-mobile__button_primary {
-    background-color: #0135d4cf;
-    padding: 10px 30px;
-    height: auto;
-    border-radius: 5px;
-    }
+background-color: #f1f2f5;
+}
+.deep-linking-mobile__button_primary {
+background-color: #0135d4cf;
+padding: 10px 30px;
+height: auto;
+border-radius: 5px;
+}
 
-    .button-group-left .toolbox-button {
-    padding-top: 0px!important;
+.button-group-left .toolbox-button {
+padding-top: 0px!important;
+}
+
+.jieXsu {
+background-clip: content-box;
+background-color: rgb(59, 71, 92);
+border-radius: 16px;
+border: 2px solid transparent;
+display: block;
+height: 24px;
+padding: 2px;
+position: relative;
+transition: all 0.2s ease 0s;
+width: 42px;
+}
+
+.new-toolbox .toolbox-content .overflow-menu .overflow-menu-item {
+margin-top: 10px;
+}
+
+.subject-conference-timer {
+cursor:default!important;
 }
