@@ -95,7 +95,7 @@ var interfaceConfig = {
 
     ENABLE_FEEDBACK_ANIMATION: false, // Enables feedback star animation.
 
-    ETHERPAD_BASE: 'https://vb.assemblee.io/etherpad/p/',
+    ETHERPAD_BASE: 'https://eu0.assemblee.io/etherpad/p/',
 
     FILM_STRIP_MAX_HEIGHT: 120,
 
