@@ -82,6 +82,13 @@ export default {
         color: ColorPalette.white
     },
 
+    errorText: {
+        fontSize: 18,
+        textAlign: 'center',
+        alignSelf: 'center',
+        color: ColorPalette.red
+    },
+
     /**
      * Join button text style.
      */
