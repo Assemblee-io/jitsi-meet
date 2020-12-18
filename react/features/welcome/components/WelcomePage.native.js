@@ -451,6 +451,11 @@ class WelcomePage extends AbstractWelcomePage {
                             style = { styles.textInput }
                             underlineColorAndroid = 'transparent'
                             value = { this.state.room } />
+                        <Text
+                            style = { styles.errorText }
+                            visible = { this.state.error }>
+                               ici
+                        </Text>
                     </View>
                     <View style = { styles.loginButtonSection }>
                         <TouchableHighlight

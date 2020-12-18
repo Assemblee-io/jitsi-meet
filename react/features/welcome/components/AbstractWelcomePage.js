@@ -1,6 +1,7 @@
 // @flow
 
 import { generateRoomWithoutSeparator } from '@jitsi/js-utils/random';
+import axios from 'axios';
 import { Component } from 'react';
 import type { Dispatch } from 'redux';
 
@@ -9,6 +10,7 @@ import { appNavigate } from '../../app/actions';
 import isInsecureRoomName from '../../base/util/isInsecureRoomName';
 import { isCalendarEnabled } from '../../calendar-sync';
 import { isRecentListEnabled } from '../../recent-list/functions';
+
 
 /**
  * {@code AbstractWelcomePage}'s React {@code Component} prop types.
@@ -90,7 +92,8 @@ export class AbstractWelcomePage extends Component<Props, *> {
         joining: false,
         room: '',
         roomPlaceholder: '',
-        updateTimeoutId: undefined
+        updateTimeoutId: undefined,
+        error: false
     };
 
     /**
@@ -192,23 +195,30 @@ export class AbstractWelcomePage extends Component<Props, *> {
     _onJoin() {
         const room = this.state.room || this.state.generatedRoomname;
 
-        sendAnalytics(
-            createWelcomePageEvent('clicked', 'joinButton', {
-                isGenerated: !this.state.room,
-                room
-            }));
+        axios.get(`https://apiv2.assemblee.io/api/v1/room/join/ ${room}`)
+            .then(() => {
+                sendAnalytics(
+                    createWelcomePageEvent('clicked', 'joinButton', {
+                        isGenerated: !this.state.room,
+                        room
+                    }));
 
-        if (room) {
-            this.setState({ joining: true });
+                if (room) {
+                    this.setState({ joining: true });
 
-            // By the time the Promise of appNavigate settles, this component
-            // may have already been unmounted.
-            const onAppNavigateSettled
-                = () => this._mounted && this.setState({ joining: false });
+                    // By the time the Promise of appNavigate settles, this component
+                    // may have already been unmounted.
+                    const onAppNavigateSettled
+                        = () => this._mounted && this.setState({ joining: false });
 
-            this.props.dispatch(appNavigate(room))
-                .then(onAppNavigateSettled, onAppNavigateSettled);
-        }
+                    this.props.dispatch(appNavigate(room))
+                        .then(onAppNavigateSettled, onAppNavigateSettled);
+                }
+            })
+            .catch(() => {
+                this.setState({ error: true });
+            });
+
     }
 
     _onRoomChange: (string) => void;
