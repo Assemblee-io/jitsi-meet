@@ -83,9 +83,10 @@ export default {
     },
 
     errorText: {
-        fontSize: 18,
         textAlign: 'center',
-        alignSelf: 'center',
+        fontSize: 18,
+        padding: 4,
+        marginBottom: BoxModel.margin,
         color: ColorPalette.red
     },
 
@@ -422,7 +423,8 @@ export default {
     },
 
     textModal: {
-        textAlign: 'left',
+        width: wp(90),
+        textAlign: 'center',
         color: '#FFFFFF'
     },
 
