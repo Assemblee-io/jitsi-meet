@@ -1,4 +1,4 @@
-import React, { createRef, useRef } from 'react';
+import React, { createRef } from 'react';
 import {
     Animated,
     Keyboard,
@@ -9,8 +9,6 @@ import {
     View,
     Image,
     Linking,
-    Modal,
-    TouchableWithoutFeedback
 } from 'react-native';
 import BottomSheet from 'react-native-simple-bottom-sheet';
 
@@ -413,6 +411,23 @@ class WelcomePage extends AbstractWelcomePage {
         ];
     }
 
+    /**
+     * Renders JitsiModals that are supposed to be on the welcome page.
+     *
+     * @returns {Array<ReactElement>}
+     */
+    _renderErrorModal() {
+        if (this.state.error) {
+            return (
+                <View style = { styles.textModal }>
+                    <Text style = { styles.errorText }>
+                        SAISISSEZ UN NOM DE REUNION VALIDE
+                    </Text>
+                </View>
+            );
+        }
+    }
+
 
     /**
      * Renders JitsiModals that are supposed to be on the welcome page.
@@ -434,14 +449,14 @@ class WelcomePage extends AbstractWelcomePage {
                             { t('welcomepage.roomname') }
                         </Text>
                     </View>
-
                     <View style = { styles.loginButtonSection }>
                         <TextInput
                             accessibilityLabel = { t(roomnameAccLabel) }
-                            autoCapitalize = 'none'
+                            autoCapitalize = 'characters'
                             autoComplete = 'off'
                             autoCorrect = { false }
                             autoFocus = { false }
+                            maxLength = { 8 }
                             onBlur = { this._onFieldBlur }
                             onChangeText = { this._onRoomChange }
                             onFocus = { this._onFieldFocus }
@@ -451,12 +466,8 @@ class WelcomePage extends AbstractWelcomePage {
                             style = { styles.textInput }
                             underlineColorAndroid = 'transparent'
                             value = { this.state.room } />
-                        <Text
-                            style = { styles.errorText }
-                            visible = { this.state.error }>
-                               ici
-                        </Text>
                     </View>
+                    { this._renderErrorModal() }
                     <View style = { styles.loginButtonSection }>
                         <TouchableHighlight
                             accessibilityLabel =
