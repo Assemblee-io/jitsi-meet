@@ -121,6 +121,7 @@ class E2EESection extends Component<Props, State> {
                         { t('dialog.e2eeLabel') }
                     </label>
                     <Switch
+                        className = { 'clean' }
                         onValueChange = { this._onToggle }
                         value = { enabled } />
                 </div>
