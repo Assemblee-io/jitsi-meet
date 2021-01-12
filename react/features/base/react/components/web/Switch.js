@@ -50,7 +50,7 @@ export default class Switch extends Component<Props> {
         // parameter to match the native implementation.
 
         return (
-            <div className = { className }>
+            <div>
                 <ToggleStateless
                     isChecked = { value }
                     isDisabled = { disabled }
