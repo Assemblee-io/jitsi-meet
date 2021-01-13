@@ -1355,12 +1355,6 @@ class Toolbox extends Component<Props, State> {
                     </div>
                 </div>
                 <div className = 'button-group-right'>
-                    { buttonsRight.indexOf('localrecording') !== -1
-                        && <LocalRecordingButton
-                            onClick = {
-                                this._onToolbarOpenLocalRecordingInfoDialog
-                            } />
-                    }
                     { buttonsRight.indexOf('tileview') !== -1
                         && <TileViewButton /> }
                     { buttonsRight.indexOf('invite') !== -1
