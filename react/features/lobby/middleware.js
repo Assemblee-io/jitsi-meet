@@ -23,11 +23,12 @@ import {
 
 
 MiddlewareRegistry.register(store => next => action => {
+    console.log(action.type);
     switch (action.type) {
     case APP_WILL_MOUNT:
         store.dispatch(registerSound(
-            'RECORDING_ON_SOUND',
-            'recordingOn.mp3'));
+            'LOBBY_ENTER_SOUND',
+            'Dingdong.mpeg'));
 
         break;
     case CONFERENCE_FAILED:
@@ -36,6 +37,7 @@ MiddlewareRegistry.register(store => next => action => {
         return _conferenceJoined(store, next, action);
     case KNOCKING_PARTICIPANT_ARRIVED_OR_UPDATED: {
         // We need the full update result to be in the store already
+        store.dispatch(playSound('LOBBY_ENTER_SOUND'));
         const result = next(action);
 
         _findLoadableAvatarForKnockingParticipant(store, action.participant);
@@ -160,7 +162,6 @@ function _findLoadableAvatarForKnockingParticipant({ dispatch, getState }, { id 
     if (!disableThirdPartyRequests && updatedParticipant && !updatedParticipant.loadableAvatarUrl) {
         getFirstLoadableAvatarUrl(updatedParticipant).then(loadableAvatarUrl => {
             if (loadableAvatarUrl) {
-                dispatch(playSound('RECORDING_ON_SOUND'));
                 dispatch(participantIsKnockingOrUpdated({
                     loadableAvatarUrl,
                     id
