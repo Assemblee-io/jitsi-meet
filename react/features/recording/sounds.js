@@ -17,11 +17,11 @@ export const LIVE_STREAMING_ON_SOUND_FILE = 'liveStreamingOn.mp3';
  *
  * @type {string}
  */
-export const RECORDING_OFF_SOUND_FILE = 'recordingOff.mp3';
+export const RECORDING_OFF_SOUND_FILE = 'RecordingStop.mpeg';
 
 /**
  * The name of the bundled audio file which will be played for when a recording is started.
  *
  * @type {string}
  */
-export const RECORDING_ON_SOUND_FILE = 'recordingOn.mp3';
+export const RECORDING_ON_SOUND_FILE = 'RecordingON.mpeg';
