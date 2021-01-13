@@ -1,9 +1,11 @@
 // @flow
 
+import { APP_WILL_MOUNT } from '../base/app';
 import { CONFERENCE_FAILED, CONFERENCE_JOINED } from '../base/conference';
 import { JitsiConferenceErrors, JitsiConferenceEvents } from '../base/lib-jitsi-meet';
 import { getFirstLoadableAvatarUrl, getParticipantDisplayName } from '../base/participants';
 import { MiddlewareRegistry, StateListenerRegistry } from '../base/redux';
+import { playSound, registerSound } from '../base/sounds';
 import { isTestModeEnabled } from '../base/testing';
 import { NOTIFICATION_TYPE, showNotification } from '../notifications';
 import { isPrejoinPageEnabled } from '../prejoin/functions';
@@ -19,8 +21,15 @@ import {
     setPasswordJoinFailed
 } from './actions';
 
+
 MiddlewareRegistry.register(store => next => action => {
     switch (action.type) {
+    case APP_WILL_MOUNT:
+        store.dispatch(registerSound(
+            'RECORDING_ON_SOUND',
+            'recordingOn.mp3'));
+
+        break;
     case CONFERENCE_FAILED:
         return _conferenceFailed(store, next, action);
     case CONFERENCE_JOINED:
@@ -151,6 +160,7 @@ function _findLoadableAvatarForKnockingParticipant({ dispatch, getState }, { id 
     if (!disableThirdPartyRequests && updatedParticipant && !updatedParticipant.loadableAvatarUrl) {
         getFirstLoadableAvatarUrl(updatedParticipant).then(loadableAvatarUrl => {
             if (loadableAvatarUrl) {
+                dispatch(playSound('RECORDING_ON_SOUND'));
                 dispatch(participantIsKnockingOrUpdated({
                     loadableAvatarUrl,
                     id
