@@ -855,7 +855,7 @@
         "emailField": "Saisissez votre adresse email",
         "enableDialogPasswordField": "Définir le mot de passe (optionnel)",
         "enableDialogSubmit": "Activer",
-        "enableDialogText": "Le mode lobby vous permet de protéger votre réunion en autorisant les personnes à entrer qu'après l'approbation formelle d'un modérateur.",
+        "enableDialogText": "La fonctionnalité « salle d’attente » permet à l’animateur de maîtriser à quel moment un participant rejoint la réunion. En tant qu’animateur de la réunion, vous pouvez admettre les participants l’un après l’autre ou bien les laisser en salle d’attente et les admettre tous en même temps.",
         "enterPasswordButton": "Saisissez un mot de passe de réunion",
         "enterPasswordTitle": "Saisissez le mot de passe pour rejoindre la réunion",
         "invalidPassword": "Mot de passe invalide",
@@ -871,7 +871,7 @@
         "passwordField": "Saisissez le mot de passe de la réunion",
         "passwordJoinButton": "Rejoindre",
         "reject": "Refuser",
-        "toggleLabel": "Activer le lobby"
+        "toggleLabel": "Activer la salle d’attente"
     },
     "security": {
         "about": "Vous pouvez ajouter un mot de passe à votre réunion. Les participants devront fournir le mot de passe avant qu'ils soient autorisés à rejoindre la réunion.",
