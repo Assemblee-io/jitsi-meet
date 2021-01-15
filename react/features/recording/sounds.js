@@ -24,4 +24,4 @@ export const RECORDING_OFF_SOUND_FILE = 'RecordingStop.mpeg';
  *
  * @type {string}
  */
-export const RECORDING_ON_SOUND_FILE = 'RecordingON.mpeg';
+export const RECORDING_ON_SOUND_FILE = 'RecordingStop.mpeg';
