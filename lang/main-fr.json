@@ -564,7 +564,7 @@
         "onBy": "{{name}} a démarré l'enregistrement",
         "pending": "Préparation de l'enregistrement de la réunion...",
         "rec": "REC",
-        "serviceDescription": "Votre enregistrement sera enregistré par le service dédié",
+        "serviceDescription": "Démarrez l’enregistrement de votre visioconférence en cliquant sur « Commencer l’enregistrement » et retrouvez celui-ci dans votre espace Assemblée, onglet « Enregistrements ».",
         "serviceName": "Service d'enregistrement",
         "signIn": "Se connecter",
         "signOut": "Se déconnecter",
