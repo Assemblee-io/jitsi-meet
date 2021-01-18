@@ -206,7 +206,7 @@ var interfaceConfig = {
     TOOLBAR_BUTTONS: [
         'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
         'fodeviceselection', 'hangup', 'profile', 'chat',
-        'etherpad', 'sharedvideo', 'settings', 'raisehand', 'shortcuts', 'recording', 'livestreaming',
+        'etherpad', 'settings', 'raisehand', 'shortcuts', 'recording', 'livestreaming',
         'tileview', 'mute-everyone', 'security', 'e2ee', 'filmstrip'
     ],
 

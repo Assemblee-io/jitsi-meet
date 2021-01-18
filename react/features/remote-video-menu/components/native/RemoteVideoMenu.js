@@ -102,7 +102,6 @@ class RemoteVideoMenu extends PureComponent<Props> {
                 renderHeader = { this._renderMenuHeader }>
                 { !_disableRemoteMute && <MuteButton { ...buttonProps } /> }
                 { !_disableKick && <KickButton { ...buttonProps } /> }
-                <GrantModeratorButton { ...buttonProps } />
                 <PinButton { ...buttonProps } />
                 <PrivateMessageButton { ...buttonProps } />
                 <MuteEveryoneElseButton { ...buttonProps } />
