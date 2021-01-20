@@ -134,11 +134,6 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                         { title }
                                     </div>
                                 </>
-                                {showConferenceInfo && (
-                                    <>
-                                        <CopyMeetingUrl />
-                                    </>
-                                )}
                                 { this.props.children }
                                 { this.props.skipPrejoinButton }
                             </div>
