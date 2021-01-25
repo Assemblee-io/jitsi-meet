@@ -1,5 +1,5 @@
 // @flow
-import { appNavigate } from '../app/actions';
+import { appNavigate, reloadNow } from '../app/actions';
 import {
     CONFERENCE_JOINED,
     KICKED_OUT,
@@ -43,6 +43,8 @@ MiddlewareRegistry.register(store => next => action => {
                 dispatch(appNavigate(undefined));
             }
         ));
+
+        dispatch(reloadNow());
 
         break;
     }
