@@ -7,6 +7,7 @@ import {
     sendAnalytics
 } from '../../analytics';
 import { kickParticipant } from '../../base/participants';
+import { toggleLobbyMode } from '../../lobby/actions';
 
 type Props = {
 
@@ -53,6 +54,7 @@ export default class AbstractKickRemoteParticipantDialog
     _onSubmit() {
         const { dispatch, participantID } = this.props;
 
+        dispatch(toggleLobbyMode(true));
         sendAnalytics(createRemoteVideoMenuButtonEvent(
             'kick.button',
             {
