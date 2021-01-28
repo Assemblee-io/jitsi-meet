@@ -60,7 +60,12 @@ type Props = {
     /**
      * The video track to render as preview (if omitted, the default local track will be rendered).
      */
-    videoTrack?: Object
+    videoTrack?: Object,
+
+    /**
+     * True if the preview overlay should be muted, false otherwise.
+     */
+    isLobby?: boolean
 }
 
 /**
@@ -84,7 +89,7 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      * @inheritdoc
      */
     render() {
-        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack } = this.props;
+        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, isLobby } = this.props;
         const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
 
         return (
@@ -114,12 +119,24 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                                             size = { 80 } />
                                     </div>
                                 )}
+                                {isLobby && (
+                                    <div className = { 'prejoin-no-camera' }>
+                                        <Avatar
+                                            className = 'premeeting-screen-avatar'
+                                            displayName = { name }
+                                            dynamicColor = { false }
+                                            participantId = 'local'
+                                            size = { 80 } />
+                                    </div>
+                                )}
                             </Row>
                             <Row>
-                                <div className = 'media-btn-container'>
-                                    <AudioSettingsButton visible = { true } />
-                                    <VideoSettingsButton visible = { true } />
-                                </div>
+                                {!isLobby && (
+                                    <div className = 'media-btn-container'>
+                                        <AudioSettingsButton visible = { true } />
+                                        <VideoSettingsButton visible = { true } />
+                                    </div>
+                                )}
                             </Row>
                         </Col>
                         <Col
