@@ -211,9 +211,9 @@
         "internalError": "Oups ! Quelque chose s'est mal passée. L'erreur suivante s'est produite : {{error}}",
         "internalErrorTitle": "Erreur interne",
         "kickMessage": "Vous pouvez contacter {{participantDisplayName}} pour plus de détails.",
-        "kickParticipantButton": "Expulser",
-        "kickParticipantDialog": "Êtes-vous sûr(e) de vouloir expulser ce participant ?",
-        "kickParticipantTitle": "Expulser ce participant ?",
+        "kickParticipantButton": "Isoler",
+        "kickParticipantDialog": "Vous êtes sur le point d’isoler/exclure ce participant. Celui-ci sera placé dans une salle d’attente. Pour revenir il lui suffira de reconfirmer son nom et de cliquer sur participer. Il ne vous restera plus qu’à accepter sa demande pour participer à la réunion à nouveau.",
+        "kickParticipantTitle": "Isoler/exclure ce participant",
         "kickTitle": "Oups! vous avez été expulsé(e) par {{participantDisplayName}}",
         "liveStreaming": "Direct",
         "liveStreamingDisabledForGuestTooltip": "Les invités ne peuvent démarrer la diffusion en direct.",
@@ -597,7 +597,7 @@
         "startVideoMuted": "Tout le monde commence sans vidéo",
         "title": "Paramètres",
         "microphones": "Microphones",
-        "speakers": "Intervenants"
+        "speakers": "Haut parleurs"
     },
     "settingsView": {
         "advanced": "Avancé",
@@ -798,7 +798,7 @@
         "domuteOthers": "Couper tous les micros",
         "flip": "Balancer",
         "grantModerator": "Nommer modérateur",
-        "kick": "Exclure",
+        "kick": "Isoler/exclure ce participant",
         "moderator": "Modérateur",
         "mute": "Un participant a coupé son micro",
         "muted": "Muet",
