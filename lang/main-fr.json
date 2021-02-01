@@ -213,7 +213,7 @@
         "kickMessage": "Vous pouvez contacter {{participantDisplayName}} pour plus de détails.",
         "kickParticipantButton": "Isoler",
         "kickParticipantDialog": "Vous êtes sur le point d’isoler/exclure ce participant. Celui-ci sera placé dans une salle d’attente. Pour revenir il lui suffira de reconfirmer son nom et de cliquer sur participer. Il ne vous restera plus qu’à accepter sa demande pour participer à la réunion à nouveau.",
-        "kickParticipantTitle": "Isoler/exclure ce participant",
+        "kickParticipantTitle": "Isoler/exclure",
         "kickTitle": "Oups! vous avez été expulsé(e) par {{participantDisplayName}}",
         "liveStreaming": "Direct",
         "liveStreamingDisabledForGuestTooltip": "Les invités ne peuvent démarrer la diffusion en direct.",
