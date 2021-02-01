@@ -213,7 +213,7 @@
         "kickMessage": "Vous pouvez contacter {{participantDisplayName}} pour plus de détails.",
         "kickParticipantButton": "Isoler",
         "kickParticipantDialog": "Vous êtes sur le point d’isoler/exclure ce participant. Celui-ci sera placé dans une salle d’attente. Pour revenir il lui suffira de reconfirmer son nom et de cliquer sur participer. Il ne vous restera plus qu’à accepter sa demande pour participer à la réunion à nouveau.",
-        "kickParticipantTitle": "Isoler/exclure",
+        "kickParticipantTitle": "Isoler/exclure ce participant",
         "kickTitle": "Oups! vous avez été expulsé(e) par {{participantDisplayName}}",
         "liveStreaming": "Direct",
         "liveStreamingDisabledForGuestTooltip": "Les invités ne peuvent démarrer la diffusion en direct.",
@@ -597,7 +597,7 @@
         "startVideoMuted": "Tout le monde commence sans vidéo",
         "title": "Paramètres",
         "microphones": "Microphones",
-        "speakers": "Haut parleurs"
+        "speakers": "Haut parleur"
     },
     "settingsView": {
         "advanced": "Avancé",
@@ -798,7 +798,7 @@
         "domuteOthers": "Couper tous les micros",
         "flip": "Balancer",
         "grantModerator": "Nommer modérateur",
-        "kick": "Isoler/exclure ce participant",
+        "kick": "Isoler/exclure",
         "moderator": "Modérateur",
         "mute": "Un participant a coupé son micro",
         "muted": "Muet",
