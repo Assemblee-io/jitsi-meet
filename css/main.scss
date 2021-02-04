@@ -1166,9 +1166,8 @@ body {
 	display: block!important;
 	color: #2c2c2c;
 	z-index: 10;
-	right: 22px;
 	background-image: none;
-	text-align: right;
+	text-align: left;
 	font-size: 15px;
 	padding: 0!important;
 }
@@ -1179,7 +1178,7 @@ body {
 
 .subject-conference-timer {
 	position: relative;
-	top: 2px;
+	top: 50px;
 	display: inline-block;
 	background: #fff;
 	border-radius: 4px;
