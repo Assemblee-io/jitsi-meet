@@ -960,11 +960,12 @@ body {
 	background: #31b76a;
 	position: unset!important;
 	border-radius: 0px 0px 8px 8px;
+    padding-top: 2px;
 }
 
 .prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
-	top: 3px;
-	padding-left: 10px;
+	top: -1px;
+	padding-right: 10px;
 	position: relative;
 }
 
