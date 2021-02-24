@@ -148,7 +148,7 @@ var config = {
     },
 
     // Enable / disable simulcast support.
-    // disableSimulcast: false,
+    disableSimulcast: true,
 
     // Enable / disable layer suspension.  If enabled, endpoints whose HD
     // layers are not in use will be suspended (no longer sent) until they
@@ -171,14 +171,14 @@ var config = {
 
     // If set to true, disable H.264 video codec by stripping it out of the
     // SDP.
-    // disableH264: false,
+    disableH264: false,
 
     // Desktop sharing
 
     // Optional desktop sharing frame rate options. Default value: min:5, max:5.
     desktopSharingFrameRate: {
         min: 25,
-        max: 60
+        max: 30
     },
 
     // Try to start calls with screen-sharing instead of camera video.
@@ -259,11 +259,11 @@ var config = {
         // are the max.bitrates to be set on that particular type of stream. The actual send may vary based on
         // the available bandwidth calculated by the browser, but it will be capped by the values specified here.
         // This is currently not implemented on app based clients on mobile.
-        //    maxBitratesVideo: {
-        //        low: 200000,
-        //        standard: 500000,
-        //        high: 1500000
-        //    },
+        maxBitratesVideo: {
+            low: 200000,
+            standard: 500000,
+            high: 1500000
+        },
 
         // The options can be used to override default thresholds of video thumbnail heights corresponding to
         // the video quality levels used in the application. At the time of this writing the allowed levels are:
@@ -283,7 +283,7 @@ var config = {
 
         // Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
         // for the presenter mode (camera picture-in-picture mode with screenshare).
-        resizeDesktopForPresenter: false
+        resizeDesktopForPresenter: true
     },
 
     // // Options for the recording limit notification.
