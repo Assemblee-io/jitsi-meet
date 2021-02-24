@@ -4,11 +4,11 @@
     color: #FFF;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 96%;
     left: -$sidebarWidth;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top: 20px;
     width: $sidebarWidth;
     z-index: $sideToolbarContainerZ;
 
