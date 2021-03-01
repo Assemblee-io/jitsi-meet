@@ -98,30 +98,37 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                         <Col
                             md = { 6 }
                             xs = { 12 }>
-                            <Preview
-                                footer = { this.props.footer }
-                                videoMuted = { videoMuted }
-                                videoTrack = { videoTrack } />
-                            {!videoMuted && <div className = 'preview-overlay' />}
-                            {showAvatar && videoMuted && (
-                                <div className = { 'prejoin-no-camera' }>
-                                    <Avatar
-                                        className = 'premeeting-screen-avatar'
-                                        displayName = { name }
-                                        dynamicColor = { false }
-                                        participantId = 'local'
-                                        size = { 80 } />
+                            <Row>
+                                <Preview
+                                    footer = { this.props.footer }
+                                    videoMuted = { videoMuted }
+                                    videoTrack = { videoTrack } />
+                                {!videoMuted && <div className = 'preview-overlay' />}
+                                {showAvatar && videoMuted && (
+                                    <div className = { 'prejoin-no-camera' }>
+                                        <Avatar
+                                            className = 'premeeting-screen-avatar'
+                                            displayName = { name }
+                                            dynamicColor = { false }
+                                            participantId = 'local'
+                                            size = { 80 } />
+                                    </div>
+                                )}
+                            </Row>
+                            <Row>
+                                <div className = 'media-btn-container'>
+                                    <AudioSettingsButton visible = { true } />
+                                    <VideoSettingsButton visible = { true } />
                                 </div>
-                            )}
-                            <div className = 'media-btn-container'>
-                                <AudioSettingsButton visible = { true } />
-                                <VideoSettingsButton visible = { true } />
-                            </div>
+                            </Row>
                         </Col>
                         <Col
+                            id = 'tist'
                             md = { 6 }
                             xs = { 12 }>
-                            <div className = 'content'>
+                            <div
+                                className = 'content'
+                                id = 'tist'>
                                 <>
                                     <div className = 'title'>
                                         { title }
