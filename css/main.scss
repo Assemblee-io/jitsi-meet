@@ -105,12 +105,12 @@ $flagsImagePath: "../images/";
 @import 'connection-status';
 
 .jcELaM {
-    max-width: 100%!important;
-    height: 100%;
+max-width: 100%!important;
+height: 100%;
 }
 
 .sc-iRbamj {
-    height: 100%;
+height: 100%;
 }
 
 /* Modules END */
@@ -740,25 +740,60 @@ border-bottom-right-radius: 50px;
 border-top-right-radius: 50px;
 }
 
-.prejoin-preview-status--ok {
-    background: #31b76a;
-    position: unset!important;
-    border-radius: 0px 0px 8px 8px;
+.prejoin-preview-status {
+position: relative;
+border-bottom-right-radius: 8px;
+border-bottom-left-radius: 8px;
+text-align: center;
+text-align: left;
+display: block;
 }
 
-#preview {
-    margin-top: 8vh;
+.prejoin-preview-status--ok {
+background: #31b76a;
+position: unset!important;
+border-radius: 0px 0px 8px 8px;
+}
+
+.prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
+top: 3px;
+padding-left: 10px;
+position: relative;
+}
+.prejoin-preview-status--warning {
+background: rgb(245 157 0 / 82%);
+}
+
+.prejoin-no-camera {
+display: none;
+	    margin-top: 28vh;
     max-width: 500px;
-    margin-left: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+        padding-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 8px;
+    text-align: center;
+    -webkit-box-shadow: 1px 2px 15px -2px #b7b5b5;
+    box-shadow: 1px 2px 15px -2px #b7b5b5;
+}
+.premeeting-screen-avatar {
+
+}
+#preview {
+padding-top: 28vh;
+max-width: 500px;
+margin:auto;
 }
 
 #preview video {
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px 8px 0px 0px;
-    position: relative;
-    width: 100%;
-    margin: 0px;
+height: 300px;
+object-fit: cover;
+border-radius: 8px 8px 0px 0px;
+position: relative;
+width: 100%;
+margin: 0px;
 }
 .premeeting-screen {
 align-items: stretch;
@@ -813,4 +848,24 @@ background: #e8e8e8;
 }
 .device-selection .audio-input-preview .audio-input-preview-level {
 background:#31b76a;
+}
+
+.settings-button-container .toolbox-icon:hover {
+background-color: #f7f7f7;
+}
+
+
+#overlay {
+background:white;
+}
+
+#overlay .inlay {
+color: #333!important;
+background: #e7e7e766;
+}
+#overlay .inlay__title {
+    border-bottom: 1px solid #c8c8c8;
+    }
+#overlay .inlay__title, #overlay .inlay__text {
+color: #333!important;
 }
