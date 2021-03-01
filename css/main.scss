@@ -677,7 +677,7 @@ color: #ffffff!important;
 fill: #e8e4e4!important;
 }
 #etherpad {
-z-index:1!important;
+z-index:2!important;
 }
 #etherpadIFrame {
 width: 100%;
@@ -746,7 +746,12 @@ box-shadow:none!important;
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@include media-breakpoint-up(xs) {
+@media (max-width: 575.98px) {
+    #preview {
+        max-width: 500px;
+        margin:auto;
+    }
+
     .premeeting-screen .content {
         display:block!important;
         text-align: center;
@@ -754,7 +759,14 @@ box-shadow:none!important;
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@include media-breakpoint-up(md) {
+@media (min-width: 576px) {
+
+    #preview {
+        padding-top: 28vh;
+        max-width: 500px;
+        margin:auto;
+    }
+
     .premeeting-screen .content {
         display:block!important;
         margin-top: 34vh;
@@ -804,6 +816,7 @@ background: rgb(245 157 0 / 82%);
 }
 
 .prejoin-no-camera {
+width: 100%;
 margin-top: 32vh;
 max-width: 500px;
 margin-left: auto;
@@ -820,11 +833,7 @@ box-shadow: 1px 2px 15px -2px #b7b5b5;
 .premeeting-screen-avatar {
 
 }
-#preview {
-padding-top: 28vh;
-max-width: 500px;
-margin:auto;
-}
+
 
 #preview video {
 height: 300px;
