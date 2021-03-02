@@ -1,9 +1,14 @@
 /* @flow */
 
-import { ToggleStateless } from '@atlaskit/toggle';
+import Toggle from '@atlaskit/toggle';
 import React, { Component } from 'react';
 
 type Props = {
+
+    /**
+     * ID of the toggle
+     */
+    id: string,
 
     /**
      * CSS class name.
@@ -42,6 +47,7 @@ export default class Switch extends Component<Props> {
             disabled,
             onValueChange,
             value,
+            id,
             ...props
         } = this.props;
 
@@ -50,8 +56,9 @@ export default class Switch extends Component<Props> {
         // parameter to match the native implementation.
 
         return (
-            <div>
-                <ToggleStateless
+            <div className = { className }>
+                <Toggle
+                    id = { id }
                     isChecked = { value }
                     isDisabled = { disabled }
                     onChange = { onValueChange }

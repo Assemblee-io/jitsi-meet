@@ -1,5 +1,7 @@
 # Jitsi Meet - Assemblée
 
+**NOTE:** If you are looking for Jitsi as a Service (JaaS) please start [here](https://jaas.8x8.vc).
+
 ## Installation
 
 > npm i

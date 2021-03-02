@@ -1,11 +1,12 @@
 // @flow
 
 import { getGravatarURL } from '@jitsi/js-utils/avatar';
+import type { Store } from 'redux';
 
 import { JitsiParticipantConnectionStatus } from '../lib-jitsi-meet';
 import { MEDIA_TYPE, shouldRenderVideoTrack } from '../media';
 import { toState } from '../redux';
-import { getTrackByMediaTypeAndParticipant, isRemoteTrackMuted } from '../tracks';
+import { getTrackByMediaTypeAndParticipant } from '../tracks';
 import { createDeferred } from '../util';
 
 import {
@@ -15,7 +16,6 @@ import {
 } from './constants';
 import { preloadImage } from './preloadImage';
 
-declare var config: Object;
 declare var interfaceConfig: Object;
 
 /**
@@ -23,30 +23,39 @@ declare var interfaceConfig: Object;
  */
 const AVATAR_QUEUE = [];
 const AVATAR_CHECKED_URLS = new Map();
-/* eslint-disable arrow-body-style */
+/* eslint-disable arrow-body-style, no-unused-vars */
 const AVATAR_CHECKER_FUNCTIONS = [
-    participant => {
+    (participant, _) => {
         return participant && participant.isJigasi ? JIGASI_PARTICIPANT_ICON : null;
     },
-    participant => {
+    (participant, _) => {
         return participant && participant.avatarURL ? participant.avatarURL : null;
     },
-    participant => {
-        return participant && participant.email ? getGravatarURL(participant.email) : null;
+    (participant, store) => {
+        if (participant && participant.email) {
+            // TODO: remove once libravatar has deployed their new scaled up infra. -saghul
+            const gravatarBaseURL
+                = store.getState()['features/base/config'].gravatarBaseURL ?? 'https://www.gravatar.com/avatar/';
+
+            return getGravatarURL(participant.email, gravatarBaseURL);
+        }
+
+        return null;
     }
 ];
-/* eslint-enable arrow-body-style */
+/* eslint-enable arrow-body-style, no-unused-vars */
 
 /**
  * Resolves the first loadable avatar URL for a participant.
  *
  * @param {Object} participant - The participant to resolve avatars for.
+ * @param {Store} store - Redux store.
  * @returns {Promise}
  */
-export function getFirstLoadableAvatarUrl(participant: Object) {
+export function getFirstLoadableAvatarUrl(participant: Object, store: Store<any, any>) {
     const deferred = createDeferred();
     const fullPromise = deferred.promise
-        .then(() => _getFirstLoadableAvatarUrl(participant))
+        .then(() => _getFirstLoadableAvatarUrl(participant, store))
         .then(src => {
 
             if (AVATAR_QUEUE.length) {
@@ -289,7 +298,7 @@ export function isEveryoneModerator(stateful: Object | Function) {
  * @returns {boolean}
  */
 export function isIconUrl(icon: ?string | ?Object) {
-    return Boolean(icon) && typeof icon === 'object';
+    return Boolean(icon) && (typeof icon === 'object' || typeof icon === 'function');
 }
 
 /**
@@ -351,62 +360,24 @@ export function shouldRenderParticipantVideo(stateful: Object | Function, id: st
     }
 
     /* Last, check if the participant is sharing their screen and they are on stage. */
-    const screenShares = state['features/video-layout'].screenShares || [];
+    const remoteScreenShares = state['features/video-layout'].remoteScreenShares || [];
     const largeVideoParticipantId = state['features/large-video'].participantId;
     const participantIsInLargeVideoWithScreen
-        = participant.id === largeVideoParticipantId && screenShares.includes(participant.id);
+        = participant.id === largeVideoParticipantId && remoteScreenShares.includes(participant.id);
 
     return participantIsInLargeVideoWithScreen;
 }
 
 /**
- * Figures out the value of mutedWhileDisconnected status by taking into
- * account remote participant's network connectivity and video muted status.
- * The flag is set to <tt>true</tt> if remote participant's video gets muted
- * during his media connection disruption. This is to prevent black video
- * being render on the thumbnail, because even though once the video has
- * been played the image usually remains on the video element it seems that
- * after longer period of the video element being hidden this image can be
- * lost.
- *
- * @param {Object|Function} stateful - Object or function that can be resolved
- * to the Redux state.
- * @param {string} participantID - The ID of the participant.
- * @param {string} [connectionStatus] - A connection status to be used.
- * @returns {boolean} - The mutedWhileDisconnected value.
- */
-export function figureOutMutedWhileDisconnectedStatus(
-        stateful: Function | Object, participantID: string, connectionStatus: ?string) {
-    const state = toState(stateful);
-    const participant = getParticipantById(state, participantID);
-
-    if (!participant || participant.local) {
-        return undefined;
-    }
-
-    const isActive = (connectionStatus || participant.connectionStatus) === JitsiParticipantConnectionStatus.ACTIVE;
-    const isVideoMuted = isRemoteTrackMuted(state['features/base/tracks'], MEDIA_TYPE.VIDEO, participantID);
-    let mutedWhileDisconnected = participant.mutedWhileDisconnected || false;
-
-    if (!isActive && isVideoMuted) {
-        mutedWhileDisconnected = true;
-    } else if (isActive && !isVideoMuted) {
-        mutedWhileDisconnected = false;
-    }
-
-    return mutedWhileDisconnected;
-}
-
-
-/**
  * Resolves the first loadable avatar URL for a participant.
  *
  * @param {Object} participant - The participant to resolve avatars for.
+ * @param {Store} store - Redux store.
  * @returns {?string}
  */
-async function _getFirstLoadableAvatarUrl(participant) {
+async function _getFirstLoadableAvatarUrl(participant, store) {
     for (let i = 0; i < AVATAR_CHECKER_FUNCTIONS.length; i++) {
-        const url = AVATAR_CHECKER_FUNCTIONS[i](participant);
+        const url = AVATAR_CHECKER_FUNCTIONS[i](participant, store);
 
         if (url) {
             if (AVATAR_CHECKED_URLS.has(url)) {

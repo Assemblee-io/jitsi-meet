@@ -8,6 +8,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Watermarks } from '../../../../base/react';
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
 import { Avatar } from '../../../avatar';
+import { allowUrlSharing } from '../../functions';
 
 import ConnectionStatus from './ConnectionStatus';
 import CopyMeetingUrl from './CopyMeetingUrl';
@@ -89,8 +90,9 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      * @inheritdoc
      */
     render() {
-        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, isLobby } = this.props;
         const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
+        const showSharingButton = allowUrlSharing();
+        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, isLobby } = this.props;
 
         return (
             <div

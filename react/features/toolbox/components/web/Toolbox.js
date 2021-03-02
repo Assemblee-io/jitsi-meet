@@ -36,6 +36,7 @@ import { OverflowMenuItem } from '../../../base/toolbox/components';
 import { getLocalVideoTrack, toggleScreensharing } from '../../../base/tracks';
 import { isVpaasMeeting } from '../../../billing-counter/functions';
 import { VideoBlurButton } from '../../../blur';
+import { checkBlurSupport } from '../../../blur/functions';
 import { CHAT_SIZE, ChatCounter, toggleChat } from '../../../chat';
 import { EmbedMeetingDialog } from '../../../embed-meeting';
 import { SharedDocumentButton } from '../../../etherpad';
@@ -74,13 +75,15 @@ import {
 import {
     setFullScreen,
     setOverflowMenuVisible,
-    setToolbarHovered
+    setToolbarHovered,
+    setToolboxVisible
 } from '../../actions';
 import { isToolboxVisible } from '../../functions';
 import DownloadButton from '../DownloadButton';
 import HangupButton from '../HangupButton';
 import HelpButton from '../HelpButton';
 import MuteEveryoneButton from '../MuteEveryoneButton';
+import MuteEveryonesVideoButton from '../MuteEveryonesVideoButton';
 
 import AudioSettingsButton from './AudioSettingsButton';
 import OverflowMenuButton from './OverflowMenuButton';
@@ -239,6 +242,7 @@ class Toolbox extends Component<Props, State> {
         this._onMouseOver = this._onMouseOver.bind(this);
         this._onResize = this._onResize.bind(this);
         this._onSetOverflowVisible = this._onSetOverflowVisible.bind(this);
+        this._onTabIn = this._onTabIn.bind(this);
 
         this._onShortcutToggleChat = this._onShortcutToggleChat.bind(this);
         this._onShortcutToggleFullScreen = this._onShortcutToggleFullScreen.bind(this);
@@ -276,7 +280,7 @@ class Toolbox extends Component<Props, State> {
             this._shouldShowButton('videoquality') && {
                 character: 'A',
                 exec: this._onShortcutToggleVideoQuality,
-                helpDescription: 'keyboardShortcuts.videoQuality'
+                helpDescription: 'toolbar.callQuality'
             },
             this._shouldShowButton('chat') && {
                 character: 'C',
@@ -369,6 +373,7 @@ class Toolbox extends Component<Props, State> {
             <div
                 className = { rootClassNames }
                 id = 'new-toolbox'
+                onFocus = { this._onTabIn }
                 onMouseOut = { this._onMouseOut }
                 onMouseOver = { this._onMouseOver }>
                 <div className = 'toolbox-background' />
@@ -471,6 +476,7 @@ class Toolbox extends Component<Props, State> {
      */
     _doToggleRaiseHand() {
         const { _localParticipantID, _raisedHand } = this.props;
+        const newRaisedStatus = !_raisedHand;
 
         this.props.dispatch(participantUpdated({
             // XXX Only the local participant is allowed to update without
@@ -481,8 +487,10 @@ class Toolbox extends Component<Props, State> {
 
             id: _localParticipantID,
             local: true,
-            raisedHand: !_raisedHand
+            raisedHand: newRaisedStatus
         }));
+
+        APP.API.notifyRaiseHandUpdated(_localParticipantID, newRaisedStatus);
     }
 
     /**
@@ -694,6 +702,19 @@ class Toolbox extends Component<Props, State> {
             }));
 
         this._doToggleScreenshare();
+    }
+
+    _onTabIn: () => void;
+
+    /**
+     * Toggle the toolbar visibility when tabbing into it.
+     *
+     * @returns {void}
+     */
+    _onTabIn() {
+        if (!this.props._visible) {
+            this.props.dispatch(setToolboxVisible(true));
+        }
     }
 
     _onToolbarOpenFeedback: () => void;
@@ -1029,32 +1050,42 @@ class Toolbox extends Component<Props, State> {
                     key = 'fullscreen'
                     onClick = { this._onToolbarToggleFullScreen }
                     text = { _fullScreen ? t('toolbar.exitFullScreen') : t('toolbar.enterFullScreen') } />,
-            <LiveStreamButton
-                key = 'livestreaming'
-                showLabel = { true } />,
-            <RecordButton
-                key = 'record'
-                showLabel = { true } />,
+            this._shouldShowButton('livestreaming')
+                && <LiveStreamButton
+                    key = 'livestreaming'
+                    showLabel = { true } />,
+            this._shouldShowButton('recording')
+                && <RecordButton
+                    key = 'record'
+                    showLabel = { true } />,
+            this._shouldShowButton('sharedvideo')
+                && <OverflowMenuItem
+                    accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
+                    icon = { IconShareVideo }
+                    key = 'sharedvideo'
+                    onClick = { this._onToolbarToggleSharedVideo }
+                    text = { _sharingVideo ? t('toolbar.stopSharedVideo') : t('toolbar.sharedvideo') } />,
             this._shouldShowButton('etherpad')
                 && <SharedDocumentButton
                     key = 'etherpad'
                     showLabel = { true } />,
-            // this._shouldShowButton('whiteboard')
-            //     && <WhiteboardButton
-            //         key = 'whiteboard'
-            //         showLabel = { true } />,
-            <VideoBlurButton
-                key = 'videobackgroundblur'
-                showLabel = { true }
-                visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing } />,
-            <SettingsButton
-                key = 'settings'
-                showLabel = { true }
-                visible = { this._shouldShowButton('settings') } />,
-            <MuteEveryoneButton
-                key = 'mute-everyone'
-                showLabel = { true }
-                visible = { this._shouldShowButton('mute-everyone') } />,
+            this._shouldShowButton('videobackgroundblur')
+                && <VideoBlurButton
+                    key = 'videobackgroundblur'
+                    showLabel = { true }
+                    visible = { !_screensharing && checkBlurSupport() } />,
+            this._shouldShowButton('settings')
+                && <SettingsButton
+                    key = 'settings'
+                    showLabel = { true } />,
+            this._shouldShowButton('mute-everyone')
+                && <MuteEveryoneButton
+                    key = 'mute-everyone'
+                    showLabel = { true } />,
+            this._shouldShowButton('mute-video-everyone')
+                && <MuteEveryonesVideoButton
+                    key = 'mute-video-everyone'
+                    showLabel = { true } />,
             this._shouldShowButton('stats')
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
@@ -1220,7 +1251,7 @@ class Toolbox extends Component<Props, State> {
             t
         } = this.props;
         const overflowMenuContent = this._renderOverflowMenuContent();
-        const overflowHasItems = Boolean(overflowMenuContent.length);
+        const overflowHasItems = overflowMenuContent.some(item => Boolean(item));
         const toolbarAccLabel = 'toolbar.accessibilityLabel.moreActionsMenu';
         const buttonsLeft = [];
         const buttonsRight = [];

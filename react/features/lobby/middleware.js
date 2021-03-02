@@ -8,7 +8,7 @@ import { MiddlewareRegistry, StateListenerRegistry } from '../base/redux';
 import { playSound, registerSound } from '../base/sounds';
 import { isTestModeEnabled } from '../base/testing';
 import { NOTIFICATION_TYPE, showNotification } from '../notifications';
-import { isPrejoinPageEnabled } from '../prejoin/functions';
+import { shouldAutoKnock } from '../prejoin/functions';
 
 import { KNOCKING_PARTICIPANT_ARRIVED_OR_UPDATED } from './actionTypes';
 import {
@@ -111,8 +111,7 @@ function _conferenceFailed({ dispatch, getState }, next, action) {
 
         dispatch(openLobbyScreen());
 
-        if (isPrejoinPageEnabled(state) && !state['features/lobby'].knocking) {
-            // prejoin is enabled, so we knock automatically
+        if (shouldAutoKnock(state)) {
             dispatch(startKnocking());
         }
 
@@ -155,12 +154,13 @@ function _conferenceJoined({ dispatch }, next, action) {
  * @param {Object} participant - The knocking participant.
  * @returns {void}
  */
-function _findLoadableAvatarForKnockingParticipant({ dispatch, getState }, { id }) {
+function _findLoadableAvatarForKnockingParticipant(store, { id }) {
+    const { dispatch, getState } = store;
     const updatedParticipant = getState()['features/lobby'].knockingParticipants.find(p => p.id === id);
     const { disableThirdPartyRequests } = getState()['features/base/config'];
 
     if (!disableThirdPartyRequests && updatedParticipant && !updatedParticipant.loadableAvatarUrl) {
-        getFirstLoadableAvatarUrl(updatedParticipant).then(loadableAvatarUrl => {
+        getFirstLoadableAvatarUrl(updatedParticipant, store).then(loadableAvatarUrl => {
             if (loadableAvatarUrl) {
                 dispatch(participantIsKnockingOrUpdated({
                     loadableAvatarUrl,

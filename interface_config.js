@@ -170,6 +170,13 @@ var interfaceConfig = {
     REMOTE_THUMBNAIL_RATIO: 1, // 1:1
 
     SETTINGS_SECTIONS: [ 'devices', 'language', 'moderator', 'profile', 'calendar' ],
+
+    /**
+     * Specify which sharing features should be displayed. If the value is not set
+     * all sharing features will be shown. You can set [] to disable all.
+     */
+    // SHARING_FEATURES: ['email', 'url', 'dial-in', 'embed'],
+
     SHOW_BRAND_WATERMARK: false,
 
     /**
@@ -204,10 +211,16 @@ var interfaceConfig = {
      * - 'desktop' controls the "Share your screen" button
      */
     TOOLBAR_BUTTONS: [
-        'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
-        'fodeviceselection', 'hangup', 'profile', 'chat',
-        'etherpad', 'settings', 'raisehand', 'shortcuts', 'recording', 'livestreaming',
-        'tileview', 'mute-everyone', 'security', 'e2ee', 'filmstrip'
+        'microphone', 'camera', 'closedcaptions', 'desktop', 'embedmeeting', 'fullscreen',
+        'fodeviceselection', 'hangup', 'profile', 'chat', 'recording',
+        'livestreaming', 'etherpad', 'sharedvideo', 'settings', 'raisehand',
+        'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
+        'tileview', 'videobackgroundblur', 'download', 'help', 'mute-everyone', 'mute-video-everyone', 'security'
+        //OLD
+        //'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
+        //'fodeviceselection', 'hangup', 'profile', 'chat',
+        //'etherpad', 'settings', 'raisehand', 'shortcuts', 'recording', 'livestreaming',
+        //'tileview', 'mute-everyone', 'security', 'e2ee', 'filmstrip'
     ],
 
     TOOLBAR_TIMEOUT: 4000,
