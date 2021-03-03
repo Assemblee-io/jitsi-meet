@@ -1,7 +1,6 @@
 /* global interfaceConfig */
 
 // @flow
-import Page, { Grid, GridColumn } from '@atlaskit/page';
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -11,7 +10,6 @@ import { Avatar } from '../../../avatar';
 import { allowUrlSharing } from '../../functions';
 
 import ConnectionStatus from './ConnectionStatus';
-import CopyMeetingUrl from './CopyMeetingUrl';
 import Preview from './Preview';
 
 import './style.css';
