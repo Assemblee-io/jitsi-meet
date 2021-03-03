@@ -89,8 +89,7 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      */
     render() {
         const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
-        const showSharingButton = allowUrlSharing();
-        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, isLobby } = this.props;
+        const { name, showAvatar, title, videoMuted, videoTrack, isLobby } = this.props;
 
         return (
             <div
@@ -104,12 +103,14 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                             md = { 6 }
                             xs = { 12 }>
                             <Row>
-                                <Preview
-                                    footer = { this.props.footer }
-                                    videoMuted = { videoMuted }
-                                    videoTrack = { videoTrack } />
+                                {!isLobby && (
+                                    <Preview
+                                        footer = { this.props.footer }
+                                        videoMuted = { videoMuted }
+                                        videoTrack = { videoTrack } />
+                                )}
                                 {!videoMuted && <div className = 'preview-overlay' />}
-                                {showAvatar && videoMuted && (
+                                {showAvatar && videoMuted &&  (
                                     <div className = { 'prejoin-no-camera' }>
                                         <Avatar
                                             className = 'premeeting-screen-avatar'
