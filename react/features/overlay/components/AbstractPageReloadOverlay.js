@@ -282,6 +282,8 @@ export function abstractMapStateToProps(state: Object) {
     const { error: connectionError } = state['features/base/connection'];
     const { fatalError } = state['features/overlay'];
 
+    console.log('ERROR', configError, connectionError);
+
     return {
         details: fatalError && fatalError.details,
         isNetworkFailure:

@@ -195,14 +195,14 @@ export class AbstractWelcomePage extends Component<Props, *> {
     _onJoin() {
         const room = this.state.room || this.state.generatedRoomname;
 
-        axios.get(`https://apiv2.assemblee.io/api/v1/room/join/${room}`)
+        axios.get(`https://api.assemblee.io/api/v2/room/join/${room}`)
             .then(res => {
-                console.log(res);
                 sendAnalytics(
                     createWelcomePageEvent('clicked', 'joinButton', {
                         isGenerated: !this.state.room,
                         room
                     }));
+                console.log('ICI',room);
 
                 if (room) {
                     this.setState({ joining: true });
@@ -217,7 +217,7 @@ export class AbstractWelcomePage extends Component<Props, *> {
                 }
             })
             .catch(err => {
-                console.log(err);
+                console.log('ERROR', err);
                 this.setState({ error: true });
             });
 
