@@ -31,7 +31,7 @@ function CopyMeetingLinkSection({ t, url }: Props) {
             <span>{t('addPeople.shareLink')}</span>
             <CopyButton
                 className = 'invite-more-dialog-conference-url'
-                displayedText = { 'test.com' }
+                displayedText = { getDecodedURI(url) }
                 textOnCopySuccess = { t('addPeople.linkCopied') }
                 textOnHover = { t('addPeople.copyLink') }
                 textToCopy = { url } />
