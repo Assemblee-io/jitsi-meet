@@ -976,7 +976,7 @@ body {
 
 .prejoin-no-camera {
     width: 100%;
-    margin-top: 5vh!important;
+    margin-top: 28vh!important;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -1263,7 +1263,7 @@ video {
 
 @media (max-width: 768px) {
     #preview {
-        padding-top: 100px!important;
+        padding-top: 10vh!important;
     }
     .premeeting-screen .content {
         display: block!important;
@@ -1311,7 +1311,7 @@ video {
         fill: #333!important;
     }
     .prejoin-no-camera {
-        margin-top: 100px!important;
+        margin-top: 10vh!important;
     }
     .prejoin-preview-status.prejoin-preview-status--ok .premeeting-screen .jitsi-icon svg {
         fill: #fff!important;
@@ -1446,7 +1446,6 @@ video {
 #chatconversation a:link, #chatconversation a:hover, #chatconversation a:focus {
     color: #3e3e3e;
 }
-
 .jBzxHz {
     background-color: #f2f4f9!important;
     color: rgb(184, 199, 224);
@@ -1456,7 +1455,7 @@ video {
 }
 #chat-input {
     border-top: none;
-    border: 1px solid #a4b8d19e!important;
+    border: none;
 }
 .ifJcZf {
     background: white!important;
@@ -1470,4 +1469,43 @@ video {
 }
 .toolbox-button-wth-dialog .overflow-menu-item-icon svg path {
     fill: #333!important;
+}
+
+
+/**/
+.chat-header,.css-ws8iq8 {
+    color: #333!important;
+}
+
+#chatconversation {
+    border-bottom: 1px solid #e4e4e4;
+}
+.chat-input-container {
+    padding: 4px 16px 4px;
+}
+.css-zc8nma.css-zc8nma[data-selected] {
+    color: #333;
+}
+.css-zc8nma {
+    color: #333;
+}
+.css-a5n5vp[data-selected] {
+    background-color: rgb(56 91 221);
+}
+.css-a5n5vp {
+    background-color: rgb(255 255 255);
+}
+.settings-pane input[type=checkbox]+svg+span {
+    color: #333;
+    font-size: 15px;
+}
+.settings-pane .mock-atlaskit-label {
+    color: #333!important;
+    font-size: 14px;
+}
+.css-1uccsrb:checked + svg {
+    --checkbox-tick-color: #ffffff;
+}
+.copy-button {
+    height:38px!important;
 }
