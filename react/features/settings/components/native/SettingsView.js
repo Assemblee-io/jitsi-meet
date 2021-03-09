@@ -1,11 +1,19 @@
 // @flow
 
 import React from 'react';
-import { Alert, NativeModules, ScrollView, Switch, Text, TextInput } from 'react-native';
+import {
+    Alert,
+    Image,
+    NativeModules,
+    ScrollView,
+    Switch,
+    TextInput, View
+} from 'react-native';
 
 import { translate } from '../../../base/i18n';
 import { JitsiModal } from '../../../base/modal';
 import { connect } from '../../../base/redux';
+import styles from '../../../welcome/components/styles';
 import { SETTINGS_VIEW_ID } from '../../constants';
 import { normalizeUserInputURL, isServerURLChangeEnabled } from '../../functions';
 import {
@@ -16,6 +24,9 @@ import {
 
 import FormRow from './FormRow';
 import FormSectionHeader from './FormSectionHeader';
+
+const DEFAULT_AVATAR = require('../../../../../images/logo_assemblee.png');
+
 
 /**
  * Application information module.
@@ -140,7 +151,7 @@ class SettingsView extends AbstractSettingsView<Props, State> {
      * @returns {ReactElement}
      */
     render() {
-        const { displayName, email, serverURL, startWithAudioMuted, startWithVideoMuted } = this.state;
+        const { displayName, email, startWithAudioMuted, startWithVideoMuted } = this.state;
 
         return (
             <JitsiModal
@@ -150,8 +161,15 @@ class SettingsView extends AbstractSettingsView<Props, State> {
                 modalId = { SETTINGS_VIEW_ID }
                 onClose = { this._onClose }>
                 <ScrollView>
+                    <View style = { styles.imageContainer }>
+                        <Image
+                            resizeMode = 'contain'
+                            source = { DEFAULT_AVATAR }
+                            style = { styles.imageDisplay } />
+                    </View>
                     <FormSectionHeader
-                        label = 'settingsView.profileSection' />
+                        label = 'settingsView.profileSection'
+                        style = { styles.headerWhite } />
                     <FormRow
                         fieldSeparator = { true }
                         label = 'settingsView.displayName'
@@ -176,22 +194,8 @@ class SettingsView extends AbstractSettingsView<Props, State> {
                             value = { email } />
                     </FormRow>
                     <FormSectionHeader
-                        label = 'settingsView.conferenceSection' />
-                    <FormRow
-                        fieldSeparator = { true }
-                        label = 'settingsView.serverURL'
-                        layout = 'column'>
-                        <TextInput
-                            autoCapitalize = 'none'
-                            autoCorrect = { false }
-                            editable = { this.props._serverURLChangeEnabled }
-                            keyboardType = { 'url' }
-                            onBlur = { this._onBlurServerURL }
-                            onChangeText = { this._onChangeServerURL }
-                            placeholder = { this.props._serverURL }
-                            textContentType = { 'URL' } // iOS only
-                            value = { serverURL } />
-                    </FormRow>
+                        label = 'settingsView.conferenceSection'
+                        style = { styles.headerWhite }/>
                     <FormRow
                         fieldSeparator = { true }
                         label = 'settingsView.startWithAudioMuted'>
@@ -204,17 +208,6 @@ class SettingsView extends AbstractSettingsView<Props, State> {
                             onValueChange = { this._onStartVideoMutedChange }
                             value = { startWithVideoMuted } />
                     </FormRow>
-                    <FormSectionHeader
-                        label = 'settingsView.buildInfoSection' />
-                    <FormRow
-                        label = 'settingsView.version'>
-                        <Text>
-                            {`${AppInfo.version} build ${AppInfo.buildNumber}`}
-                        </Text>
-                    </FormRow>
-                    <FormSectionHeader
-                        label = 'settingsView.advanced' />
-                    {this._renderAdvancedSettings()}
                 </ScrollView>
             </JitsiModal>
         );

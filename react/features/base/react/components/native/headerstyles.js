@@ -1,6 +1,10 @@
 // @flex
 
 import { StyleSheet } from 'react-native';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
 
 import { ColorSchemeRegistry, schemeColor } from '../../../color-scheme';
 import { BoxModel } from '../../../styles';
@@ -8,6 +12,7 @@ import { BoxModel } from '../../../styles';
 const HEADER_FONT_SIZE = 18;
 const HEADER_HEIGHT = 48;
 const HEADER_PADDING = BoxModel.padding / 2;
+
 
 ColorSchemeRegistry.register('Header', {
 

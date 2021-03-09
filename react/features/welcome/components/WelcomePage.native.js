@@ -9,14 +9,19 @@ import {
     View,
     Image,
     Linking,
+    KeyboardAvoidingView,
+    Platform
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import BottomSheet from 'react-native-simple-bottom-sheet';
 
+import { JoinView, JOIN_VIEW_MODAL_ID } from '../../Join';
 import { getName } from '../../app/functions';
 import { ColorSchemeRegistry } from '../../base/color-scheme';
 import { translate } from '../../base/i18n';
 import { Icon, IconMenu, IconWarning } from '../../base/icons';
 import { MEDIA_TYPE } from '../../base/media';
+import { setActiveModalId } from '../../base/modal';
 import { Header, LoadingIndicator, Text } from '../../base/react';
 import { connect } from '../../base/redux';
 import { ColorPalette } from '../../base/styles';
@@ -37,6 +42,7 @@ import {
 import LocalVideoTrackUnderlay from './LocalVideoTrackUnderlay';
 import WelcomePageSideBar from './WelcomePageSideBar';
 import styles, { PLACEHOLDER_TEXT_COLOR } from './styles';
+
 
 const FEMME_ORDI = require('../../../../images/femme-ordi.png');
 const DEFAULT_AVATAR = require('../../../../images/logo_assemblee.png');
@@ -69,6 +75,7 @@ class WelcomePage extends AbstractWelcomePage {
         // Specially bind functions to avoid function definition on render.
         this._onFieldBlur = this._onFieldFocusChange.bind(this, false);
         this._onFieldFocus = this._onFieldFocusChange.bind(this, true);
+        this._onOpenModal = this._onOpenModal.bind(this);
     }
 
     /**
@@ -125,6 +132,21 @@ class WelcomePage extends AbstractWelcomePage {
         */
 
         return this._renderFullUI();
+    }
+
+    _onOpenModal: () => void;
+
+    /**
+     * Shows the {@link SettingsView}.
+     *
+     * @private
+     * @returns {void}
+     */
+    _onOpenModal() {
+        console.log('ici');
+        const { dispatch } = this.props;
+
+        dispatch(setActiveModalId(JOIN_VIEW_MODAL_ID));
     }
 
     /**
@@ -325,7 +347,8 @@ class WelcomePage extends AbstractWelcomePage {
 
         return (
             <LocalVideoTrackUnderlay style = { styles.welcomePage }>
-                <View style = { _headerStyles.page }>
+                <View
+                    style = { _headerStyles.page }>
                     <Header style = { styles.header }>
                         <TouchableOpacity onPress = { this._onShowSideBar } >
                             <Icon
@@ -358,7 +381,7 @@ class WelcomePage extends AbstractWelcomePage {
                                 <TouchableHighlight
                                     accessibilityLabel =
                                         { t('welcomepage.accessibilityLabel.join') }
-                                    onPress = { () => panelRef.current.togglePanel() }
+                                    onPress = { this._onOpenModal }
                                     style = { styles.button }
                                     underlayColor = { ColorPalette.white }>
                                     <Text style = { styles.buttonText }>
@@ -413,6 +436,7 @@ class WelcomePage extends AbstractWelcomePage {
     _renderWelcomePageModals() {
         return [
             <HelpView key = 'helpView' />,
+            <JoinView key = 'joinView' />,
             <DialInSummary key = 'dialInSummary' />,
             <SettingsView key = 'settings' />
         ];
@@ -450,13 +474,16 @@ class WelcomePage extends AbstractWelcomePage {
                 isOpen = { false }
                 ref = { ref => panelRef.current = ref }
                 sliderMinHeight = { '0' }>
-                <View style = { styles.modalViewHeight }>
+                <KeyboardAwareScrollView
+                    style = { this.state.heightModal }>
                     <View style = { styles.textModal }>
                         <Text style = { styles.enterRoomText }>
                             { t('welcomepage.roomname') }
                         </Text>
                     </View>
-                    <View style = { styles.loginButtonSection }>
+                    <KeyboardAvoidingView
+                        behavior = { Platform.OS === 'ios' ? 'padding' : 'height' }
+                        style = { styles.loginButtonSection }>
                         <TextInput
                             accessibilityLabel = { t(roomnameAccLabel) }
                             autoCapitalize = 'characters'
@@ -473,7 +500,7 @@ class WelcomePage extends AbstractWelcomePage {
                             style = { styles.textInput }
                             underlineColorAndroid = 'transparent'
                             value = { this.state.room } />
-                    </View>
+                    </KeyboardAvoidingView>
                     { this._renderErrorModal() }
                     <View style = { styles.loginButtonSection }>
                         <TouchableHighlight
@@ -487,7 +514,7 @@ class WelcomePage extends AbstractWelcomePage {
                             </Text>
                         </TouchableHighlight>
                     </View>
-                </View>
+                </KeyboardAwareScrollView>
             </BottomSheet>
         );
     }

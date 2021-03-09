@@ -93,7 +93,8 @@ export class AbstractWelcomePage extends Component<Props, *> {
         room: '',
         roomPlaceholder: '',
         updateTimeoutId: undefined,
-        error: false
+        error: false,
+        heightModal: 100
     };
 
     /**

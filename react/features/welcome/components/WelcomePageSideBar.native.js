@@ -1,9 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
-import { SafeAreaView, ScrollView, Text } from 'react-native';
+import { Image, SafeAreaView, ScrollView } from 'react-native';
 
-import { Avatar } from '../../base/avatar';
 import { IconInfo, IconSettings, IconHelp } from '../../base/icons';
 import { setActiveModalId } from '../../base/modal';
 import {
@@ -20,17 +19,19 @@ import { SETTINGS_VIEW_ID } from '../../settings';
 import { setSideBarVisible } from '../actions';
 
 import SideBarItem from './SideBarItem';
-import styles, { SIDEBAR_AVATAR_SIZE } from './styles';
+import styles from './styles';
 
 /**
  * The URL at which the privacy policy is available to the user.
  */
-const PRIVACY_URL = 'https://jitsi.org/meet/privacy';
+const PRIVACY_URL = 'https://assemblee.io/privacy';
 
 /**
  * The URL at which the terms (of service/use) are available to the user.
  */
-const TERMS_URL = 'https://jitsi.org/meet/terms';
+const TERMS_URL = 'https://assemblee.io/cgv';
+
+const DEFAULT_AVATAR = require('../../../../images/logo_assemblee.png');
 
 type Props = {
 
@@ -87,12 +88,10 @@ class WelcomePageSideBar extends Component<Props> {
                 show = { this.props._visible }
                 style = { styles.sideBar } >
                 <Header style = { styles.sideBarHeader }>
-                    <Avatar
-                        participantId = { this.props._localParticipantId }
-                        size = { SIDEBAR_AVATAR_SIZE } />
-                    <Text style = { styles.displayName }>
-                        { this.props._displayName }
-                    </Text>
+                    <Image
+                        resizeMode = 'contain'
+                        source = { DEFAULT_AVATAR }
+                        style = { styles.imageDisplaySideBar } />
                 </Header>
                 <SafeAreaView style = { styles.sideBarBody }>
                     <ScrollView
@@ -100,7 +99,8 @@ class WelcomePageSideBar extends Component<Props> {
                         <SideBarItem
                             icon = { IconSettings }
                             label = 'settings.title'
-                            onPress = { this._onOpenSettings } />
+                            onPress = { this._onOpenSettings }
+                            style = { styles.buttonText } />
                         <SideBarItem
                             icon = { IconInfo }
                             label = 'welcomepage.terms'

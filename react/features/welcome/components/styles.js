@@ -1,7 +1,7 @@
 // @flow
 
 import { colorPalette } from '@atlaskit/theme/dist/cjs/colors';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp
@@ -124,7 +124,8 @@ export default {
      * The welcome screen header style.
      */
     header: {
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: hp(10)
     },
 
     /**
@@ -169,7 +170,8 @@ export default {
      * A view that contains the field and hint box.
      */
     joinControls: {
-        padding: BoxModel.padding
+        padding: BoxModel.padding,
+        height: hp(30)
     },
 
     messageContainer: {
@@ -196,6 +198,7 @@ export default {
      * Top-level screen style.
      */
     page: {
+        height: hp(100),
         flex: 1,
         flexDirection: 'column'
     },
@@ -270,7 +273,7 @@ export default {
      * The icon in the side bar item touchables.
      */
     sideBarItemIcon: {
-        color: ColorPalette.blueHighlight,
+        color: ColorPalette.blue,
         fontSize: 20,
         marginRight: 15
     },
@@ -279,7 +282,7 @@ export default {
      * The label of the side bar item touchables.
      */
     sideBarItemText: {
-        color: ColorPalette.black,
+        color: ColorPalette.blue,
         fontWeight: 'bold'
     },
 
@@ -349,13 +352,30 @@ export default {
 
     imageDisplay: {
         width: wp(100),
-        height: hp(5)
+        height: hp(10)
+    },
+
+    imageDisplaySideBar: {
+        width: wp(50),
+        height: hp(10)
     },
 
     imageFemmeDisplay: {
-        height: hp(45),
+        height: hp(50),
         width: '100%',
         marginBottom: hp(3)
+    },
+
+    headerWhite: {
+        margin: 'auto',
+        marginBottom: 10,
+        marginTop: 10,
+        width: '100%',
+        backgroundColor: ColorPalette.lightNewGrey,
+        borderColor: ColorPalette.lightNewGrey,
+        height: 50,
+        justifyContent: 'center',
+        paddingHorizontal: 10
     },
 
 
