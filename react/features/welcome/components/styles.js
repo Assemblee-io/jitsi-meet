@@ -125,7 +125,7 @@ export default {
      */
     header: {
         justifyContent: 'space-between',
-        height: hp(10)
+        height: hp(5)
     },
 
     /**
@@ -282,7 +282,7 @@ export default {
      * The label of the side bar item touchables.
      */
     sideBarItemText: {
-        color: ColorPalette.blue,
+        color: ColorPalette.black,
         fontWeight: 'bold'
     },
 
@@ -352,7 +352,7 @@ export default {
 
     imageDisplay: {
         width: wp(100),
-        height: hp(10)
+        height: hp(8)
     },
 
     imageDisplaySideBar: {
@@ -361,7 +361,7 @@ export default {
     },
 
     imageFemmeDisplay: {
-        height: hp(50),
+        height: hp(57),
         width: '100%',
         marginBottom: hp(3)
     },
