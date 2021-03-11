@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'org.jitsi.meet'
+        applicationId 'video.assemblee.io'
         versionCode vcode
         versionName project.appVersion
 
