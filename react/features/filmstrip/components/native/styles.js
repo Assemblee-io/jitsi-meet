@@ -3,6 +3,7 @@
 import { ColorSchemeRegistry, schemeColor } from '../../../base/color-scheme';
 import { ColorPalette } from '../../../base/styles';
 import { FILMSTRIP_SIZE } from '../../constants';
+import { colorPalette } from '@atlaskit/theme/color-palettes';
 
 /**
  * Size for the Avatar.
@@ -127,7 +128,8 @@ export default {
     },
 
     tileViewRows: {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: ColorPalette.black
     },
 
     tileViewRow: {
