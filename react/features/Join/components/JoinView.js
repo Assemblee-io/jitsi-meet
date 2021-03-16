@@ -89,12 +89,6 @@ class JoinView extends AbstractJoinView {
                     headerLabelKey: 'helpView.header'
                 }}
                 modalId = { JOIN_VIEW_MODAL_ID }>
-                <View style = { styles.imageContainer }>
-                    <Image
-                        resizeMode = 'contain'
-                        source = { DEFAULT_AVATAR }
-                        style = { styles.imageDisplay } />
-                </View>
                 <View style = { styles.textModal }>
                     <Text style = { styles.enterRoomText }>
                         { t('welcomepage.roomname') }

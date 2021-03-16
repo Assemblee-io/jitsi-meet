@@ -41,9 +41,9 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('your_key_name.keystore')
+            storeFile file('my-key.keystore')
             storePassword 'assemblee34'
-            keyAlias 'your_key_alias'
+            keyAlias 'my-key-alias'
             keyPassword 'assemblee34'
         }
     }
@@ -55,7 +55,7 @@ android {
         }
         release {
             // Uncomment the following line for singing a test release build.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-release.pro'
             buildConfigField "boolean", "GOOGLE_SERVICES_ENABLED", "${googleServicesEnabled}"

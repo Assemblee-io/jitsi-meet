@@ -369,15 +369,6 @@ class WelcomePage extends AbstractWelcomePage {
                         </View>
                         <View style = { styles.joinControls } >
                             <View style = { styles.loginButtonSection }>
-                                <TouchableOpacity
-                                    onPress = { this._onHandleClick }
-                                    style = { styles.buttonWhite } >
-                                    <View >
-                                        <Text style = { styles.textCenter }> { t('toolbar.login') }</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                            <View style = { styles.loginButtonSection }>
                                 <TouchableHighlight
                                     accessibilityLabel =
                                         { t('welcomepage.accessibilityLabel.join') }
@@ -388,17 +379,6 @@ class WelcomePage extends AbstractWelcomePage {
                                         { this.props.t('welcomepage.join') }
                                     </Text>
                                 </TouchableHighlight>
-                            </View>
-                            <View style = { styles.loginButtonSection }>
-                                <TouchableOpacity
-                                    accessibilityLabel =
-                                        { t('welcomepage.accessibilityLabel.signup') }
-                                    onPress = { this._onCreateAccount }
-                                    style = { styles.signupText } >
-                                    <Text style = { styles.signupText }>
-                                        { this.props.t('welcomepage.signup') }
-                                    </Text>
-                                </TouchableOpacity>
                             </View>
                         </View>
                     </SafeAreaView>

@@ -171,7 +171,9 @@ export default {
      */
     joinControls: {
         padding: BoxModel.padding,
-        height: hp(30)
+        height: hp(30),
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     messageContainer: {
@@ -409,8 +411,8 @@ export default {
 
     loginButtonSection: {
         width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     textCenter: {
