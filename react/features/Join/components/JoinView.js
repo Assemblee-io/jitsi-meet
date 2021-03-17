@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {
-    Image,
     KeyboardAvoidingView,
     Platform,
     TextInput,
@@ -22,7 +21,6 @@ import {
 } from '../AbstractJoinView';
 import { JOIN_VIEW_MODAL_ID } from '../constants';
 
-const DEFAULT_AVATAR = require('../../../../images/logo_assemblee.png');
 const DEFAULT_HELP_CENTRE_URL = 'https://web-cdn.jitsi.net/faq/meet-faq.html';
 
 

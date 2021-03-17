@@ -23,7 +23,6 @@ import {
 
 
 MiddlewareRegistry.register(store => next => action => {
-    console.log(action.type);
     switch (action.type) {
     case APP_WILL_MOUNT:
         store.dispatch(registerSound(
