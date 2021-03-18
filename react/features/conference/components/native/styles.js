@@ -33,6 +33,8 @@ export default {
         flex: 1
     }),
 
+    statusBar: schemeColor('statusBar'),
+
     displayNameContainer: {
         margin: 10
     },
