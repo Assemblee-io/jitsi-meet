@@ -305,7 +305,7 @@ export function maybeRedirectToWelcomePage(options: Object = {}) {
             window.sessionStorage.setItem('guest', !jwt);
             window.sessionStorage.setItem('jwt', jwt);
 
-            window.location.href = 'https://assemblee.io/quit';
+            window.top.location.href = 'https://assemblee.io/quit';
 
             return;
         }
