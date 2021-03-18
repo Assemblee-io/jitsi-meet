@@ -291,7 +291,7 @@ export function maybeRedirectToWelcomePage(options: Object = {}) {
 
 
         // if close page is enabled redirect to it, without further action
-        if (!enableClosePage) {
+        if (enableClosePage) {
             if (isVpaasMeeting(getState())) {
                 redirectToStaticPage('/');
 
