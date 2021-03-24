@@ -211,7 +211,7 @@ var config = {
     // fileRecordingsServiceSharingEnabled: false,
 
     // Whether to enable live streaming or not.
-    liveStreamingEnabled: true,
+    liveStreamingEnabled: false,
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)
@@ -545,12 +545,12 @@ var config = {
     // Information for the chrome extension banner
     // chromeExtensionBanner: {
     //     // The chrome extension to be installed address
-    //     url: 'https://chrome.google.com/webstore/detail/jitsi-meetings/kglhbbefdnlheedjiejgomgmfplipfeb',
+    //     url: 'https://chrome.google.com/webstore/detail/assembleeio/gnhgmmhblfockhjchidodfkfpnffadgg',
 
     //     // Extensions info which allows checking if they are installed or not
     //     chromeExtensionsInfo: [
     //         {
-    //             id: 'kglhbbefdnlheedjiejgomgmfplipfeb',
+    //             id: 'gnhgmmhblfockhjchidodfkfpnffadgg',
     //             path: 'jitsi-logo-48x48.png'
     //         }
     //     ]
