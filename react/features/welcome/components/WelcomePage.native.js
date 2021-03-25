@@ -44,8 +44,9 @@ import WelcomePageSideBar from './WelcomePageSideBar';
 import styles, { PLACEHOLDER_TEXT_COLOR } from './styles';
 
 
-const FEMME_ORDI = require('../../../../images/femme-ordi.png');
+const FEMME_ORDI = require('../../../../images/femme_ordi.jpg');
 const DEFAULT_AVATAR = require('../../../../images/logo_assemblee.png');
+const DEFAULT_PHRASE = require('../../../../images/logo_phrase.png');
 const panelRef = createRef(null);
 
 
@@ -143,7 +144,6 @@ class WelcomePage extends AbstractWelcomePage {
      * @returns {void}
      */
     _onOpenModal() {
-        console.log('ici');
         const { dispatch } = this.props;
 
         dispatch(setActiveModalId(JOIN_VIEW_MODAL_ID));
@@ -364,11 +364,18 @@ class WelcomePage extends AbstractWelcomePage {
                                 style = { styles.imageDisplay } />
                             <Image
                                 resizeMode = 'contain'
+                                source = { DEFAULT_PHRASE }
+                                style = { styles.phraseDisplay } />
+                            <Image
+                                resizeMode = 'contain'
                                 source = { FEMME_ORDI }
                                 style = { styles.imageFemmeDisplay } />
                         </View>
                         <View style = { styles.joinControls } >
                             <View style = { styles.loginButtonSection }>
+                                <Text style = { styles.textUpperButton }>
+                                    { this.props.t('welcomepage.start') }
+                                </Text>
                                 <TouchableHighlight
                                     accessibilityLabel =
                                         { t('welcomepage.accessibilityLabel.join') }

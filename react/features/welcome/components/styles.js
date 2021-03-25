@@ -75,6 +75,14 @@ export default {
     /**
      * Join button text style.
      */
+    textUpperButton: {
+        fontSize: 18,
+        textAlign: 'center',
+        alignSelf: 'center',
+        color: ColorPalette.black,
+        marginBottom: hp(3)
+    },
+
     buttonText: {
         fontSize: 18,
         textAlign: 'center',
@@ -171,9 +179,8 @@ export default {
      */
     joinControls: {
         padding: BoxModel.padding,
-        height: hp(30),
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: hp(35),
+        alignItems: 'center'
     },
 
     messageContainer: {
@@ -354,7 +361,13 @@ export default {
 
     imageDisplay: {
         width: wp(100),
-        height: hp(8)
+        height: hp(5)
+    },
+
+    phraseDisplay: {
+        width: wp(90),
+        height: hp(8),
+        marginTop: hp(2)
     },
 
     imageDisplaySideBar: {
@@ -363,9 +376,9 @@ export default {
     },
 
     imageFemmeDisplay: {
-        height: hp(57),
+        height: hp(50),
         width: '100%',
-        marginBottom: hp(3)
+        marginTop: hp(0)
     },
 
     headerWhite: {
@@ -411,7 +424,6 @@ export default {
 
     loginButtonSection: {
         width: '100%',
-        justifyContent: 'center',
         alignItems: 'center'
     },
 

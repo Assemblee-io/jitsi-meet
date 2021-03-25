@@ -30,31 +30,6 @@ const DEFAULT_HELP_CENTRE_URL = 'https://web-cdn.jitsi.net/faq/meet-faq.html';
 class JoinView extends AbstractJoinView {
 
     /**
-     * Initializes a new {@code SettingsView} instance.
-     *
-     * @inheritdoc
-     */
-    constructor(props) {
-        super(props);
-
-        this._onClose = this._onClose.bind(this);
-    }
-
-    _onClose: () => void;
-
-    /**
-     * Callback to be invoked on closing the modal. Also invokes normalizeUserInputURL to validate
-     * the URL entered by the user.
-     *
-     * @returns {boolean} - True if the modal can be closed.
-     */
-    _onClose() {
-        this.setState({ showAdvanced: false });
-
-        return this._processServerURL(true /* hideOnSuccess */);
-    }
-
-    /**
      * Renders JitsiModals that are supposed to be on the welcome page.
      *
      * @returns {Array<ReactElement>}
@@ -64,7 +39,7 @@ class JoinView extends AbstractJoinView {
             return (
                 <View style = { styles.textModal }>
                     <Text style = { styles.errorText }>
-                        SAISISSEZ UN NOM DE REUNION VALIDE
+                        Saisissez un nom de réunion valide
                     </Text>
                 </View>
             );
@@ -86,7 +61,8 @@ class JoinView extends AbstractJoinView {
                 headerProps = {{
                     headerLabelKey: 'helpView.header'
                 }}
-                modalId = { JOIN_VIEW_MODAL_ID }>
+                modalId = { JOIN_VIEW_MODAL_ID }
+                onClose = { this._onClose }>
                 <View style = { styles.textModal }>
                     <Text style = { styles.enterRoomText }>
                         { t('welcomepage.roomname') }

@@ -899,6 +899,7 @@
         "headerSubtitle": "Secure and high quality meetings",
         "info": "Dial-in info",
         "join": "Join a room",
+        "start": "Start now !",
         "signup": "Create a account",
         "jitsiOnMobile": "Jitsi on mobile – download our apps and start a meeting from anywhere",
         "moderatedMessage": "Or <a href=\"{{url}}\" rel=\"noopener noreferrer\" target=\"_blank\">book a meeting URL</a> in advance where you are the only moderator.",

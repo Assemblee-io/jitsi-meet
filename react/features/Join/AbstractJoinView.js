@@ -1,8 +1,9 @@
 // @flow
 
+import axios from 'axios';
 import { Component } from 'react';
 import type { Dispatch } from 'redux';
-import axios from 'axios';
+
 import { createWelcomePageEvent, sendAnalytics } from '../analytics';
 import { appNavigate } from '../app/actions';
 
@@ -74,6 +75,22 @@ export class AbstractJoinView extends Component<Props, *> {
         // Bind event handlers so they are only bound once per instance.
         this._onRoomChange = this._onRoomChange.bind(this);
         this._onJoin = this._onJoin.bind(this);
+        this._onClose = this._onClose.bind(this);
+    }
+
+
+    _onClose: () => void;
+
+    /**
+     * Callback to be invoked on closing the modal. Also invokes normalizeUserInputURL to validate
+     * the URL entered by the user.
+     *
+     * @returns {boolean} - True if the modal can be closed.
+     */
+    _onClose() {
+        this.setState({ error: false });
+
+        return true;
     }
 
 
@@ -112,7 +129,6 @@ export class AbstractJoinView extends Component<Props, *> {
                         isGenerated: !this.state.room,
                         room
                     }));
-                console.log('ICI',room);
 
                 if (room) {
                     this.setState({ joining: true });
@@ -130,9 +146,7 @@ export class AbstractJoinView extends Component<Props, *> {
                 console.log('ERROR', err);
                 this.setState({ error: true });
             });
-
     }
-
 }
 
 /**
