@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleURLName</key>
-			<string>org.jitsi.meet</string>
+			<string>assemblee</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>org.jitsi.meet</string>
+				<string>assemblee</string>
 			</array>
 		</dict>
 		<dict>

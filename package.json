@@ -78,6 +78,7 @@
     "react-native-calendar-events": "github:jitsi/react-native-calendar-events#df48ecdc4e1e90c5352f803ddbab1fa7269b74a7",
     "react-native-callstats": "3.70.1",
     "react-native-collapsible": "1.5.1",
+    "react-native-deep-linking": "^2.2.0",
     "react-native-default-preference": "1.4.2",
     "react-native-device-info": "8.0.0",
     "react-native-immersive": "2.0.0",
