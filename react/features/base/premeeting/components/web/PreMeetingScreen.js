@@ -1,13 +1,14 @@
 // @flow
 
 import React, { PureComponent } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
+import { Watermarks } from '../../../../base/react';
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
 import { Avatar } from '../../../avatar';
 import { allowUrlSharing } from '../../functions';
 
 import ConnectionStatus from './ConnectionStatus';
-import CopyMeetingUrl from './CopyMeetingUrl';
 import Preview from './Preview';
 
 type Props = {
@@ -55,7 +56,12 @@ type Props = {
     /**
      * The video track to render as preview (if omitted, the default local track will be rendered).
      */
-    videoTrack?: Object
+    videoTrack?: Object,
+
+    /**
+     * True if the preview overlay should be muted, false otherwise.
+     */
+    isLobby?: boolean
 }
 
 /**
@@ -79,47 +85,74 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      * @inheritdoc
      */
     render() {
-        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack } = this.props;
-        const showSharingButton = allowUrlSharing();
+        // eslint-disable-next-line no-undef
+        const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
+        const { name, showAvatar, title, videoMuted, videoTrack, isLobby } = this.props;
 
         return (
             <div
                 className = 'premeeting-screen'
                 id = 'lobby-screen'>
+                <Watermarks defaultJitsiLogoURL = { DEFAULT_WELCOME_PAGE_LOGO_URL } />
                 <ConnectionStatus />
-                <Preview
-                    videoMuted = { videoMuted }
-                    videoTrack = { videoTrack } />
-                {!videoMuted && <div className = 'preview-overlay' />}
-                <div className = 'content'>
-                    {showAvatar && videoMuted && (
-                        <Avatar
-                            className = 'premeeting-screen-avatar'
-                            displayName = { name }
-                            dynamicColor = { false }
-                            participantId = 'local'
-                            size = { 80 } />
-                    )}
-                    {showConferenceInfo && (
-                        <>
-                            <div className = 'title'>
-                                { title }
+                <Container>
+                    <Row>
+                        <Col
+                            md = { 6 }
+                            xs = { 12 }>
+                            <Row>
+                                {!isLobby && (
+                                    <Preview
+                                        footer = { this.props.footer }
+                                        videoMuted = { videoMuted }
+                                        videoTrack = { videoTrack } />
+                                )}
+                                {!videoMuted && <div className = 'preview-overlay' />}
+                                {showAvatar && videoMuted && (
+                                    <div className = { 'prejoin-no-camera' }>
+                                        <Avatar
+                                            className = 'premeeting-screen-avatar'
+                                            displayName = { name }
+                                            dynamicColor = { false }
+                                            participantId = 'local'
+                                            size = { 80 } />
+                                    </div>
+                                )}
+                                {isLobby && (
+                                    <div className = { 'prejoin-no-camera' }>
+                                        <Avatar
+                                            className = 'premeeting-screen-avatar'
+                                            displayName = { name }
+                                            dynamicColor = { false }
+                                            participantId = 'local'
+                                            size = { 80 } />
+                                    </div>
+                                )}
+                            </Row>
+                            <Row>
+                                {!isLobby && (
+                                    <div className = 'media-btn-container'>
+                                        <AudioSettingsButton visible = { true } />
+                                        <VideoSettingsButton visible = { true } />
+                                    </div>
+                                )}
+                            </Row>
+                        </Col>
+                        <Col
+                            md = { 6 }
+                            xs = { 12 }>
+                            <div className = 'content'>
+                                <>
+                                    <div className = 'title'>
+                                        { title }
+                                    </div>
+                                </>
+                                { this.props.children }
+                                { this.props.skipPrejoinButton }
                             </div>
-                            {showSharingButton ? <CopyMeetingUrl /> : null}
-                        </>
-                    )}
-                    { this.props.children }
-                    <div className = 'media-btn-container'>
-                        <div className = 'toolbox-content'>
-                            <div className = 'toolbox-content-items'>
-                                <AudioSettingsButton visible = { true } />
-                                <VideoSettingsButton visible = { true } />
-                            </div>
-                        </div>
-                    </div>
-                    { this.props.skipPrejoinButton }
-                    { this.props.footer }
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }

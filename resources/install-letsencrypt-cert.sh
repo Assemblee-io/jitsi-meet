@@ -70,7 +70,7 @@ if [ -f /etc/nginx/sites-enabled/$DOMAIN.conf ] ; then
 
         cp /usr/share/jitsi-meet-turnserver/coturn-certbot-deploy.sh $TURN_HOOK
         chmod u+x $TURN_HOOK
-        sed -i "s/jitsi-meet.example.com/$DOMAIN/g" $TURN_HOOK
+        sed -i "s/visio.assemblee.io/$DOMAIN/g" $TURN_HOOK
 
         /usr/bin/certbot certonly --noninteractive \
         --webroot --webroot-path /usr/share/jitsi-meet \
@@ -95,16 +95,16 @@ if [ -f /etc/nginx/sites-enabled/$DOMAIN.conf ] ; then
     CERT_CRT_ESC=$(echo $CERT_CRT_ESC | sed 's/\//\\\//g')
     sed -i "s/ssl_certificate\ \/etc\/jitsi\/meet\/.*crt/ssl_certificate\ $CERT_CRT_ESC/g" \
         $CONF_FILE
-    
+
     if type service >/dev/null 2>&1
-    then 
+    then
         service nginx reload
         echo "service nginx reload" >> $CRON_FILE
-    else 
-        systemctl reload nginx.service 
+    else
+        systemctl reload nginx.service
         echo "systemctl reload nginx.service" >> $CRON_FILE
     fi
-    
+
 elif [ -f /etc/apache2/sites-enabled/$DOMAIN.conf ] ; then
 
     /usr/bin/certbot certonly --noninteractive \
@@ -123,13 +123,13 @@ elif [ -f /etc/apache2/sites-enabled/$DOMAIN.conf ] ; then
     CERT_CRT_ESC=$(echo $CERT_CRT_ESC | sed 's/\//\\\//g')
     sed -i "s/SSLCertificateFile\ \/etc\/jitsi\/meet\/.*crt/SSLCertificateFile\ $CERT_CRT_ESC/g" \
         $CONF_FILE
-    
+
     if type service >/dev/null 2>&1
-    then 
+    then
         service apache2 reload
         echo "service apache2 reload" >> $CRON_FILE
-    else 
-        systemctl reload apache2.service 
+    else
+        systemctl reload apache2.service
         echo "systemctl reload apache2.service" >> $CRON_FILE
     fi
 fi

@@ -125,9 +125,9 @@ case "$1" in
             cp /usr/share/jitsi-meet-web-config/config.js $JITSI_MEET_CONFIG
             # replaces needed config for multidomain as it works only with nginx
             if [[ "$FORCE_NGINX" = "true" ]] ; then
-                sed -i "s/conference.jitsi-meet.example.com/conference.<\!--# echo var=\"subdomain\" default=\"\" -->jitsi-meet.example.com/g" $JITSI_MEET_CONFIG
+                sed -i "s/conference.visio.assemblee.io/conference.<\!--# echo var=\"subdomain\" default=\"\" -->visio.assemblee.io/g" $JITSI_MEET_CONFIG
             fi
-            sed -i "s/jitsi-meet.example.com/$JVB_HOSTNAME/g" $JITSI_MEET_CONFIG
+            sed -i "s/visio.assemblee.io/$JVB_HOSTNAME/g" $JITSI_MEET_CONFIG
         fi
 
         # getting rid of jetty serving web
@@ -191,7 +191,7 @@ case "$1" in
                 if [ ! -f /etc/nginx/sites-enabled/$JVB_HOSTNAME.conf ] ; then
                     ln -s /etc/nginx/sites-available/$JVB_HOSTNAME.conf /etc/nginx/sites-enabled/$JVB_HOSTNAME.conf
                 fi
-                sed -i "s/jitsi-meet.example.com/$JVB_HOSTNAME/g" /etc/nginx/sites-available/$JVB_HOSTNAME.conf
+                sed -i "s/visio.assemblee.io/$JVB_HOSTNAME/g" /etc/nginx/sites-available/$JVB_HOSTNAME.conf
             fi
 
             if [ "$CERT_CHOICE" = "$UPLOADED_CERT_CHOICE" ] ; then
@@ -221,7 +221,7 @@ case "$1" in
                 a2enmod rewrite ssl headers proxy_http proxy_wstunnel include
                 cp /usr/share/jitsi-meet-web-config/jitsi-meet.example-apache /etc/apache2/sites-available/$JVB_HOSTNAME.conf
                 a2ensite $JVB_HOSTNAME.conf
-                sed -i "s/jitsi-meet.example.com/$JVB_HOSTNAME/g" /etc/apache2/sites-available/$JVB_HOSTNAME.conf
+                sed -i "s/visio.assemblee.io/$JVB_HOSTNAME/g" /etc/apache2/sites-available/$JVB_HOSTNAME.conf
             fi
 
             if [ "$CERT_CHOICE" = "$UPLOADED_CERT_CHOICE" ] ; then

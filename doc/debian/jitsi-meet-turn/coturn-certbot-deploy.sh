@@ -14,10 +14,10 @@ fi
 
 # This is a template and when copied to /etc/letsencrypt/renewal-hooks/deploy/
 # during creating the Let's encrypt certs script
-# jitsi-meet.example.com will be replaced with the real domain of deployment
+# visio.assemblee.io will be replaced with the real domain of deployment
 for domain in $RENEWED_DOMAINS; do
         case $domain in
-        jitsi-meet.example.com)
+        visio.assemblee.io)
                 # Make sure the certificate and private key files are
                 # never world readable, even just for an instant while
                 # we're copying them into daemon_cert_root.

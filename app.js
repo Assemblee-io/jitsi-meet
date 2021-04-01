@@ -6,6 +6,7 @@ import 'jQuery-Impromptu';
 import 'olm';
 
 import 'focus-visible';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // We need to setup the jitsi-local-storage as early as possible so that we can start using it.
 // NOTE: If jitsi-local-storage is used before the initial setup is performed this will break the use case when we use

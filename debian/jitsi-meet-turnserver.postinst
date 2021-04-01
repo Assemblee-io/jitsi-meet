@@ -114,7 +114,7 @@ denied-peer-ip=240.0.0.0-255.255.255.255" >> $TURN_CONFIG
 
         # no turn config exists, lt's copy template and fill it in
         cp /usr/share/jitsi-meet-turnserver/turnserver.conf $TURN_CONFIG
-        sed -i "s/jitsi-meet.example.com/$JVB_HOSTNAME/g" $TURN_CONFIG
+        sed -i "s/visio.assemblee.io/$JVB_HOSTNAME/g" $TURN_CONFIG
         sed -i "s/__turnSecret__/$TURN_SECRET/g" $TURN_CONFIG
 
         # SSL for nginx

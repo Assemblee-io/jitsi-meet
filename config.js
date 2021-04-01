@@ -6,26 +6,26 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'jitsi-meet.example.com',
+        domain: 'visio.assemblee.io',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'jitsi-meet.example.com',
+        // authdomain: 'visio.assemblee.io',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        // focus: 'focus.visio.assemblee.io',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.jitsi-meet.example.com'
+        muc: 'conference.visio.assemblee.io'
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: '//jitsi-meet.example.com/http-bind',
+    bosh: '//visio.assemblee.io/http-bind',
 
     // Websocket URL
-    // websocket: 'wss://jitsi-meet.example.com/xmpp-websocket',
+    // websocket: 'wss://visio.assemblee.io/xmpp-websocket',
 
     // The name of client node advertised in XEP-0115 'c' stanza
     clientNode: 'http://jitsi.org/jitsimeet',
@@ -33,7 +33,7 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.jitsi-meet.example.com',
+    // focusUserJid: 'focus@auth.visio.assemblee.io',
 
 
     // Testing / experimental features.
@@ -46,7 +46,7 @@ var config = {
 
         // P2P test mode disables automatic switching to P2P when there are 2
         // participants in the conference.
-        p2pTestMode: false
+        p2pTestMode: false,
 
         // Enables the test specific features consumed by jitsi-meet-torture
         // testMode: false
@@ -60,7 +60,7 @@ var config = {
         // on while screensharing is in progress, the max bitrate is automatically
         // adjusted to 2.5 Mbps. This takes a value between 0 and 1 which determines
         // the probability for this to be enabled.
-        // capScreenshareBitrate: 1 // 0 to disable
+        capScreenshareBitrate: 0 // 0 to disable
 
         // Enable callstats only for a percentage of users.
         // This takes a value between 0 and 100 which determines the probability for
@@ -107,7 +107,7 @@ var config = {
     // startAudioOnly: false,
 
     // Every participant after the Nth will start audio muted.
-    // startAudioMuted: 10,
+    startAudioMuted: 10,
 
     // Start calls with audio muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
@@ -128,37 +128,37 @@ var config = {
     // Video
 
     // Sets the preferred resolution (height) for local video. Defaults to 720.
-    // resolution: 720,
+    resolution: 1080,
 
     // How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
     // Use -1 to disable.
-    // maxFullResolutionParticipants: 2,
+    maxFullResolutionParticipants: 10,
 
     // w3c spec-compliant video constraints to use for video capture. Currently
     // used by browsers that return true from lib-jitsi-meet's
     // util#browser#usesNewGumFlow. The constraints are independent from
     // this config's resolution value. Defaults to requesting an ideal
     // resolution of 720p.
-    // constraints: {
-    //     video: {
-    //         height: {
-    //             ideal: 720,
-    //             max: 720,
-    //             min: 240
-    //         }
-    //     }
-    // },
+    constraints: {
+        video: {
+            height: {
+                ideal: 1080,
+                max: 1080,
+                min: 240
+            }
+        }
+    },
 
     // Enable / disable simulcast support.
-    // disableSimulcast: false,
+    disableSimulcast: true,
 
     // Enable / disable layer suspension.  If enabled, endpoints whose HD
     // layers are not in use will be suspended (no longer sent) until they
     // are requested again.
-    // enableLayerSuspension: false,
+    enableLayerSuspension: true,
 
     // Every participant after the Nth will start video muted.
-    // startVideoMuted: 10,
+    startVideoMuted: 10,
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
@@ -173,15 +173,15 @@ var config = {
 
     // If set to true, disable H.264 video codec by stripping it out of the
     // SDP.
-    // disableH264: false,
+    disableH264: false,
 
     // Desktop sharing
 
     // Optional desktop sharing frame rate options. Default value: min:5, max:5.
-    // desktopSharingFrameRate: {
-    //     min: 5,
-    //     max: 5
-    // },
+    desktopSharingFrameRate: {
+        min: 25,
+        max: 30
+    },
 
     // Try to start calls with screen-sharing instead of camera video.
     // startScreenSharing: false,
@@ -189,15 +189,16 @@ var config = {
     // Recording
 
     // Whether to enable file recording or not.
-    // fileRecordingsEnabled: false,
+    fileRecordingsEnabled: true,
+
     // Enable the dropbox integration.
     // dropbox: {
     //     appKey: '<APP_KEY>' // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://jitsi-meet.example.com/static/oauth.html'
+    //     // 'https://visio.assemblee.io/static/oauth.html'
     //     redirectURI:
-    //          'https://jitsi-meet.example.com/subfolder/static/oauth.html'
+    //          'https://visio.assemblee.io/subfolder/static/oauth.html'
     // },
     // When integrations like dropbox are enabled only that will be shown,
     // by enabling fileRecordingsServiceEnabled, we show both the integrations
@@ -210,11 +211,11 @@ var config = {
     // fileRecordingsServiceSharingEnabled: false,
 
     // Whether to enable live streaming or not.
-    // liveStreamingEnabled: false,
+    liveStreamingEnabled: false,
 
     // Transcription (in interface_config,
     // subtitles and buttons can be configured)
-    // transcribingEnabled: false,
+    transcribingEnabled: false,
 
     // Enables automatic turning on captions when recording is started
     // autoCaptionOnRecord: false,
@@ -247,57 +248,64 @@ var config = {
     // useNewBandwidthAllocationStrategy: false,
 
     // Specify the settings for video quality optimizations on the client.
-    // videoQuality: {
+    videoQuality: {
     //    // Provides a way to prevent a video codec from being negotiated on the JVB connection. The codec specified
     //    // here will be removed from the list of codecs present in the SDP answer generated by the client. If the
     //    // same codec is specified for both the disabled and preferred option, the disable settings will prevail.
     //    // Note that 'VP8' cannot be disabled since it's a mandatory codec, the setting will be ignored in this case.
-    //    disabledCodec: 'H264',
-    //
-    //    // Provides a way to set a preferred video codec for the JVB connection. If 'H264' is specified here,
-    //    // simulcast will be automatically disabled since JVB doesn't support H264 simulcast yet. This will only
-    //    // rearrange the the preference order of the codecs in the SDP answer generated by the browser only if the
-    //    // preferred codec specified here is present. Please ensure that the JVB offers the specified codec for this
-    //    // to take effect.
-    //    preferredCodec: 'VP8',
-    //
-    //    // Provides a way to configure the maximum bitrates that will be enforced on the simulcast streams for
-    //    // video tracks. The keys in the object represent the type of the stream (LD, SD or HD) and the values
-    //    // are the max.bitrates to be set on that particular type of stream. The actual send may vary based on
-    //    // the available bandwidth calculated by the browser, but it will be capped by the values specified here.
-    //    // This is currently not implemented on app based clients on mobile.
-    //    maxBitratesVideo: {
-    //          VP8 : {
-    //              low: 200000,
-    //              standard: 500000,
-    //              high: 1500000
-    //          },
-    //          VP9: {
-    //              low: 100000,
-    //              standard: 300000,
-    //              high:  1200000
-    //          }
-    //    },
-    //
-    //    // The options can be used to override default thresholds of video thumbnail heights corresponding to
-    //    // the video quality levels used in the application. At the time of this writing the allowed levels are:
-    //    //     'low' - for the low quality level (180p at the time of this writing)
-    //    //     'standard' - for the medium quality level (360p)
-    //    //     'high' - for the high quality level (720p)
-    //    // The keys should be positive numbers which represent the minimal thumbnail height for the quality level.
-    //    //
-    //    // With the default config value below the application will use 'low' quality until the thumbnails are
-    //    // at least 360 pixels tall. If the thumbnail height reaches 720 pixels then the application will switch to
-    //    // the high quality.
-    //    minHeightForQualityLvl: {
-    //        360: 'standard',
-    //        720: 'high'
-    //    },
-    //
-    //    // Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
-    //    // for the presenter mode (camera picture-in-picture mode with screenshare).
-    //    resizeDesktopForPresenter: false
-    // },
+        disabledCodec: 'H264',
+
+        //
+        //    // Provides a way to set a preferred video codec for the JVB connection. If 'H264' is specified here,
+        //    // simulcast will be automatically disabled since JVB doesn't support H264 simulcast yet. This will only
+        //    // rearrange the the preference order of the codecs in the SDP answer generated by the browser only if the
+        // eslint-disable-next-line max-len
+        //    // preferred codec specified here is present. Please ensure that the JVB offers the specified codec for this
+        //    // to take effect.
+        preferredCodec: 'VP8',
+
+        //
+        //    // Provides a way to configure the maximum bitrates that will be enforced on the simulcast streams for
+        //    // video tracks. The keys in the object represent the type of the stream (LD, SD or HD) and the values
+        //    // are the max.bitrates to be set on that particular type of stream. The actual send may vary based on
+        //    // the available bandwidth calculated by the browser, but it will be capped by the values specified here.
+        //    // This is currently not implemented on app based clients on mobile.
+        maxBitratesVideo: {
+            VP8: {
+                low: 200000,
+                standard: 500000,
+                high: 1500000
+            },
+            VP9: {
+                low: 100000,
+                standard: 300000,
+                high: 1200000
+            }
+        },
+
+        //
+        //    // The options can be used to override default thresholds of video thumbnail heights corresponding to
+        //    // the video quality levels used in the application. At the time of this writing the allowed levels are:
+        //    //     'low' - for the low quality level (180p at the time of this writing)
+        //    //     'standard' - for the medium quality level (360p)
+        //    //     'high' - for the high quality level (720p)
+        //    // The keys should be positive numbers which represent the minimal thumbnail height for the quality level.
+        //    //
+        //    // With the default config value below the application will use 'low' quality until the thumbnails are
+        // eslint-disable-next-line max-len
+        //    // at least 360 pixels tall. If the thumbnail height reaches 720 pixels then the application will switch to
+        //    // the high quality.
+        minHeightForQualityLvl: {
+            360: 'standard',
+            720: 'high'
+        },
+
+        //
+        // eslint-disable-next-line max-len
+        //    // Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
+        //    // for the presenter mode (camera picture-in-picture mode with screenshare).
+        resizeDesktopForPresenter: false
+    },
 
     // // Options for the recording limit notification.
     // recordingLimit: {
@@ -351,11 +359,11 @@ var config = {
     // hideLobbyButton: false,
 
     // Require users to always specify a display name.
-    // requireDisplayName: true,
+    requireDisplayName: true,
 
     // Whether to use a welcome page or not. In case it's false a random room
     // will be joined when no room is specified.
-    enableWelcomePage: true,
+    enableWelcomePage: false,
 
     // Disable app shortcuts that are registered upon joining a conference
     // disableShortcuts: false,
@@ -366,13 +374,13 @@ var config = {
 
     // Enabling the close page will ignore the welcome page redirection when
     // a call is hangup.
-    // enableClosePage: false,
+    enableClosePage: true,
 
     // Disable hiding of remote thumbnails when in a 1-on-1 conference call.
     // disable1On1Mode: false,
 
     // Default language for the user interface.
-    // defaultLanguage: 'en',
+    defaultLanguage: 'fr',
 
     // Disables profile and the edit of all fields from the profile settings (display name and email)
     // disableProfile: false,
@@ -393,7 +401,7 @@ var config = {
     // enableCalendarIntegration: false,
 
     // When 'true', it shows an intermediate page before joining, where the user can configure their devices.
-    // prejoinPageEnabled: false,
+    prejoinPageEnabled: true,
 
     // If etherpad integration is enabled, setting this to true will
     // automatically open the etherpad when a participant joins.  This
@@ -484,7 +492,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:jitsi-meet.example.com:3478' },
+            // { urls: 'stun:visio.assemblee.io:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' }
         ]
 
@@ -584,20 +592,25 @@ var config = {
     // Local Recording
     //
 
-    // localRecording: {
+    localRecording: {
     // Enables local recording.
     // Additionally, 'localrecording' (all lowercase) needs to be added to
     // TOOLBAR_BUTTONS in interface_config.js for the Local Recording
     // button to show up on the toolbar.
     //
-    //     enabled: true,
-    //
+        enabled: true,
 
-    // The recording format, can be one of 'ogg', 'flac' or 'wav'.
-    //     format: 'flac'
-    //
+        //
 
-    // },
+        // The recording format, can be one of 'ogg', 'flac' or 'wav'.
+        format: 'wav'
+
+        //
+
+    },
+
+    hiddenDomain: 'recorder.visio.assemblee.io',
+
 
     // Options related to end-to-end (participant to participant) ping.
     // e2eping: {
@@ -636,7 +649,7 @@ var config = {
     // disableInviteFunctions: true,
 
     // Disables storing the room name to the recents list
-    // doNotStoreRoom: true,
+    doNotStoreRoom: true,
 
     // Deployment specific URLs.
     // deploymentUrls: {
@@ -683,7 +696,7 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.jitsi-meet.example.com',
+    // moderatedRoomServiceUrl: 'https://moderated.visio.assemblee.io',
 
     // If true, tile view will not be enabled automatically when the participants count threshold is reached.
     // disableTileView: true,
@@ -699,6 +712,9 @@ var config = {
 
     // Sets the conference subject
     // subject: 'Conference Subject',
+
+    // eslint-disable-next-line camelcase
+    etherpad_base: 'https://visio.assemblee.io/etherpad/p/',
 
     // This property is related to the use case when jitsi-meet is used via the IFrame API. When the property is true
     // jitsi-meet will use the local storage of the host page instead of its own. This option is useful if the browser
