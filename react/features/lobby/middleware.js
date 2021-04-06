@@ -1,9 +1,11 @@
 // @flow
 
+import { APP_WILL_MOUNT } from '../base/app';
 import { CONFERENCE_FAILED, CONFERENCE_JOINED } from '../base/conference';
 import { JitsiConferenceErrors, JitsiConferenceEvents } from '../base/lib-jitsi-meet';
 import { getFirstLoadableAvatarUrl, getParticipantDisplayName } from '../base/participants';
 import { MiddlewareRegistry, StateListenerRegistry } from '../base/redux';
+import { playSound, registerSound } from '../base/sounds';
 import { isTestModeEnabled } from '../base/testing';
 import { NOTIFICATION_TYPE, showNotification } from '../notifications';
 import { shouldAutoKnock } from '../prejoin/functions';
@@ -21,12 +23,18 @@ import {
 
 MiddlewareRegistry.register(store => next => action => {
     switch (action.type) {
+    case APP_WILL_MOUNT:
+        store.dispatch(registerSound(
+            'LOBBY_ENTER_SOUND',
+            'Dingdong.mpeg'));
+        break;
     case CONFERENCE_FAILED:
         return _conferenceFailed(store, next, action);
     case CONFERENCE_JOINED:
         return _conferenceJoined(store, next, action);
     case KNOCKING_PARTICIPANT_ARRIVED_OR_UPDATED: {
         // We need the full update result to be in the store already
+        store.dispatch(playSound('LOBBY_ENTER_SOUND'));
         const result = next(action);
 
         _findLoadableAvatarForKnockingParticipant(store, action.participant);
