@@ -132,7 +132,7 @@ function mapStateToProps(state) {
         _locked: locked,
         _password: password,
         _passwordNumberOfDigits: roomPasswordNumberOfDigits,
-        _showE2ee: Boolean(e2eeSupported)
+        _showE2ee: false // Boolean(e2eeSupported)
     };
 }
 

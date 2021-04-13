@@ -45,22 +45,7 @@ type Props = {
 function LocalVideoMenuTriggerButton(props: Props) {
     return (
         props._showLocalVideoFlipButton
-            ? <Popover
-                content = {
-                    <VideoMenu id = 'localVideoMenu'>
-                        <FlipLocalVideoButton />
-                    </VideoMenu>
-                }
-                overflowDrawer = { props._overflowDrawer }
-                position = { props._menuPosition }>
-                <span
-                    className = 'popover-trigger local-video-menu-trigger'>
-                    <Icon
-                        size = '1em'
-                        src = { IconMenuThumb }
-                        title = 'Local user controls' />
-                </span>
-            </Popover>
+            ? null
             : null
     );
 }

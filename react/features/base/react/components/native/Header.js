@@ -53,7 +53,7 @@ class Header extends PureComponent<Props> {
             <View style = { _styles.headerOverlay }>
                 <StatusBar
                     backgroundColor = { _styles.statusBar }
-                    barStyle = { this._getStatusBarContentColor() }
+                    barStyle = { STATUSBAR_DARK }
                     translucent = { false } />
                 <SafeAreaView>
                     <View

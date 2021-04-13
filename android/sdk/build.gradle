@@ -154,7 +154,7 @@ android.libraryVariants.all { def variant ->
         //
         copy {
             from("${projectDir}/../../sounds/incomingMessage.wav")
-            from("${projectDir}/../../sounds/joined.wav")
+            from("${projectDir}/../../sounds/sounds_joined.wav")
             from("${projectDir}/../../sounds/left.wav")
             from("${projectDir}/../../sounds/liveStreamingOn.mp3")
             from("${projectDir}/../../sounds/liveStreamingOff.mp3")

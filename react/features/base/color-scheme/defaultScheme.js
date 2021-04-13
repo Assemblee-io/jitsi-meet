@@ -33,11 +33,11 @@ export default {
         buttonLabel: ColorPalette.white
     },
     'Header': {
-        background: ColorPalette.blue,
-        icon: ColorPalette.white,
+        background: ColorPalette.white,
+        icon: ColorPalette.black,
         statusBar: ColorPalette.blueHighlight,
-        statusBarContent: ColorPalette.white,
-        text: ColorPalette.white
+        statusBarContent: ColorPalette.black,
+        text: ColorPalette.black
     },
     'Modal': {},
     'LargeVideo': {

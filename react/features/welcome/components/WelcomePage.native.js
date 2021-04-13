@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import {
     Animated,
     Keyboard,
@@ -6,14 +6,22 @@ import {
     TextInput,
     TouchableHighlight,
     TouchableOpacity,
-    View
+    View,
+    Image,
+    Linking,
+    KeyboardAvoidingView,
+    Platform
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import BottomSheet from 'react-native-simple-bottom-sheet';
 
+import { JoinView, JOIN_VIEW_MODAL_ID } from '../../Join';
 import { getName } from '../../app/functions';
 import { ColorSchemeRegistry } from '../../base/color-scheme';
 import { translate } from '../../base/i18n';
 import { Icon, IconMenu, IconWarning } from '../../base/icons';
 import { MEDIA_TYPE } from '../../base/media';
+import { setActiveModalId } from '../../base/modal';
 import { Header, LoadingIndicator, Text } from '../../base/react';
 import { connect } from '../../base/redux';
 import { ColorPalette } from '../../base/styles';
@@ -32,10 +40,15 @@ import {
     _mapStateToProps as _abstractMapStateToProps
 } from './AbstractWelcomePage';
 import LocalVideoTrackUnderlay from './LocalVideoTrackUnderlay';
-import VideoSwitch from './VideoSwitch';
-import WelcomePageLists from './WelcomePageLists';
 import WelcomePageSideBar from './WelcomePageSideBar';
 import styles, { PLACEHOLDER_TEXT_COLOR } from './styles';
+
+
+const FEMME_ORDI = require('../../../../images/femme_ordi.jpg');
+const DEFAULT_AVATAR = require('../../../../images/logo_assemblee.png');
+const DEFAULT_PHRASE = require('../../../../images/logo_phrase.png');
+const panelRef = createRef(null);
+
 
 /**
  * The native container rendering the welcome page.
@@ -51,6 +64,7 @@ class WelcomePage extends AbstractWelcomePage {
     constructor(props) {
         super(props);
 
+        this.state.modalVisible = false;
         this.state._fieldFocused = false;
         this.state.hintBoxAnimation = new Animated.Value(0);
 
@@ -62,6 +76,7 @@ class WelcomePage extends AbstractWelcomePage {
         // Specially bind functions to avoid function definition on render.
         this._onFieldBlur = this._onFieldFocusChange.bind(this, false);
         this._onFieldFocus = this._onFieldFocusChange.bind(this, true);
+        this._onOpenModal = this._onOpenModal.bind(this);
     }
 
     /**
@@ -89,7 +104,7 @@ class WelcomePage extends AbstractWelcomePage {
             // already granted the permission.
             navigator.permissions.query({ name: 'camera' }).then(response => {
                 response === 'granted'
-                    && dispatch(createDesiredLocalTracks(MEDIA_TYPE.VIDEO));
+                && dispatch(createDesiredLocalTracks(MEDIA_TYPE.VIDEO));
             });
         }
     }
@@ -118,6 +133,20 @@ class WelcomePage extends AbstractWelcomePage {
         */
 
         return this._renderFullUI();
+    }
+
+    _onOpenModal: () => void;
+
+    /**
+     * Shows the {@link SettingsView}.
+     *
+     * @private
+     * @returns {void}
+     */
+    _onOpenModal() {
+        const { dispatch } = this.props;
+
+        dispatch(setActiveModalId(JOIN_VIEW_MODAL_ID));
     }
 
     /**
@@ -158,6 +187,41 @@ class WelcomePage extends AbstractWelcomePage {
         ];
     }
 
+
+    _onHandleClick = () => {
+        Linking.canOpenURL('https://assemblee.io/app/login').then(supported => {
+            if (supported) {
+                Linking.openURL('https://assemblee.io/app/login');
+            } else {
+                console.log('Don\'t know how to open URI: https://assemblee.io/app/login');
+            }
+        });
+    };
+
+    _onCreateAccount = () => {
+        Linking.canOpenURL('https://assemblee.io/app/signup').then(supported => {
+            if (supported) {
+                Linking.openURL('https://assemblee.io/app/signup');
+            } else {
+                console.log('Don\'t know how to open URI: https://assemblee.io/app/signup');
+            }
+        });
+    };
+
+    /**
+     * Callback for when the room field's focus changes so the hint box
+     * must be rendered or removed.
+     *
+     * @private
+     * @param {boolean} visible - The focused state of the field.
+     * @returns {void}
+     */
+    _onClicksetModalVisible(visible) {
+        this.setState({
+            modalVisible: visible
+        });
+    }
+
     /**
      * Callback for when the room field's focus changes so the hint box
      * must be rendered or removed.
@@ -187,10 +251,10 @@ class WelcomePage extends AbstractWelcomePage {
             })
             .start(animationState =>
                 animationState.finished
-                    && !focused
-                    && this.setState({
-                        _fieldFocused: false
-                    }));
+                && !focused
+                && this.setState({
+                    _fieldFocused: false
+                }));
     }
 
     /**
@@ -279,53 +343,57 @@ class WelcomePage extends AbstractWelcomePage {
      * @returns {ReactElement}
      */
     _renderFullUI() {
-        const roomnameAccLabel = 'welcomepage.accessibilityLabel.roomname';
         const { _headerStyles, t } = this.props;
 
         return (
             <LocalVideoTrackUnderlay style = { styles.welcomePage }>
-                <View style = { _headerStyles.page }>
+                <View
+                    style = { _headerStyles.page }>
                     <Header style = { styles.header }>
                         <TouchableOpacity onPress = { this._onShowSideBar } >
                             <Icon
                                 src = { IconMenu }
                                 style = { _headerStyles.headerButtonIcon } />
                         </TouchableOpacity>
-                        <VideoSwitch />
                     </Header>
                     <SafeAreaView style = { styles.roomContainer } >
+                        <View style = { styles.imageContainer }>
+                            <Image
+                                resizeMode = 'contain'
+                                source = { DEFAULT_AVATAR }
+                                style = { styles.imageDisplay } />
+                            <Image
+                                resizeMode = 'contain'
+                                source = { DEFAULT_PHRASE }
+                                style = { styles.phraseDisplay } />
+                            <Image
+                                resizeMode = 'contain'
+                                source = { FEMME_ORDI }
+                                style = { styles.imageFemmeDisplay } />
+                        </View>
                         <View style = { styles.joinControls } >
-                            <Text style = { styles.enterRoomText }>
-                                { t('welcomepage.roomname') }
-                            </Text>
-                            <TextInput
-                                accessibilityLabel = { t(roomnameAccLabel) }
-                                autoCapitalize = 'none'
-                                autoComplete = 'off'
-                                autoCorrect = { false }
-                                autoFocus = { false }
-                                onBlur = { this._onFieldBlur }
-                                onChangeText = { this._onRoomChange }
-                                onFocus = { this._onFieldFocus }
-                                onSubmitEditing = { this._onJoin }
-                                placeholder = { this.state.roomPlaceholder }
-                                placeholderTextColor = { PLACEHOLDER_TEXT_COLOR }
-                                returnKeyType = { 'go' }
-                                style = { styles.textInput }
-                                underlineColorAndroid = 'transparent'
-                                value = { this.state.room } />
-                            {
-                                this._renderInsecureRoomNameWarning()
-                            }
-                            {
-                                this._renderHintBox()
-                            }
+                            <View style = { styles.loginButtonSection }>
+                                <Text style = { styles.textUpperButton }>
+                                    { this.props.t('welcomepage.start') }
+                                </Text>
+                                <TouchableHighlight
+                                    accessibilityLabel =
+                                        { t('welcomepage.accessibilityLabel.join') }
+                                    onPress = { this._onOpenModal }
+                                    style = { styles.button }
+                                    underlayColor = { ColorPalette.white }>
+                                    <Text style = { styles.buttonText }>
+                                        { this.props.t('welcomepage.join') }
+                                    </Text>
+                                </TouchableHighlight>
+                            </View>
                         </View>
                     </SafeAreaView>
-                    <WelcomePageLists disabled = { this.state._fieldFocused } />
+                    { this._renderRoomModal() }
                 </View>
                 <WelcomePageSideBar />
                 { this._renderWelcomePageModals() }
+
             </LocalVideoTrackUnderlay>
         );
     }
@@ -355,9 +423,87 @@ class WelcomePage extends AbstractWelcomePage {
     _renderWelcomePageModals() {
         return [
             <HelpView key = 'helpView' />,
+            <JoinView key = 'joinView' />,
             <DialInSummary key = 'dialInSummary' />,
             <SettingsView key = 'settings' />
         ];
+    }
+
+    /**
+     * Renders JitsiModals that are supposed to be on the welcome page.
+     *
+     * @returns {Array<ReactElement>}
+     */
+    _renderErrorModal() {
+        if (this.state.error) {
+            return (
+                <View style = { styles.textModal }>
+                    <Text style = { styles.errorText }>
+                        SAISISSEZ UN NOM DE REUNION VALIDE
+                    </Text>
+                </View>
+            );
+        }
+    }
+
+
+    /**
+     * Renders JitsiModals that are supposed to be on the welcome page.
+     *
+     * @returns {Array<ReactElement>}
+     */
+    _renderRoomModal() {
+        const { t } = this.props;
+        const roomnameAccLabel = 'welcomepage.accessibilityLabel.roomname';
+
+        return (
+            <BottomSheet
+                isOpen = { false }
+                ref = { ref => panelRef.current = ref }
+                sliderMinHeight = { '0' }>
+                <KeyboardAwareScrollView
+                    style = { this.state.heightModal }>
+                    <View style = { styles.textModal }>
+                        <Text style = { styles.enterRoomText }>
+                            { t('welcomepage.roomname') }
+                        </Text>
+                    </View>
+                    <KeyboardAvoidingView
+                        behavior = { Platform.OS === 'ios' ? 'padding' : 'height' }
+                        style = { styles.loginButtonSection }>
+                        <TextInput
+                            accessibilityLabel = { t(roomnameAccLabel) }
+                            autoCapitalize = 'characters'
+                            autoComplete = 'off'
+                            autoCorrect = { false }
+                            autoFocus = { false }
+                            maxLength = { 8 }
+                            onBlur = { this._onFieldBlur }
+                            onChangeText = { this._onRoomChange }
+                            onFocus = { this._onFieldFocus }
+                            onSubmitEditing = { this._onJoin }
+                            placeholderTextColor = { PLACEHOLDER_TEXT_COLOR }
+                            returnKeyType = { 'go' }
+                            style = { styles.textInput }
+                            underlineColorAndroid = 'transparent'
+                            value = { this.state.room } />
+                    </KeyboardAvoidingView>
+                    { this._renderErrorModal() }
+                    <View style = { styles.loginButtonSection }>
+                        <TouchableHighlight
+                            accessibilityLabel =
+                                { t('welcomepage.accessibilityLabel.join') }
+                            onPress = { this._onJoin }
+                            style = { styles.button }
+                            underlayColor = { ColorPalette.white }>
+                            <Text style = { styles.buttonText }>
+                                { this.props.t('welcomepage.join') }
+                            </Text>
+                        </TouchableHighlight>
+                    </View>
+                </KeyboardAwareScrollView>
+            </BottomSheet>
+        );
     }
 }
 

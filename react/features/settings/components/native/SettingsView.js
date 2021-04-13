@@ -179,21 +179,6 @@ class SettingsView extends AbstractSettingsView<Props, State> {
                         label = 'settingsView.conferenceSection' />
                     <FormRow
                         fieldSeparator = { true }
-                        label = 'settingsView.serverURL'
-                        layout = 'column'>
-                        <TextInput
-                            autoCapitalize = 'none'
-                            autoCorrect = { false }
-                            editable = { this.props._serverURLChangeEnabled }
-                            keyboardType = { 'url' }
-                            onBlur = { this._onBlurServerURL }
-                            onChangeText = { this._onChangeServerURL }
-                            placeholder = { this.props._serverURL }
-                            textContentType = { 'URL' } // iOS only
-                            value = { serverURL } />
-                    </FormRow>
-                    <FormRow
-                        fieldSeparator = { true }
                         label = 'settingsView.startWithAudioMuted'>
                         <Switch
                             onValueChange = { this._onStartAudioMutedChange }
@@ -206,15 +191,6 @@ class SettingsView extends AbstractSettingsView<Props, State> {
                     </FormRow>
                     <FormSectionHeader
                         label = 'settingsView.buildInfoSection' />
-                    <FormRow
-                        label = 'settingsView.version'>
-                        <Text>
-                            {`${AppInfo.version} build ${AppInfo.buildNumber}`}
-                        </Text>
-                    </FormRow>
-                    <FormSectionHeader
-                        label = 'settingsView.advanced' />
-                    {this._renderAdvancedSettings()}
                 </ScrollView>
             </JitsiModal>
         );
