@@ -882,6 +882,7 @@
             "audio": "Voix",
             "video": "Vidéo"
         },
+        "start": "Demarrez maintenant !",
         "calendar": "Calendrier",
         "connectCalendarButton": "Connecter votre calendrier",
         "connectCalendarText": "Connectez-vous à votre calendrier pour afficher toutes les réunions {{app}}. Ajoutez également les réunions de {{provider}} à votre calendrier et démarrez-les d'un simple clic.",
