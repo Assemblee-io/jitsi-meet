@@ -72,7 +72,7 @@ const DEFAULT_STATE = {
      * @public
      * @type {string}
      */
-    inviteDomain: '',
+    inviteDomain: 'https://assemblee.io/meet',
 
     /**
      * The custom url used when the user clicks the logo.
