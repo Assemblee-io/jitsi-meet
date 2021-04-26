@@ -107,211 +107,235 @@ $flagsImagePath: "../images/";
 @import 'drawer';
 
 .premeeting-screen-avatar text {
-    fill: #fff!important;
+fill: #fff!important;
 }
 
 .premeeting-screen .audio-preview .settings-button-container,
 .premeeting-screen .video-preview .settings-button-container {
-    padding: 10px 10px;
-    background: #c6c9d42e;
-    border-radius: 50px;
+padding: 10px 10px;
+background: #c6c9d42e;
+border-radius: 50px;
 }
 
 .premeeting-screen .sc-cvbbAY.cDFPVJ {
-    max-width: 1000px;
-    margin: auto;
+max-width: 1000px;
+margin: auto;
 }
 
 .premeeting-screen .action-btn.primary {
-    background: #0135d4cf;
-    border: #0135d4cf;
+background: #0135d4cf;
+border: #0135d4cf;
 }
 
 .premeeting-screen .content input.field {
-    background-color: #fff!important;
-    border: 1px solid #d8d6d6;
+background-color: #fff!important;
+border: 1px solid #d8d6d6;
 }
 
 .premeeting-screen .content input.field.focused {
-    box-shadow: none!important;
+box-shadow: none!important;
 }
 
 
 /* Small devices (landscape phones, 576px and up) */
 
 @media (max-width: 575.98px) {
-    #preview {
-        max-width: 500px;
-        margin: auto;
-    }
-    .premeeting-screen .content {
-        display: block!important;
-        text-align: center;
-    }
+#preview {
+max-width: 500px;
+margin: auto;
+}
+.premeeting-screen .content {
+display: block!important;
+text-align: center;
+}
 }
 
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 
 @media (min-width: 576px) {
-    #preview {
-        padding-top: 28vh;
-        max-width: 500px;
-        margin: auto;
-    }
-    .premeeting-screen .content {
-        display: block!important;
-        margin-top: 34vh;
-        text-align: center;
-    }
+#preview {
+padding-top: 28vh;
+max-width: 500px;
+margin: auto;
+}
+.premeeting-screen .content {
+display: block!important;
+margin-top: 34vh;
+text-align: center;
+}
 }
 
 .premeeting-screen .audio-preview,
 .premeeting-screen .video-preview {
-    background: #f2f2f2;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
+background: #f2f2f2;
+border-top-left-radius: 50px;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+border-top-right-radius: 50px;
 }
 
 .premeeting-screen-avatar {
-    margin: auto;
+margin: auto;
 }
 
 
 .prejoin-no-camera .avatar {
-    background-color: #ffffff!important;
-    border-radius: 50%!important;
-    color: #3659dc!important;
+background-color: #ffffff!important;
+border-radius: 50%!important;
+color: #3659dc!important;
 }
 
 .prejoin-preview-status {
-    position: relative;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    text-align: center;
-    display: block;
+position: relative;
+border-bottom-right-radius: 8px;
+border-bottom-left-radius: 8px;
+text-align: center;
+display: block;
 }
 
 .prejoin-preview-status--ok {
-    background: #31b76a;
-    position: unset!important;
-    border-radius: 0px 0px 8px 8px;
-    padding-top: 2px;
+background: #31b76a;
+position: unset!important;
+border-radius: 0px 0px 8px 8px;
+padding-top: 2px;
 }
 
 .prejoin-preview-status .jitsi-icon.prejoin-preview-icon {
-    top: -1px;
-    padding-right: 10px;
-    position: relative;
+top: -1px;
+padding-right: 10px;
+position: relative;
 }
 
 .prejoin-preview-status--warning {
-    background: rgb(245 157 0 / 82%);
+background: rgb(245 157 0 / 82%);
 }
 
 .prejoin-no-camera {
-    width: 100%;
-    margin-top: 28vh!important;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #3659dc;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    border-radius: 8px;
-    text-align: center;
-    -webkit-box-shadow: 1px 2px 15px -2px #b7b5b5;
-    box-shadow: 1px 2px 15px -2px #b7b5b5;
+width: 100%;
+margin-top: 28vh!important;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+background: #3659dc;
+padding-top: 100px;
+padding-bottom: 100px;
+border-radius: 8px;
+text-align: center;
+-webkit-box-shadow: 1px 2px 15px -2px #b7b5b5;
+box-shadow: 1px 2px 15px -2px #b7b5b5;
 }
 
 .premeeting-screen-avatar {}
 
 #preview video {
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px 8px 0px 0px;
-    position: relative;
-    width: 100%;
-    margin: 0px;
+height: 300px;
+object-fit: cover;
+border-radius: 8px 8px 0px 0px;
+position: relative;
+width: 100%;
+margin: 0px;
 }
 
 .premeeting-screen {
-    align-items: stretch;
-    background: #f2f4f9;
+align-items: stretch;
+background: #f2f4f9;
 }
 
 .premeeting-screen .preview-overlay {
-    display: none!important;
+display: none!important;
 }
 
 .premeeting-screen .content .title {
-    color: #333;
+color: #333;
 }
 
 .premeeting-screen .toggle-button {
-    color: #333;
+color: #333;
 }
 
 .premeeting-screen .toggle-button svg {
-    fill: black;
+fill: black;
 }
 
 .premeeting-screen .content .copy-meeting .url {
-    background: #fff!important;
-    border: 1px solid #d8d8d8;
+background: #fff!important;
+border: 1px solid #d8d8d8;
 }
 
 .premeeting-screen .content .copy-meeting .url.done {
-    color: white;
+color: white;
 }
 
 .premeeting-screen .content .copy-meeting .copy-meeting-text {
-    color: #333;
-    font-weight: 400;
+color: #333;
+font-weight: 400;
 }
 
 .premeeting-screen .content .copy-meeting .jitsi-icon svg {
-    fill: #33333352;
+fill: #33333352;
 }
 
 .premeeting-screen .content .copy-meeting .url:hover {
-    background: #d6d7d8;
+background: #d6d7d8;
 }
 
 .prejoin-preview-dropdown-container .sc-ckVGcZ.fdAqDG>div:nth-child(1) {
-    border: 1px solid #d8d6d6;
-    border-radius: 5px;
+border: 1px solid #d8d6d6;
+border-radius: 5px;
 }
 
 .prejoin-preview-dropdown-container .sc-ckVGcZ.fdAqDG>div:nth-child(1)>div.sc-eNQAEJ.dOAAnq {
-    padding: 10px!important;
+padding: 10px!important;
 }
 
 .premeeting-screen .action-btn .options:hover {
-    background-color: #2956cc;
+background-color: #2956cc;
 }
 
 
 .premeeting-screen-avatar,
 .prejoin-no-camera .avatar {
-    background-color: #0f1419!important;
-    opacity: 0.9;
+background-color: #0f1419!important;
+opacity: 0.9;
 }
 
 
 .premeeting-screen .action-btn.secondary {
-    color: #3f4850;
+color: #3f4850;
 }
 
 .premeeting-screen .action-btn.disabled {
-    color: #ffffff
+color: #ffffff
 }
 
 .popover {
-    top: 10px !important;
-    max-width: 400px !important;
+top: 10px !important;
+max-width: 400px !important;
+}
+
+div[role="tablist"] div {
+color: #fff;
+}
+.settings-pane .mock-atlaskit-label {
+color: #cecece;
+}
+
+.atlaskit-portal [role="dialog"] header, .atlaskit-portal [role="dialog"] > div, .atlaskit-portal [role="dialog"] footer {
+background:#131519;
+color:#fff;
+}
+.settings-pane input[type=checkbox]+svg+span {
+color: #fff;
+}
+.subject.gradient {
+background-image: none!important;
+}
+.subject.gradient .subject-text {
+display:none;
+}
+.send-button path {
+fill: #fff;
 }
 
 /* Modules END */
