@@ -465,7 +465,7 @@
 				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4444TWR757;
 				ENABLE_BITCODE = NO;
@@ -481,7 +481,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = visio.assemblee.io;
+				PRODUCT_BUNDLE_IDENTIFIER = video.assemblee.io;
 				PRODUCT_NAME = "jitsi-meet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -496,7 +496,7 @@
 				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 4444TWR757;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = src/Info.plist;
@@ -511,7 +511,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = visio.assemblee.io;
+				PRODUCT_BUNDLE_IDENTIFIER = video.assemblee.io;
 				PRODUCT_NAME = "jitsi-meet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

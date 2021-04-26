@@ -244,6 +244,7 @@
         "muteEveryoneElseTitle": "Couper le micro de tout le monde sauf de {{whom}} ?",
         "muteEveryoneDialog": "Êtes-vous sûr de vouloir couper les micros de tout le monde ? Vous ne pourrez plus réactiver leur micro, mais ils pourront l'activer par eux-mêmes à tout moment.",
         "muteEveryoneTitle": "Couper le micro de tout le monde ?",
+        "muteEveryonesVideoTitle": "Couper la camera de tout le monde ?",
         "muteEveryoneSelf": "vous",
         "muteEveryoneStartMuted": "Tout le monde démarre avec le micro coupé",
         "muteParticipantBody": "Vous ne pourrez plus réactiver son micro, mais il pourra l'activer par lui-même à tout moment.",
