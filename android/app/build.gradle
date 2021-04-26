@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'org.jitsi.meet'
+        applicationId 'video.assemblee.io'
         versionCode vcode
         versionName project.appVersion
 
@@ -40,6 +40,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('my-key.keystore')
+            storePassword 'assemblee34'
+            keyAlias 'my-key-alias'
+            keyPassword 'assemblee34'
+        }
     }
 
     buildTypes {
@@ -49,6 +55,7 @@ android {
         }
         release {
             // Uncomment the following line for singing a test release build.
+            signingConfig signingConfigs.release
             //signingConfig signingConfigs.debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-release.pro'
