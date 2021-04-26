@@ -46,12 +46,12 @@ $reloadProgressBarBg: #0074E0;
 /**
  * Dialog colors
  **/
-$auiDialogColor: #eceef1;
-$auiDialogBg: #253858;
-$auiDialogContentBg: #344563;
-$auiBorderColor: #253858;
+$auiDialogColor: #fff;
+$auiDialogBg: #333;
+$auiDialogContentBg: #333;
+$auiBorderColor: #333;
 $dialogTitleFontWeight: 400;
-$dialogErrorText: #344563;
+$dialogErrorText: #fff;
 
 /**
 * Inlay colors
@@ -60,14 +60,14 @@ $inlayColorBg: lighten($defaultBackground, 20%);
 $inlayBorderColor: lighten($baseLight, 10%);
 
 // Main controls
-$placeHolderColor: #a7a7a7;
+$placeHolderColor: #333;
 $readOnlyInputColor: #a7a7a7;
 $defaultDarkSelectionColor: #ccc;
 $buttonFontWeight: 400;
 $labelFontWeight: 400;
 $hintFontSize: em(13, 14);
-$linkFontColor: #3572b0;
-$linkHoverFontColor: darken(#3572b0, 10%);
+$linkFontColor: #006DDB;
+$linkHoverFontColor: darken(#006DDB, 10%);
 $dropdownColor: #333;
 $errorColor: #c61600;
 
@@ -92,7 +92,7 @@ $toolbarBadgeColor: #FFFFFF;
 $toolbarButtonColor: #FFFFFF;
 $toolbarSelectBackground: rgba(0, 0, 0, .6);
 $toolbarTitleColor: #FFFFFF;
-$toolbarToggleBackground: #12499C;
+$toolbarToggleBackground: #333;
 
 
 /**

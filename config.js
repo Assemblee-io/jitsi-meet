@@ -128,11 +128,11 @@ var config = {
     // Video
 
     // Sets the preferred resolution (height) for local video. Defaults to 720.
-    resolution: 1080,
+    resolution: 720,
 
     // How many participants while in the tile view mode, before the receiving video quality is reduced from HD to SD.
     // Use -1 to disable.
-    maxFullResolutionParticipants: 10,
+    maxFullResolutionParticipants: 6,
 
     // w3c spec-compliant video constraints to use for video capture. Currently
     // used by browsers that return true from lib-jitsi-meet's
@@ -142,7 +142,7 @@ var config = {
     constraints: {
         video: {
             height: {
-                ideal: 1080,
+                ideal: 720,
                 max: 1080,
                 min: 240
             }
@@ -150,7 +150,7 @@ var config = {
     },
 
     // Enable / disable simulcast support.
-    disableSimulcast: true,
+    disableSimulcast: false,
 
     // Enable / disable layer suspension.  If enabled, endpoints whose HD
     // layers are not in use will be suspended (no longer sent) until they
@@ -179,7 +179,7 @@ var config = {
 
     // Optional desktop sharing frame rate options. Default value: min:5, max:5.
     desktopSharingFrameRate: {
-        min: 25,
+        min: 20,
         max: 30
     },
 
@@ -223,7 +223,7 @@ var config = {
     // Misc
 
     // Default value for the channel "last N" attribute. -1 for unlimited.
-    channelLastN: -1,
+    channelLastN: 10,
 
     // Provides a way to use different "last N" values based on the number of participants in the conference.
     // The keys in an Object represent number of participants and the values are "last N" to be used when number of
@@ -304,7 +304,7 @@ var config = {
         // eslint-disable-next-line max-len
         //    // Provides a way to resize the desktop track to 720p (if it is greater than 720p) before creating a canvas
         //    // for the presenter mode (camera picture-in-picture mode with screenshare).
-        resizeDesktopForPresenter: false
+        resizeDesktopForPresenter: true
     },
 
     // // Options for the recording limit notification.
