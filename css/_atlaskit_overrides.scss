@@ -37,13 +37,14 @@
 /**
  * Override @atlaskit/modal-dialog header styling
  */
+
 .atlaskit-portal [role="dialog"] header {
     .jitsi-icon {
         cursor: pointer;
     }
 
     .jitsi-icon svg {
-        fill: #B8C7E0;
+        fill: #fff;
     }
 }
 
