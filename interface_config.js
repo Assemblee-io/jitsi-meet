@@ -143,7 +143,7 @@ var interfaceConfig = {
     /**
      * Specify custom URL for downloading android mobile app.
      */
-    MOBILE_DOWNLOAD_LINK_ANDROID: 'https://play.google.com/store/apps/details?id=org.jitsi.meet',
+    MOBILE_DOWNLOAD_LINK_ANDROID: 'https://play.google.com/store/apps/details?id=video.assemblee.io',
 
     /**
      * Specify custom URL for downloading f droid app.
@@ -153,9 +153,9 @@ var interfaceConfig = {
     /**
      * Specify URL for downloading ios mobile app.
      */
-    MOBILE_DOWNLOAD_LINK_IOS: 'https://itunes.apple.com/us/app/jitsi-meet/id1165103905',
+    MOBILE_DOWNLOAD_LINK_IOS: 'https://apps.apple.com/us/app/assembl%C3%A9e/id1558433133',
 
-    NATIVE_APP_NAME: 'Jitsi Meet',
+    NATIVE_APP_NAME: 'Assemblee.io',
 
     // Names of browsers which should show a warning stating the current browser
     // has a suboptimal experience. Browsers which are not listed as optimal or

@@ -120,7 +120,7 @@ class DeepLinkingMobilePage extends Component<Props> {
                             ? null
                             : <img
                                 className = 'logo'
-                                src = 'images/logo-deep-linking.png' />
+                                src = 'images/logo_assemblee.png' />
                     }
                 </div>
                 <div className = { `${_SNS}__body` }>
@@ -204,7 +204,7 @@ class DeepLinkingMobilePage extends Component<Props> {
         } = interfaceConfig.MOBILE_DYNAMIC_LINK || {};
 
         const domain = CUSTOM_DOMAIN ?? `https://${APP_CODE}.app.goo.gl`;
-        const IUS = interfaceConfig.APP_SCHEME || 'org.jitsi.meet';
+        const IUS = interfaceConfig.APP_SCHEME || 'assemblee';
 
         return `${domain}/?link=${
             encodeURIComponent(window.location.href)}&apn=${
