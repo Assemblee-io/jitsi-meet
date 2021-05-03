@@ -143,7 +143,10 @@ class DeepLinkingMobilePage extends Component<Props> {
                         href = { generateDeepLinkingURL() }
                         onClick = { this._onOpenApp }
                         target = '_top'>
-                        <button className = { `${_SNS}__button ${_SNS}__button_primary` }>
+                        <button
+                            className = { `${_SNS}__button ${_SNS}__button_primary` }
+                            style = {{ borderRadius: '5px',
+                                backgroundColor: '#0135d4cf' }}>
                             { t(`${_TNS}.joinInApp`) }
                         </button>
                     </a>
@@ -155,7 +158,10 @@ class DeepLinkingMobilePage extends Component<Props> {
                         href = { this._generateDownloadURL() }
                         onClick = { this._onDownloadApp }
                         target = '_top'>
-                        <button className = { downloadButtonClassName }>
+                        <button
+                            className = { downloadButtonClassName }
+                            style = {{ borderRadius: '5px',
+                                backgroundColor: '#0135d4cf' }}>
                             { t(`${_TNS}.downloadApp`) }
                         </button>
                     </a>
@@ -164,7 +170,10 @@ class DeepLinkingMobilePage extends Component<Props> {
                             && <a
                                 onClick = { this._onLaunchWeb }
                                 target = '_top'>
-                                <button className = { downloadButtonClassName }>
+                                <button
+                                    className = { downloadButtonClassName }
+                                    style = {{ borderRadius: '5px',
+                                        backgroundColor: '#0135d4cf' }}>
                                     { t(`${_TNS}.launchWebButton`) }
                                 </button>
                             </a>

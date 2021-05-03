@@ -146,7 +146,7 @@
         "downloadApp": "Télécharger l'application",
         "ifDoNotHaveApp": "Si vous n'avez pas encore l'application:",
         "ifHaveApp": "Si vous avez déjà installé l'application:",
-        "joinInApp": "Rejoindre la réunion en utilisant l'application",
+        "joinInApp": "Rejoindre la réunion via l'application",
         "launchWebButton": "Lancer dans le navigateur",
         "openApp": "Continuer vers l'application",
         "title": "Lancement de votre réunion dans {{app}} en cours ...",
