@@ -957,13 +957,6 @@ class Toolbox extends Component<Props> {
                 && <RecordButton
                     key = 'record'
                     showLabel = { true } />,
-            this._shouldShowButton('localrecording')
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.localRecording') }
-                    icon = { IconRec }
-                    key = 'localrecording'
-                    onClick = { this._onToolbarOpenLocalRecordingInfoDialog }
-                    text = { t('localRecording.dialogTitle') } />,
             this._shouldShowButton('mute-everyone')
                 && <MuteEveryoneButton
                     key = 'mute-everyone'
