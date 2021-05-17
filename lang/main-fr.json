@@ -246,7 +246,7 @@
         "muteEveryoneTitle": "Couper le micro de tout le monde ?",
         "muteEveryoneElsesVideoDialog": "Une fois la caméra désactivée, vous ne pourrez plus la réactiver, mais ils peuvent la réactiver à tout moment.",
         "muteEveryoneElsesVideoTitle": "Couper la camera de tout le monde sauf de {{whom}}?",
-        "muteParticipantsVideoButton": "Couper les caméras",
+        "muteParticipantsVideoButton": "Couper la caméra",
         "muteEveryonesVideoTitle": "Couper la camera de tout le monde ?",
         "muteEveryoneSelf": "vous",
         "muteEveryoneStartMuted": "Tout le monde démarre avec le micro coupé",
@@ -254,6 +254,8 @@
         "muteParticipantButton": "Couper les micros",
         "muteParticipantDialog": "Êtes-vous sûr(e) de vouloir couper le micro de ce participant ? Seul le participant pourra ensuite réactiver son micro à tout moment.",
         "muteParticipantTitle": "Couper le micro de ce participant ?",
+        "muteParticipantsVideoTitle": "Désactiver la caméra de ce participant ?",
+        "muteParticipantsVideoBody": "Vous ne pourrez pas rallumer la caméra, mais ils peuvent la rallumer à tout moment.",
         "Ok": "Ok",
         "passwordLabel": "La réunion a été verrouillée par un(e) participant(e). Veuillez entrer le $t(lockRoomPassword) pour la rejoindre.",
         "passwordNotSupported": "La définition d'un $t(lockRoomPassword) de réunion n'est pas prise en charge.",
@@ -812,7 +814,8 @@
         "toggleCamera": "Changer de caméra",
         "videomute": "Démarrer / Arrêter la caméra",
         "startvideoblur": "Flouter mon arrière plan",
-        "stopvideoblur": "Désactiver le flou d'arrière-plan"
+        "stopvideoblur": "Désactiver le flou d'arrière-plan",
+        "selectBackground": "Modifier l'arrière-plan"
     },
     "transcribing": {
         "ccButtonTooltip": "Activer / Désactiver les sous-titres",
@@ -868,13 +871,16 @@
     },
     "videothumbnail": {
         "domute": "Couper le micro",
+        "domuteVideo": "Désactiver la caméra",
         "domuteOthers": "Couper le micro de tous les autres",
+        "domuteVideoOfOthers": "Désactiver la caméra de tous les autres",
         "flip": "Balancer",
         "grantModerator": "Nommer modérateur",
         "kick": "Exclure",
         "moderator": "Modérateur",
         "mute": "Un participant a coupé son micro",
         "muted": "Muet",
+        "videoMuted": "Caméra désactivée",
         "remoteControl": "Démarrer / Arrêter le contrôle à distance",
         "show": "Afficher en premier plan",
         "videomute": "Le participant a arrêté la caméra"
