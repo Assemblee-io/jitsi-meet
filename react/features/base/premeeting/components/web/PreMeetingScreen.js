@@ -5,6 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import { Watermarks } from '../../../../base/react';
 import { AudioSettingsButton, VideoSettingsButton } from '../../../../toolbox/components/web';
+import { VideoBackgroundButton } from '../../../../virtual-background';
+import { checkBlurSupport } from '../../../../virtual-background/functions';
 import { Avatar } from '../../../avatar';
 import { allowUrlSharing } from '../../functions';
 
@@ -62,6 +64,11 @@ type Props = {
      * True if the preview overlay should be muted, false otherwise.
      */
     isLobby?: boolean
+
+    /**
+     * Array with the buttons which this Toolbox should display.
+     */
+    visibleButtons?: Array<string>
 }
 
 /**
@@ -85,9 +92,9 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      * @inheritdoc
      */
     render() {
-        // eslint-disable-next-line no-undef
         const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
-        const { name, showAvatar, title, videoMuted, videoTrack, isLobby } = this.props;
+        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, visibleButtons } = this.props;
+        const showSharingButton = allowUrlSharing();
 
         return (
             <div

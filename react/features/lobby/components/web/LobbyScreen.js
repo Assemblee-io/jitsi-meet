@@ -154,7 +154,7 @@ class LobbyScreen extends AbstractLobbyScreen {
      * @inheritdoc
      */
     _renderStandardButtons() {
-        const { _knocking, t } = this.props;
+        const { _knocking, _renderPassword, t } = this.props;
 
         return (
             <>
@@ -165,12 +165,12 @@ class LobbyScreen extends AbstractLobbyScreen {
                     type = 'primary'>
                     { t('lobby.knockButton') }
                 </ActionButton> }
-                <ActionButton
+                {_renderPassword && <ActionButton
                     onClick = { this._onSwitchToPasswordMode }
                     testId = 'lobby.enterPasswordButton'
                     type = 'secondary'>
                     { t('lobby.enterPasswordButton') }
-                </ActionButton>
+                </ActionButton> }
             </>
         );
     }
