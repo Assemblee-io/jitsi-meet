@@ -63,7 +63,7 @@ type Props = {
     /**
      * True if the preview overlay should be muted, false otherwise.
      */
-    isLobby?: boolean
+    isLobby?: boolean,
 
     /**
      * Array with the buttons which this Toolbox should display.
@@ -93,7 +93,7 @@ export default class PreMeetingScreen extends PureComponent<Props> {
      */
     render() {
         const { DEFAULT_WELCOME_PAGE_LOGO_URL } = interfaceConfig;
-        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, visibleButtons } = this.props;
+        const { name, showAvatar, showConferenceInfo, title, videoMuted, videoTrack, visibleButtons, isLobby } = this.props;
         const showSharingButton = allowUrlSharing();
 
         return (
