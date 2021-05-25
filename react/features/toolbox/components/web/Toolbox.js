@@ -1040,15 +1040,6 @@ class Toolbox extends Component<Props> {
                 && <SharedVideoButton
                     key = 'sharedvideo'
                     showLabel = { true } />,
-            this._shouldShowButton('shareaudio')
-                && _desktopSharingEnabled
-                && isScreenAudioSupported()
-                && <OverflowMenuItem
-                    accessibilityLabel = { t('toolbar.accessibilityLabel.shareaudio') }
-                    icon = { IconShareAudio }
-                    key = 'shareaudio'
-                    onClick = { this._onToolbarToggleShareAudio }
-                    text = { t('toolbar.shareaudio') } />,
             this._shouldShowButton('etherpad')
                 && <SharedDocumentButton
                     key = 'etherpad'

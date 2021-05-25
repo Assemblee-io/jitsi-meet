@@ -530,6 +530,17 @@
         "oldElectronClientDescription2": "dernière build",
         "oldElectronClientDescription3": " rapidement !"
     },
+    "participantsPane": {
+        "headings": {
+            "lobby": "Lobby ({{count}})",
+            "participantsList": "Participants ({{count}})"
+        },
+        "actions": {
+            "invite": "Inviter un participant",
+            "muteAll": "Mettre en sourdine tous les participants",
+            "stopVideo": "Arrêter la vidéo"
+        }
+    },
     "passwordSetRemotely": "défini par un autre participant",
     "passwordDigitsOnly": "Jusqu'à {{number}} chiffres",
     "poweredby": "produit par",
