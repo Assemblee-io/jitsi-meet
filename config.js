@@ -534,13 +534,6 @@ var config = {
         // How long we're going to wait, before going back to P2P after the 3rd
         // participant has left the conference (to filter out page reload).
         // backToP2PDelay: 5,
-
-        // The STUN servers that will be used in the peer to peer connections
-        stunServers: [
-
-            // { urls: 'stun:jitsi-meet.example.com:3478' },
-            { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' }
-        ]
     },
 
     analytics: {
