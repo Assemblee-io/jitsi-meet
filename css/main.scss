@@ -114,6 +114,13 @@ $flagsImagePath: "../images/";
 @import 'drawer';
 @import 'participants-pane';
 
+.help a {
+    color: #1271d6!important;
+}
+.premeeting-screen .audio-preview, .premeeting-screen .video-preview {
+    background: #171c1f!important;
+}
+
 .premeeting-screen-avatar text {
 fill: #fff!important;
 }
