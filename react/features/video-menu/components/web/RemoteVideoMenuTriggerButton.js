@@ -276,10 +276,10 @@ function _mapStateToProps(state, ownProps) {
 
     switch (currentLayout) {
     case LAYOUTS.TILE_VIEW:
-        _menuPosition = 'left-start';
+        _menuPosition = 'auto';
         break;
     case LAYOUTS.VERTICAL_FILMSTRIP_VIEW:
-        _menuPosition = 'left-end';
+        _menuPosition = 'auto';
         break;
     default:
         _menuPosition = 'auto';
