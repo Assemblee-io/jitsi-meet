@@ -170,9 +170,10 @@ text-align: center;
 
 @media (min-width: 576px) {
 #preview {
-padding-top: 28vh;
-max-width: 500px;
-margin: auto;
+    position: relative;
+    padding-top: 28vh;
+    max-width: 500px;
+    margin: auto;
 }
 .premeeting-screen .content {
 display: block!important;
