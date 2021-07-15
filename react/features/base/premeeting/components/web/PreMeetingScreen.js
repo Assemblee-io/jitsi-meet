@@ -107,7 +107,7 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                         <Col
                             md = { 6 }
                             xs = { 12 }>
-                            <Row style = {{ height: !videoMuted ? 'calc(100% + 30px)' : null }}>
+                            <Row style = {{ height: !videoMuted ? '85%' : null }}>
                                 {!isLobby && (
                                     <Preview
                                         footer = { this.props.footer }
